@@ -1,10 +1,11 @@
-
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import { Link } from "react-router-dom";
 
 const Projects = () => {
   const projects = [
     {
+      id: "1247-mayfield-garden",
       title: "1247 Mayfield Garden Way NE",
       description: "Complete home renovation including kitchen remodel, bathroom updates, and exterior improvements.",
       image: "/lovable-uploads/a5d40fca-81d6-4d1a-8426-931a7bed28df.png",
@@ -137,9 +138,11 @@ const Projects = () => {
                         {project.status}
                       </span>
                     )}
-                    <button className="bg-black text-white px-4 py-2 rounded text-sm hover:bg-gray-800 transition-colors font-poppins ml-auto">
-                      View Details
-                    </button>
+                    <Link to={`/projects/${project.id}`}>
+                      <button className="bg-black text-white px-4 py-2 rounded text-sm hover:bg-gray-800 transition-colors font-poppins ml-auto">
+                        View Details
+                      </button>
+                    </Link>
                   </div>
                 </div>
               </div>
@@ -157,16 +160,18 @@ const Projects = () => {
           <p className="text-xl text-gray-600 mb-8 font-poppins">
             Ready to start your construction or remodeling project? Contact us for a free consultation.
           </p>
-          <button 
-            className="bg-total-red text-white hover:bg-red-600 transition-colors font-syne font-medium text-2xl"
-            style={{
-              width: '183px',
-              height: '49px',
-              borderRadius: '27px'
-            }}
-          >
-            Get Started
-          </button>
+          <Link to="/contact">
+            <button 
+              className="bg-total-red text-white hover:bg-red-600 transition-colors font-syne font-medium text-2xl"
+              style={{
+                width: '183px',
+                height: '49px',
+                borderRadius: '27px'
+              }}
+            >
+              Get Started
+            </button>
+          </Link>
         </div>
       </section>
 
