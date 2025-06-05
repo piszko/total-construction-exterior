@@ -9,7 +9,7 @@ const AboutSection = () => {
           </h2>
         </div>
 
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
+        <div className="grid lg:grid-cols-2 gap-12 items-start">
           {/* Left Content */}
           <div>
             <h3 className="text-2xl lg:text-3xl font-bold text-gray-900 mb-6 font-poppins">
@@ -49,7 +49,7 @@ const AboutSection = () => {
           </div>
 
           {/* Right Image */}
-          <div>
+          <div className="flex items-start">
             <img 
               src="/lovable-uploads/a5d40fca-81d6-4d1a-8426-931a7bed28df.png" 
               alt="Beautiful modern house construction by Total Construction & Remodeling"
