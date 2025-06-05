@@ -44,11 +44,11 @@ const ServicesSection = () => {
               className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow animate-fade-in"
               style={{ animationDelay: `${index * 0.2}s` }}
             >
-              <div className="h-48 overflow-hidden">
+              <div className="aspect-[4/3] overflow-hidden">
                 <img
                   src={service.image}
                   alt={service.title}
-                  className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+                  className="w-full h-full object-contain hover:scale-105 transition-transform duration-300"
                 />
               </div>
               <div className="p-6">

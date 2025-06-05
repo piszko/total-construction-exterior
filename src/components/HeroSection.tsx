@@ -11,6 +11,10 @@ const HeroSection = () => {
       alt: "Beautiful modern house with professional construction work"
     },
     {
+      image: "/lovable-uploads/6cf34b2d-b0a4-46f6-b951-53be648f7e80.png",
+      alt: "Modern house construction with architectural plans"
+    },
+    {
       image: "/lovable-uploads/c03d0596-ccaa-4a4c-8c74-fc8039c5fe2c.png",
       alt: "Construction project showcase"
     }
@@ -69,30 +73,37 @@ const HeroSection = () => {
           <div className="animate-fade-in">
             <div className="relative">
               <div className="overflow-hidden rounded-lg shadow-xl">
-                <img
-                  src={slides[currentSlide].image}
-                  alt={slides[currentSlide].alt}
-                  className="w-full h-auto transition-opacity duration-500"
-                />
+                <div className="relative w-full h-auto">
+                  {slides.map((slide, index) => (
+                    <img
+                      key={index}
+                      src={slide.image}
+                      alt={slide.alt}
+                      className={`w-full h-auto transition-opacity duration-500 ${
+                        index === currentSlide ? 'opacity-100' : 'opacity-0 absolute top-0 left-0'
+                      }`}
+                    />
+                  ))}
+                </div>
               </div>
               
               {/* Slideshow Controls */}
               <button
                 onClick={prevSlide}
-                className="absolute left-4 top-1/2 transform -translate-y-1/2 bg-white/80 hover:bg-white text-gray-800 p-2 rounded-full shadow-lg transition-all"
+                className="absolute left-4 top-1/2 transform -translate-y-1/2 bg-white/80 hover:bg-white text-gray-800 p-2 rounded-full shadow-lg transition-all z-10"
               >
                 <ChevronLeft size={24} />
               </button>
               
               <button
                 onClick={nextSlide}
-                className="absolute right-4 top-1/2 transform -translate-y-1/2 bg-white/80 hover:bg-white text-gray-800 p-2 rounded-full shadow-lg transition-all"
+                className="absolute right-4 top-1/2 transform -translate-y-1/2 bg-white/80 hover:bg-white text-gray-800 p-2 rounded-full shadow-lg transition-all z-10"
               >
                 <ChevronRight size={24} />
               </button>
 
               {/* Slide Indicators */}
-              <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-2">
+              <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-2 z-10">
                 {slides.map((_, index) => (
                   <button
                     key={index}
