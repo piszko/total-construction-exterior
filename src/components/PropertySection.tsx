@@ -43,7 +43,7 @@ const PropertySection = () => {
     <section className="py-16 bg-gray-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
-          <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
+          <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-4 font-poppins">
             Invest In Your Dream Home .Buy The Best Property Today
           </h2>
         </div>
@@ -64,17 +64,17 @@ const PropertySection = () => {
                 />
               </div>
               <div className="p-6">
-                <h3 className="text-lg font-bold text-gray-900 mb-2">
+                <h3 className="text-lg font-bold text-gray-900 mb-2 font-poppins">
                   {property.title}
                 </h3>
-                <p className="text-gray-600 text-sm mb-4">
+                <p className="text-gray-600 text-sm mb-4 font-poppins">
                   {property.description}
                 </p>
                 <div className="flex justify-between items-center">
-                  <span className="text-total-red font-semibold text-sm">
+                  <span className="text-total-red font-semibold text-sm font-poppins">
                     {property.price}
                   </span>
-                  <button className="bg-black text-white px-4 py-2 rounded text-sm hover:bg-gray-800 transition-colors">
+                  <button className="bg-black text-white px-4 py-2 rounded text-sm hover:bg-gray-800 transition-colors font-poppins">
                     View
                   </button>
                 </div>
