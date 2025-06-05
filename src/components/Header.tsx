@@ -25,7 +25,7 @@ const Header = () => {
           </div>
 
           {/* Desktop Navigation */}
-          <nav className="hidden md:flex space-x-8">
+          <nav className="hidden md:flex space-x-12">
             <Link 
               to="/" 
               className={`font-syne font-medium text-2xl transition-colors ${
