@@ -2,34 +2,34 @@
 const PropertySection = () => {
   const properties = [
     {
-      title: "4-Bed Apartment Design",
+      title: "1247 Mayfield Garden Way NE",
       description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-      image: "https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=400&h=300&fit=crop"
+      image: "/lovable-uploads/a5d40fca-81d6-4d1a-8426-931a7bed28df.png"
     },
     {
-      title: "4-Bed Apartment Design",
+      title: "892 Brookhaven Circle NE",
       description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-      image: "https://images.unsplash.com/photo-1568605114967-8130f3a36994?w=400&h=300&fit=crop"
+      image: "/lovable-uploads/c03d0596-ccaa-4a4c-8c74-fc8039c5fe2c.png"
     },
     {
-      title: "4-Bed Apartment Design",
+      title: "1534 Dresden Drive NE",
       description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-      image: "https://images.unsplash.com/photo-1613490493576-7fde63acd811?w=400&h=300&fit=crop"
+      image: "/lovable-uploads/6cf34b2d-b0a4-46f6-b951-53be648f7e80.png"
     },
     {
-      title: "3-Bed Apartment Design",
+      title: "756 Clairmont Road NE",
       description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-      image: "https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?w=400&h=300&fit=crop"
+      image: "/lovable-uploads/310bd3db-7307-4ff6-8ea6-4f464c721cf6.png"
     },
     {
-      title: "4-Bed Apartment Design",
+      title: "2018 LaVista Road NE",
       description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-      image: "https://images.unsplash.com/photo-1582063289852-62e3ba2747f8?w=400&h=300&fit=crop"
+      image: "/lovable-uploads/6e20f217-2601-444a-b4da-fe1996160910.png"
     },
     {
-      title: "4-Bed Apartment Design",
+      title: "1165 North Highland Ave NE",
       description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-      image: "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=400&h=300&fit=crop"
+      image: "/lovable-uploads/7275067e-f8d1-4392-9730-3ede28f23a5b.png"
     }
   ];
 
