@@ -224,9 +224,10 @@ const Contact = () => {
             For urgent construction emergencies, we offer 24/7 emergency services.
           </p>
           <button 
-            className="bg-total-red text-white hover:bg-red-600 transition-colors font-syne font-medium text-2xl"
+            className="bg-total-red text-white hover:bg-red-600 transition-colors font-syne font-medium text-xl sm:text-2xl whitespace-nowrap px-4 sm:px-6"
             style={{
-              width: '220px',
+              width: 'auto',
+              minWidth: '220px',
               height: '49px',
               borderRadius: '27px'
             }}
