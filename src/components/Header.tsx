@@ -28,7 +28,14 @@ const Header = () => {
 
           {/* Contact Button */}
           <div className="hidden md:block">
-            <button className="bg-total-red text-white px-6 py-2 rounded-md hover:bg-red-600 transition-colors font-syne font-medium text-2xl">
+            <button 
+              className="bg-total-red text-white hover:bg-red-600 transition-colors font-syne font-medium text-2xl"
+              style={{
+                width: '183px',
+                height: '49px',
+                borderRadius: '27px'
+              }}
+            >
               Contact Us
             </button>
           </div>

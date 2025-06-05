@@ -31,7 +31,14 @@ const ServicesSection = () => {
           <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 font-poppins">
             What We Offer:
           </h2>
-          <button className="bg-total-red text-white px-6 py-2 rounded-md hover:bg-red-600 transition-colors font-syne font-medium text-2xl">
+          <button 
+            className="bg-total-red text-white hover:bg-red-600 transition-colors font-syne font-medium text-2xl"
+            style={{
+              width: '176px',
+              height: '62px',
+              borderRadius: '27px'
+            }}
+          >
             See All
           </button>
         </div>
@@ -39,23 +46,20 @@ const ServicesSection = () => {
         {/* Services Grid */}
         <div className="grid md:grid-cols-3 gap-8">
           {services.map((service, index) => (
-            <div 
-              key={index}
-              className="animate-fade-in"
-              style={{ animationDelay: `${index * 0.2}s` }}
-            >
-              <div className="aspect-[4/3] overflow-hidden mb-4">
+            <div key={index}>
+              <div className="mb-4" style={{ width: '446px', height: '536px' }}>
                 <img
                   src={service.image}
                   alt={service.title}
-                  className="w-full h-full object-contain hover:scale-105 transition-transform duration-300"
+                  className="w-full h-full object-contain"
                 />
               </div>
               <div>
-                <h3 className="text-xl font-bold text-gray-900 mb-3 font-poppins">
+                <h3 className="font-poppins font-semibold text-[24px] text-gray-900 mb-3 relative">
                   {service.title}
+                  <span className="absolute bottom-0 left-0 w-full h-[2px] bg-total-red"></span>
                 </h3>
-                <p className="text-gray-600 leading-relaxed font-epilogue">
+                <p className="font-poppins text-[22px] leading-relaxed" style={{ color: '#6F6F6F' }}>
                   {service.description}
                 </p>
               </div>

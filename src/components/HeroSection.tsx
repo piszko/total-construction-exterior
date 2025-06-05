@@ -13,10 +13,6 @@ const HeroSection = () => {
     {
       image: "/lovable-uploads/6cf34b2d-b0a4-46f6-b951-53be648f7e80.png",
       alt: "Modern house construction with architectural plans"
-    },
-    {
-      image: "/lovable-uploads/c03d0596-ccaa-4a4c-8c74-fc8039c5fe2c.png",
-      alt: "Construction project showcase"
     }
   ];
 
@@ -34,7 +30,7 @@ const HeroSection = () => {
         <div className="grid lg:grid-cols-2 gap-12 items-start">
           {/* Left Content */}
           <div className="animate-fade-in">
-            <h1 className="text-[56px] font-semibold text-gray-900 leading-tight mb-6 font-poppins">
+            <h1 className="text-[39px] font-semibold text-gray-900 leading-tight mb-6 font-poppins">
               Atlanta, GA Based
               <br />
               Construction, Roofing
@@ -52,14 +48,21 @@ const HeroSection = () => {
 
             {/* CTA Buttons */}
             <div className="flex flex-col sm:flex-row gap-4 mb-8">
-              <button className="bg-total-red text-white px-8 py-3 rounded-md hover:bg-red-600 transition-colors font-syne font-medium text-2xl">
+              <button 
+                className="bg-total-red text-white font-syne font-medium text-2xl hover:bg-red-600 transition-colors"
+                style={{
+                  width: '282px',
+                  height: '70px',
+                  borderRadius: '27px'
+                }}
+              >
                 Get a Free Quote
               </button>
             </div>
 
             {/* Contact Info */}
             <div className="border-l-4 border-total-red pl-4">
-              <p className="text-gray-700 font-medium mb-1 font-epilogue">For a Free Consultation:</p>
+              <p className="text-[#6F6F6F] font-poppins font-medium text-[24px] mb-1">For a Free Consultation:</p>
               <p className="text-total-red text-2xl font-bold font-epilogue">(404) 386-6848</p>
             </div>
           </div>
