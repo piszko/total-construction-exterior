@@ -10,16 +10,16 @@ const Header = () => {
   const isActive = (path: string) => location.pathname === path;
 
   return (
-    <header className="bg-white shadow-sm pt-4">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center h-24">
+    <header className="bg-white shadow-sm pt-2 sm:pt-4">
+      <div className="max-w-7xl mx-auto px-2 sm:px-4 lg:px-8">
+        <div className="flex justify-between items-center h-16 sm:h-24">
           {/* Logo */}
           <div className="flex items-center">
             <Link to="/">
               <img 
                 src="/lovable-uploads/6e20f217-2601-444a-b4da-fe1996160910.png" 
                 alt="Total Construction & Remodeling"
-                className="h-[91px] w-[184px]"
+                className="h-12 w-24 sm:h-[91px] sm:w-[184px]"
               />
             </Link>
           </div>
@@ -82,18 +82,18 @@ const Header = () => {
               onClick={() => setIsMenuOpen(!isMenuOpen)}
               className="text-gray-700 hover:text-total-red p-2"
             >
-              {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
+              {isMenuOpen ? <X size={20} /> : <Menu size={20} />}
             </button>
           </div>
         </div>
 
         {/* Mobile Navigation */}
         {isMenuOpen && (
-          <div className="md:hidden bg-white">
+          <div className="md:hidden bg-white pb-2">
             <div className="px-2 pt-2 pb-3 space-y-1">
               <Link 
                 to="/" 
-                className={`block px-3 py-2 font-syne font-medium text-xl ${
+                className={`block px-3 py-2 font-syne font-medium text-lg ${
                   isActive('/') ? 'text-total-red font-bold' : 'text-gray-700 hover:text-total-red'
                 }`}
                 onClick={() => setIsMenuOpen(false)}
@@ -102,7 +102,7 @@ const Header = () => {
               </Link>
               <Link 
                 to="/about" 
-                className={`block px-3 py-2 font-syne font-medium text-xl ${
+                className={`block px-3 py-2 font-syne font-medium text-lg ${
                   isActive('/about') ? 'text-total-red font-bold' : 'text-gray-700 hover:text-total-red'
                 }`}
                 onClick={() => setIsMenuOpen(false)}
@@ -111,7 +111,7 @@ const Header = () => {
               </Link>
               <Link 
                 to="/services" 
-                className={`block px-3 py-2 font-syne font-medium text-xl ${
+                className={`block px-3 py-2 font-syne font-medium text-lg ${
                   isActive('/services') ? 'text-total-red font-bold' : 'text-gray-700 hover:text-total-red'
                 }`}
                 onClick={() => setIsMenuOpen(false)}
@@ -120,7 +120,7 @@ const Header = () => {
               </Link>
               <Link 
                 to="/projects" 
-                className={`block px-3 py-2 font-syne font-medium text-xl ${
+                className={`block px-3 py-2 font-syne font-medium text-lg ${
                   isActive('/projects') ? 'text-total-red font-bold' : 'text-gray-700 hover:text-total-red'
                 }`}
                 onClick={() => setIsMenuOpen(false)}
@@ -128,7 +128,7 @@ const Header = () => {
                 Projects
               </Link>
               <Link to="/contact" onClick={() => setIsMenuOpen(false)}>
-                <button className="w-full mt-2 bg-total-red text-white px-6 py-2 rounded-md hover:bg-red-600 transition-colors font-syne font-medium text-2xl">
+                <button className="w-full mt-2 bg-total-red text-white px-4 py-2 rounded-md hover:bg-red-600 transition-colors font-syne font-medium text-lg">
                   Contact Us
                 </button>
               </Link>

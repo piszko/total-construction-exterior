@@ -1,6 +1,7 @@
 
 import { useState, useEffect } from 'react';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 const HeroSection = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -34,12 +35,12 @@ const HeroSection = () => {
   };
 
   return (
-    <section className="bg-white py-16 lg:py-20">
+    <section className="bg-white py-8 sm:py-12 lg:py-20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid lg:grid-cols-2 gap-12 items-start">
+        <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-start">
           {/* Left Content */}
-          <div className="animate-fade-in">
-            <h1 className="text-[50px] font-semibold text-gray-900 leading-tight mb-6 font-poppins">
+          <div className="animate-fade-in order-2 lg:order-1">
+            <h1 className="text-[28px] sm:text-[36px] lg:text-[50px] font-semibold text-gray-900 leading-tight mb-4 sm:mb-6 font-poppins">
               Atlanta, GA Based
               <br />
               Construction, Roofing
@@ -47,37 +48,41 @@ const HeroSection = () => {
               and Remodeling Co.
             </h1>
             
-            <p className="text-[#6F6F6F] text-[22px] mb-8 leading-relaxed font-epilogue">
+            <p className="text-[#6F6F6F] text-[16px] sm:text-[18px] lg:text-[22px] mb-4 sm:mb-6 lg:mb-8 leading-relaxed font-epilogue">
               Total Construction & Remodeling specializes in home construction, roofing, and remodeling. We have been serving Atlanta and the surrounding areas since 1985. With hundreds of happy customers and awards for our work, we strive to be the best construction contractors that we can.
             </p>
 
-            <p className="text-[#6F6F6F] text-[22px] mb-8 leading-relaxed font-epilogue">
+            <p className="text-[#6F6F6F] text-[16px] sm:text-[18px] lg:text-[22px] mb-6 sm:mb-8 leading-relaxed font-epilogue">
               If you are looking to start a new residential or commercial construction, remodel a bathroom or kitchen, or are in need of a new roof, please give us a call today for a free, no-hassle consultation. We offer quality craftsmanship and service at a reasonable price.
             </p>
 
             {/* CTA Buttons */}
-            <div className="flex flex-col sm:flex-row gap-4 mb-8">
-              <button 
-                className="bg-total-red text-white font-syne font-medium text-2xl hover:bg-red-600 transition-colors"
-                style={{
-                  width: '282px',
-                  height: '70px',
-                  borderRadius: '27px'
-                }}
-              >
-                Get a Free Quote
-              </button>
+            <div className="flex flex-col sm:flex-row gap-4 mb-6 sm:mb-8">
+              <Link to="/contact">
+                <button 
+                  className="bg-total-red text-white font-syne font-medium hover:bg-red-600 transition-colors w-full sm:w-auto text-lg sm:text-xl lg:text-2xl px-6 py-3 sm:px-8 sm:py-4 rounded-[20px] sm:rounded-[27px]"
+                  style={{
+                    width: '100%',
+                    maxWidth: '282px',
+                    height: '50px',
+                    borderRadius: '20px'
+                  }}
+                  className="bg-total-red text-white font-syne font-medium text-lg sm:text-xl lg:text-2xl hover:bg-red-600 transition-colors w-full sm:w-[282px] h-[50px] sm:h-[70px] rounded-[20px] sm:rounded-[27px]"
+                >
+                  Get a Free Quote
+                </button>
+              </Link>
             </div>
 
             {/* Contact Info */}
-            <div className="border-l-4 border-total-red pl-4">
-              <p className="text-[#6F6F6F] font-poppins font-medium text-[24px] mb-1">For a Free Consultation:</p>
-              <p className="text-total-red text-2xl font-bold font-epilogue">(404) 386-6848</p>
+            <div className="border-l-4 border-total-red pl-3 sm:pl-4">
+              <p className="text-[#6F6F6F] font-poppins font-medium text-[18px] sm:text-[20px] lg:text-[24px] mb-1">For a Free Consultation:</p>
+              <p className="text-total-red text-xl sm:text-2xl font-bold font-epilogue">(404) 386-6848</p>
             </div>
           </div>
 
           {/* Right Image Slideshow */}
-          <div className="animate-fade-in">
+          <div className="animate-fade-in order-1 lg:order-2">
             <div className="relative">
               <div className="overflow-hidden rounded-lg shadow-xl">
                 <div className="relative w-full h-auto">
@@ -97,25 +102,25 @@ const HeroSection = () => {
               {/* Slideshow Controls */}
               <button
                 onClick={prevSlide}
-                className="absolute left-4 top-1/2 transform -translate-y-1/2 bg-white/80 hover:bg-white text-gray-800 p-2 rounded-full shadow-lg transition-all z-10"
+                className="absolute left-2 sm:left-4 top-1/2 transform -translate-y-1/2 bg-white/80 hover:bg-white text-gray-800 p-1 sm:p-2 rounded-full shadow-lg transition-all z-10"
               >
-                <ChevronLeft size={24} />
+                <ChevronLeft size={20} className="sm:w-6 sm:h-6" />
               </button>
               
               <button
                 onClick={nextSlide}
-                className="absolute right-4 top-1/2 transform -translate-y-1/2 bg-white/80 hover:bg-white text-gray-800 p-2 rounded-full shadow-lg transition-all z-10"
+                className="absolute right-2 sm:right-4 top-1/2 transform -translate-y-1/2 bg-white/80 hover:bg-white text-gray-800 p-1 sm:p-2 rounded-full shadow-lg transition-all z-10"
               >
-                <ChevronRight size={24} />
+                <ChevronRight size={20} className="sm:w-6 sm:h-6" />
               </button>
 
               {/* Slide Indicators */}
-              <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-2 z-10">
+              <div className="absolute bottom-2 sm:bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-2 z-10">
                 {slides.map((_, index) => (
                   <button
                     key={index}
                     onClick={() => setCurrentSlide(index)}
-                    className={`w-3 h-3 rounded-full transition-all ${
+                    className={`w-2 h-2 sm:w-3 sm:h-3 rounded-full transition-all ${
                       index === currentSlide ? 'bg-total-red' : 'bg-white/60'
                     }`}
                   />
