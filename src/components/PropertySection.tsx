@@ -65,8 +65,13 @@ const PropertySection = () => {
                 <p className="text-gray-600 text-sm mb-4 font-poppins">
                   {property.description}
                 </p>
-                <div className="flex justify-end">
-                  <button className="bg-black text-white px-4 py-2 rounded text-sm hover:bg-gray-800 transition-colors font-poppins">
+                <div className="flex justify-between items-center">
+                  {property.title === "1247 Mayfield Garden Way NE" && (
+                    <span className="text-total-red text-sm font-poppins font-medium">
+                      currently under construction
+                    </span>
+                  )}
+                  <button className="bg-black text-white px-4 py-2 rounded text-sm hover:bg-gray-800 transition-colors font-poppins ml-auto">
                     View
                   </button>
                 </div>
