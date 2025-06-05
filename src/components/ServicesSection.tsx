@@ -1,5 +1,6 @@
 
 import { Hammer, Home, Shield } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 const ServicesSection = () => {
   const services = [
@@ -29,18 +30,20 @@ const ServicesSection = () => {
         {/* Section Header */}
         <div className="flex justify-between items-center mb-12">
           <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 font-poppins">
-            What We Offer:
+            Services We Offer:
           </h2>
-          <button 
-            className="bg-total-red text-white hover:bg-red-600 transition-colors font-syne font-medium text-2xl"
-            style={{
-              width: '176px',
-              height: '62px',
-              borderRadius: '27px'
-            }}
-          >
-            See All
-          </button>
+          <Link to="/services">
+            <button 
+              className="bg-total-red text-white hover:bg-red-600 transition-colors font-syne font-medium text-2xl"
+              style={{
+                width: '176px',
+                height: '62px',
+                borderRadius: '27px'
+              }}
+            >
+              View All Services
+            </button>
+          </Link>
         </div>
 
         {/* Services Grid */}
