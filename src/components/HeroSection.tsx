@@ -1,5 +1,5 @@
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 
 const HeroSection = () => {
@@ -15,6 +15,15 @@ const HeroSection = () => {
       alt: "Modern house construction with architectural plans"
     }
   ];
+
+  // Auto-advance slideshow every 5 seconds
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentSlide((prev) => (prev + 1) % slides.length);
+    }, 5000);
+
+    return () => clearInterval(interval);
+  }, [slides.length]);
 
   const nextSlide = () => {
     setCurrentSlide((prev) => (prev + 1) % slides.length);

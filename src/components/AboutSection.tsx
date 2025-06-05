@@ -13,7 +13,7 @@ const AboutSection = () => {
           {/* Left Content */}
           <div>
             <h3 className="text-2xl lg:text-3xl font-bold text-gray-900 mb-6 font-poppins">
-              The <span className="text-total-orange">Potential</span> Of a Property In as Good as The Person Investing in it
+              The <span className="text-total-red">Potential</span> Of a Property In as Good as The Person Investing in it
             </h3>
             
             <p className="text-gray-600 text-lg leading-relaxed mb-8 font-poppins">
@@ -36,7 +36,14 @@ const AboutSection = () => {
               </div>
             </div>
 
-            <button className="bg-total-orange text-white px-8 py-3 rounded-md hover:bg-orange-600 transition-colors font-semibold font-poppins">
+            <button 
+              className="bg-total-red text-white hover:bg-red-600 transition-colors font-syne font-medium text-2xl"
+              style={{
+                width: '176px',
+                height: '62px',
+                borderRadius: '27px'
+              }}
+            >
               Read More
             </button>
           </div>
