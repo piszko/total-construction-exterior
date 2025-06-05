@@ -1,4 +1,3 @@
-
 import { useState } from 'react';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 
@@ -30,7 +29,7 @@ const HeroSection = () => {
         <div className="grid lg:grid-cols-2 gap-12 items-start">
           {/* Left Content */}
           <div className="animate-fade-in">
-            <h1 className="text-[39px] font-semibold text-gray-900 leading-tight mb-6 font-poppins">
+            <h1 className="text-[45px] font-semibold text-gray-900 leading-tight mb-6 font-poppins">
               Atlanta, GA Based
               <br />
               Construction, Roofing

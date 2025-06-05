@@ -46,8 +46,8 @@ const ServicesSection = () => {
         {/* Services Grid */}
         <div className="grid md:grid-cols-3 gap-8">
           {services.map((service, index) => (
-            <div key={index}>
-              <div className="mb-4" style={{ width: '446px', height: '536px' }}>
+            <div key={index} className="max-w-[446px] mx-auto">
+              <div className="mb-4 w-full max-w-[446px] h-[536px] overflow-hidden">
                 <img
                   src={service.image}
                   alt={service.title}
