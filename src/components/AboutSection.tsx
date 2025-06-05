@@ -31,7 +31,7 @@ const AboutSection = () => {
                 <div className="text-gray-600 text-sm font-poppins">Projects Done</div>
               </div>
               <div className="text-center">
-                <div className="text-3xl font-bold text-gray-900 mb-2 font-poppins">"Too Many"</div>
+                <div className="text-3xl font-bold text-gray-900 mb-2 font-poppins">Many</div>
                 <div className="text-gray-600 text-sm font-poppins">Happy Customers</div>
               </div>
             </div>
@@ -50,7 +50,11 @@ const AboutSection = () => {
 
           {/* Right Image */}
           <div>
-            <div className="bg-gray-200 h-96 rounded-lg"></div>
+            <img 
+              src="/lovable-uploads/a5d40fca-81d6-4d1a-8426-931a7bed28df.png" 
+              alt="Beautiful modern house construction by Total Construction & Remodeling"
+              className="w-full h-96 object-cover rounded-lg shadow-lg"
+            />
           </div>
         </div>
       </div>
