@@ -1,5 +1,5 @@
 
-import { Phone, Mail, MapPin } from 'lucide-react';
+import { Phone, Mail, MapPin, Clock } from 'lucide-react';
 
 const Footer = () => {
   return (
@@ -8,11 +8,12 @@ const Footer = () => {
         <div className="grid md:grid-cols-4 gap-8">
           {/* Company Info */}
           <div>
-            <div className="flex items-center mb-4">
-              <div className="bg-total-red text-white p-2 rounded-md mr-3">
-                <span className="font-bold text-lg">TOTAL</span>
-              </div>
-              <span className="text-white text-sm font-medium">CONSTRUCTION</span>
+            <div className="mb-4">
+              <img 
+                src="/lovable-uploads/6e20f217-2601-444a-b4da-fe1996160910.png" 
+                alt="Total Construction & Remodeling"
+                className="h-[60px] w-auto brightness-0 invert"
+              />
             </div>
             <p className="text-gray-400 text-sm leading-relaxed">
               Professional construction, roofing, and remodeling services in Atlanta, GA since 1985.
@@ -47,15 +48,19 @@ const Footer = () => {
             <div className="space-y-3">
               <div className="flex items-center">
                 <Phone size={16} className="text-total-red mr-3" />
-                <span className="text-gray-400">+1 800 897 24 36</span>
+                <span className="text-gray-400">(404) 386-6849</span>
               </div>
               <div className="flex items-center">
                 <Mail size={16} className="text-total-red mr-3" />
-                <span className="text-gray-400">totalconstruction@gmail.com</span>
+                <span className="text-gray-400">info@totalconstructionandremodeling.com</span>
               </div>
               <div className="flex items-start">
                 <MapPin size={16} className="text-total-red mr-3 mt-1" />
-                <span className="text-gray-400">1901 Thornridge Cir. Shiloh, Hawaii 81063</span>
+                <span className="text-gray-400">1273 Thomas Rd, Decatur, GA 30030</span>
+              </div>
+              <div className="flex items-center">
+                <Clock size={16} className="text-total-red mr-3" />
+                <span className="text-gray-400">Mon - Fri: 8:00am - 5:00pm</span>
               </div>
             </div>
           </div>

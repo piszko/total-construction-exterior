@@ -55,9 +55,8 @@ const ServicesSection = () => {
                 />
               </div>
               <div>
-                <h3 className="font-poppins font-semibold text-[24px] text-gray-900 mb-3 relative">
+                <h3 className="font-poppins font-semibold text-[24px] text-gray-900 mb-3">
                   {service.title}
-                  <span className="absolute bottom-0 left-0 w-full h-[2px] bg-total-red"></span>
                 </h3>
                 <p className="font-poppins text-[22px] leading-relaxed" style={{ color: '#6F6F6F' }}>
                   {service.description}
