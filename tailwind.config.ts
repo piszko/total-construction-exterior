@@ -22,6 +22,7 @@ export default {
 			fontFamily: {
 				'syne': ['Syne', 'sans-serif'],
 				'poppins': ['Poppins', 'sans-serif'],
+				'epilogue': ['Epilogue', 'sans-serif'],
 			},
 			colors: {
 				border: 'hsl(var(--border))',
@@ -30,7 +31,7 @@ export default {
 				background: 'hsl(var(--background))',
 				foreground: 'hsl(var(--foreground))',
 				primary: {
-					DEFAULT: '#EF4444',
+					DEFAULT: '#ED1F25',
 					foreground: '#FFFFFF'
 				},
 				secondary: {
@@ -67,7 +68,7 @@ export default {
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
 				},
-				'total-red': '#EF4444',
+				'total-red': '#ED1F25',
 				'total-orange': '#FF8C00'
 			},
 			borderRadius: {
