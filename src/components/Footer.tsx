@@ -16,7 +16,7 @@ const Footer = () => {
               />
             </div>
             <p className="text-gray-400 text-sm leading-relaxed">
-              Professional construction, roofing, and remodeling services in Atlanta, GA since 1985.
+              Professional construction, roofing, and remodeling services in Atlanta, GA since 1990.
             </p>
           </div>
 
