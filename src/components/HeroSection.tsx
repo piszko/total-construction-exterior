@@ -49,11 +49,11 @@ const HeroSection = () => {
             </h1>
             
             <p className="text-[#6F6F6F] text-[16px] sm:text-[18px] lg:text-[22px] mb-4 sm:mb-6 lg:mb-8 leading-relaxed font-epilogue">
-              Total Construction & Remodeling specializes in home construction, roofing, and remodeling. We have been serving Atlanta and the surrounding areas since 1985. With hundreds of happy customers and awards for our work, we strive to be the best construction contractors that we can.
+              Total Construction & Remodeling specializes in home construction, roofing, and remodeling. We have been serving Atlanta and the surrounding areas since 1990. With hundreds of happy customers and awards for our work, we strive to be the best construction contractors that we can.
             </p>
 
             <p className="text-[#6F6F6F] text-[16px] sm:text-[18px] lg:text-[22px] mb-6 sm:mb-8 leading-relaxed font-epilogue">
-              If you are looking to start a new residential or commercial construction, remodel a bathroom or kitchen, or are in need of a new roof, please give us a call today for a free, no-hassle consultation. We offer quality craftsmanship and service at a reasonable price.
+              If you are looking to start a new residential or commercial construction, remodel a bathroom or kitchen, or are in need of a new roof, please give us a call today for a free, no-hassle consultation. Quality craftsmanship and service at a reasonable price.
             </p>
 
             {/* CTA Buttons */}
