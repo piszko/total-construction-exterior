@@ -110,7 +110,7 @@ const ExteriorConstruction = () => {
           </p>
           <Link to="/contact">
             <button 
-              className="bg-white text-total-red hover:bg-gray-100 transition-colors font-syne font-medium text-2xl"
+              className="bg-white text-total-red hover:bg-gray-100 transition-colors font-syne font-medium text-2xl whitespace-nowrap"
               style={{
                 width: '200px',
                 height: '55px',
