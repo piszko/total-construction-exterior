@@ -10,6 +10,9 @@ import Services from "./pages/Services";
 import Projects from "./pages/Projects";
 import Contact from "./pages/Contact";
 import ProjectDetail from "./pages/ProjectDetail";
+import ExteriorConstruction from "./pages/ExteriorConstruction";
+import InteriorConstruction from "./pages/InteriorConstruction";
+import RoofingServices from "./pages/RoofingServices";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -24,6 +27,9 @@ const App = () => (
           <Route path="/" element={<Index />} />
           <Route path="/about" element={<About />} />
           <Route path="/services" element={<Services />} />
+          <Route path="/services/exterior-construction" element={<ExteriorConstruction />} />
+          <Route path="/services/interior-construction" element={<InteriorConstruction />} />
+          <Route path="/services/roofing-services" element={<RoofingServices />} />
           <Route path="/projects" element={<Projects />} />
           <Route path="/projects/:id" element={<ProjectDetail />} />
           <Route path="/contact" element={<Contact />} />

@@ -2,6 +2,7 @@
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { Hammer, Home, Shield, Wrench, Building, Paintbrush } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 const Services = () => {
   const services = [
@@ -10,42 +11,48 @@ const Services = () => {
       description: "From new construction to remodeling, we handle anything from roofs, decks, porches, siding, painting and much more.",
       icon: Hammer,
       image: "/lovable-uploads/7275067e-f8d1-4392-9730-3ede28f23a5b.png",
-      features: ["Roofing", "Siding", "Decks & Porches", "Exterior Painting", "Windows & Doors"]
+      features: ["Roofing", "Siding", "Decks & Porches", "Exterior Painting", "Windows & Doors"],
+      link: "/services/exterior-construction"
     },
     {
       title: "Total Interior Construction", 
       description: "From simple to elaborate, let us make your dreams come true. Hardwood, carpet, tile, bathrooms, drywall and more.",
       icon: Home,
       image: "/lovable-uploads/310bd3db-7307-4ff6-8ea6-4f464c721cf6.png",
-      features: ["Flooring Installation", "Bathroom Remodeling", "Kitchen Renovation", "Drywall", "Interior Painting"]
+      features: ["Flooring Installation", "Bathroom Remodeling", "Kitchen Renovation", "Drywall", "Interior Painting"],
+      link: "/services/interior-construction"
     },
     {
       title: "Total Roofing Services",
       description: "For all your residential and commercial roofing needs, we offer numerous products and solutions.",
       icon: Shield,
       image: "/lovable-uploads/7cadb1e4-bb42-4bb2-9133-7aac1a0b332b.png",
-      features: ["Roof Replacement", "Roof Repair", "Gutter Installation", "Roof Inspection", "Emergency Repairs"]
+      features: ["Roof Replacement", "Roof Repair", "Gutter Installation", "Roof Inspection", "Emergency Repairs"],
+      link: "/services/roofing-services"
     },
     {
       title: "Home Additions",
       description: "Expand your living space with professionally designed and constructed home additions.",
       icon: Building,
       image: "/lovable-uploads/a5d40fca-81d6-4d1a-8426-931a7bed28df.png",
-      features: ["Room Additions", "Second Story Additions", "Garage Construction", "Sunrooms", "Deck Additions"]
+      features: ["Room Additions", "Second Story Additions", "Garage Construction", "Sunrooms", "Deck Additions"],
+      link: "/contact"
     },
     {
       title: "Kitchen & Bath Remodeling",
       description: "Transform your kitchen and bathroom spaces with our expert remodeling services.",
       icon: Wrench,
       image: "/lovable-uploads/6cf34b2d-b0a4-46f6-b951-53be648f7e80.png",
-      features: ["Kitchen Design", "Bathroom Design", "Countertop Installation", "Cabinet Installation", "Plumbing Updates"]
+      features: ["Kitchen Design", "Bathroom Design", "Countertop Installation", "Cabinet Installation", "Plumbing Updates"],
+      link: "/contact"
     },
     {
       title: "Custom Home Building",
       description: "Build your dream home from the ground up with our comprehensive construction services.",
       icon: Paintbrush,
       image: "/lovable-uploads/a5d40fca-81d6-4d1a-8426-931a7bed28df.png",
-      features: ["Custom Design", "Site Preparation", "Foundation Work", "Framing", "Full Construction"]
+      features: ["Custom Design", "Site Preparation", "Foundation Work", "Framing", "Full Construction"],
+      link: "/contact"
     }
   ];
 
@@ -101,9 +108,11 @@ const Services = () => {
                       </li>
                     ))}
                   </ul>
-                  <button className="w-full bg-total-red text-white py-2 rounded hover:bg-red-600 transition-colors font-poppins">
-                    Learn More
-                  </button>
+                  <Link to={service.link}>
+                    <button className="w-full bg-total-red text-white py-2 rounded hover:bg-red-600 transition-colors font-poppins">
+                      Learn More
+                    </button>
+                  </Link>
                 </div>
               </div>
             ))}
@@ -120,16 +129,18 @@ const Services = () => {
           <p className="text-xl text-gray-600 mb-8 font-poppins">
             Contact us today for a free consultation and estimate.
           </p>
-          <button 
-            className="bg-total-red text-white hover:bg-red-600 transition-colors font-syne font-medium text-2xl"
-            style={{
-              width: '183px',
-              height: '49px',
-              borderRadius: '27px'
-            }}
-          >
-            Contact Us
-          </button>
+          <Link to="/contact">
+            <button 
+              className="bg-total-red text-white hover:bg-red-600 transition-colors font-syne font-medium text-2xl"
+              style={{
+                width: '183px',
+                height: '49px',
+                borderRadius: '27px'
+              }}
+            >
+              Contact Us
+            </button>
+          </Link>
         </div>
       </section>
 
