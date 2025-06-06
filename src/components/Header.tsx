@@ -76,59 +76,67 @@ const Header = () => {
             </Link>
           </div>
 
-          {/* Mobile menu button */}
+          {/* Mobile menu button - doubled size */}
           <div className="md:hidden">
             <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
               className="text-gray-700 hover:text-logo-red p-2"
             >
-              {isMenuOpen ? <X size={20} /> : <Menu size={20} />}
+              {isMenuOpen ? <X size={40} /> : <Menu size={40} />}
             </button>
           </div>
         </div>
 
-        {/* Mobile Navigation */}
+        {/* Mobile Navigation - redesigned with red buttons */}
         {isMenuOpen && (
-          <div className="md:hidden bg-white pb-2">
-            <div className="px-2 pt-2 pb-3 space-y-1">
+          <div className="md:hidden bg-white pb-6">
+            <div className="px-4 pt-4 pb-3 space-y-4 text-center">
               <Link 
                 to="/" 
-                className={`block px-3 py-2 font-syne font-medium text-lg ${
-                  isActive('/') ? 'text-logo-red font-bold' : 'text-gray-700 hover:text-logo-red'
-                }`}
+                className="block"
                 onClick={() => setIsMenuOpen(false)}
               >
-                Home
+                <button className={`w-full py-3 px-6 rounded-lg font-syne font-medium text-xl transition-colors ${
+                  isActive('/') ? 'bg-logo-red text-white' : 'bg-logo-red text-white hover:bg-red-700'
+                }`}>
+                  Home
+                </button>
               </Link>
               <Link 
                 to="/about" 
-                className={`block px-3 py-2 font-syne font-medium text-lg ${
-                  isActive('/about') ? 'text-logo-red font-bold' : 'text-gray-700 hover:text-logo-red'
-                }`}
+                className="block"
                 onClick={() => setIsMenuOpen(false)}
               >
-                About
+                <button className={`w-full py-3 px-6 rounded-lg font-syne font-medium text-xl transition-colors ${
+                  isActive('/about') ? 'bg-logo-red text-white' : 'bg-logo-red text-white hover:bg-red-700'
+                }`}>
+                  About
+                </button>
               </Link>
               <Link 
                 to="/services" 
-                className={`block px-3 py-2 font-syne font-medium text-lg ${
-                  isActive('/services') ? 'text-logo-red font-bold' : 'text-gray-700 hover:text-logo-red'
-                }`}
+                className="block"
                 onClick={() => setIsMenuOpen(false)}
               >
-                Services
+                <button className={`w-full py-3 px-6 rounded-lg font-syne font-medium text-xl transition-colors ${
+                  isActive('/services') ? 'bg-logo-red text-white' : 'bg-logo-red text-white hover:bg-red-700'
+                }`}>
+                  Services
+                </button>
               </Link>
               <Link 
                 to="/projects" 
-                className={`block px-3 py-2 font-syne font-medium text-lg ${
-                  isActive('/projects') ? 'text-logo-red font-bold' : 'text-gray-700 hover:text-logo-red'
-                }`}
+                className="block"
                 onClick={() => setIsMenuOpen(false)}
               >
-                Projects
+                <button className={`w-full py-3 px-6 rounded-lg font-syne font-medium text-xl transition-colors ${
+                  isActive('/projects') ? 'bg-logo-red text-white' : 'bg-logo-red text-white hover:bg-red-700'
+                }`}>
+                  Projects
+                </button>
               </Link>
-              <Link to="/contact" onClick={() => setIsMenuOpen(false)}>
-                <button className="w-full mt-2 bg-logo-red text-white px-4 py-2 rounded-md hover:bg-red-700 transition-colors font-syne font-medium text-lg">
+              <Link to="/contact" className="block" onClick={() => setIsMenuOpen(false)}>
+                <button className="w-full py-3 px-6 rounded-lg bg-logo-red text-white hover:bg-red-700 transition-colors font-syne font-medium text-xl">
                   Contact Us
                 </button>
               </Link>
