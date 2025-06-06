@@ -12,7 +12,7 @@ const Footer = () => {
               <img 
                 src="/lovable-uploads/79cb77b9-7686-4faa-b2f5-488bc978db30.png" 
                 alt="Total Construction & Remodeling"
-                className="h-[60px] w-auto brightness-0 invert"
+                className="h-12 w-auto object-contain brightness-0 invert"
               />
             </div>
             <p className="text-gray-400 text-sm leading-relaxed">
@@ -47,19 +47,19 @@ const Footer = () => {
             <h4 className="text-lg font-semibold mb-4">Contact</h4>
             <div className="space-y-3">
               <div className="flex items-center">
-                <Phone size={16} className="text-total-red mr-3" />
+                <Phone size={16} className="text-logo-red mr-3" />
                 <span className="text-gray-400">(404) 386-6849</span>
               </div>
               <div className="flex items-center">
-                <Mail size={16} className="text-total-red mr-3" />
+                <Mail size={16} className="text-logo-red mr-3" />
                 <span className="text-gray-400">info@totalconstructionandremodeling.com</span>
               </div>
               <div className="flex items-start">
-                <MapPin size={16} className="text-total-red mr-3 mt-1" />
+                <MapPin size={16} className="text-logo-red mr-3 mt-1" />
                 <span className="text-gray-400">1273 Thomas Rd, Decatur, GA 30030</span>
               </div>
               <div className="flex items-center">
-                <Clock size={16} className="text-total-red mr-3" />
+                <Clock size={16} className="text-logo-red mr-3" />
                 <span className="text-gray-400">Mon - Fri: 8:00am - 5:00pm</span>
               </div>
             </div>

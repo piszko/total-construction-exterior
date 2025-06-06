@@ -1,5 +1,4 @@
 
-
 const PropertySection = () => {
   const properties = [
     {
@@ -39,7 +38,7 @@ const PropertySection = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="mb-12">
           <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-4 font-poppins text-left">
-            Total Construction & Remodeling <span className="text-total-red">Projects</span>
+            Total Construction & Remodeling <span className="text-logo-red">Projects</span>
           </h2>
         </div>
 
@@ -67,7 +66,7 @@ const PropertySection = () => {
                 </p>
                 <div className="flex justify-between items-center">
                   {property.title === "1247 Mayfield Garden Way NE" && (
-                    <span className="text-total-red text-sm font-poppins font-medium">
+                    <span className="text-logo-red text-sm font-poppins font-medium">
                       currently under construction
                     </span>
                   )}
@@ -85,4 +84,3 @@ const PropertySection = () => {
 };
 
 export default PropertySection;
-

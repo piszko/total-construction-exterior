@@ -19,7 +19,7 @@ const Header = () => {
               <img 
                 src="/lovable-uploads/79cb77b9-7686-4faa-b2f5-488bc978db30.png" 
                 alt="Total Construction & Remodeling"
-                className="h-12 w-24 sm:h-[91px] sm:w-[184px]"
+                className="h-12 w-auto sm:h-16 object-contain"
               />
             </Link>
           </div>
@@ -29,7 +29,7 @@ const Header = () => {
             <Link 
               to="/" 
               className={`font-syne font-medium text-2xl transition-colors ${
-                isActive('/') ? 'text-total-red font-bold' : 'text-gray-700 hover:text-total-red'
+                isActive('/') ? 'text-logo-red font-bold' : 'text-gray-700 hover:text-logo-red'
               }`}
             >
               Home
@@ -37,7 +37,7 @@ const Header = () => {
             <Link 
               to="/about" 
               className={`font-syne font-medium text-2xl transition-colors ${
-                isActive('/about') ? 'text-total-red font-bold' : 'text-gray-700 hover:text-total-red'
+                isActive('/about') ? 'text-logo-red font-bold' : 'text-gray-700 hover:text-logo-red'
               }`}
             >
               About
@@ -45,7 +45,7 @@ const Header = () => {
             <Link 
               to="/services" 
               className={`font-syne font-medium text-2xl transition-colors ${
-                isActive('/services') ? 'text-total-red font-bold' : 'text-gray-700 hover:text-total-red'
+                isActive('/services') ? 'text-logo-red font-bold' : 'text-gray-700 hover:text-logo-red'
               }`}
             >
               Services
@@ -53,7 +53,7 @@ const Header = () => {
             <Link 
               to="/projects" 
               className={`font-syne font-medium text-2xl transition-colors ${
-                isActive('/projects') ? 'text-total-red font-bold' : 'text-gray-700 hover:text-total-red'
+                isActive('/projects') ? 'text-logo-red font-bold' : 'text-gray-700 hover:text-logo-red'
               }`}
             >
               Projects
@@ -64,7 +64,7 @@ const Header = () => {
           <div className="hidden md:block">
             <Link to="/contact">
               <button 
-                className="bg-total-red text-white hover:bg-red-600 transition-colors font-syne font-medium text-2xl"
+                className="bg-logo-red text-white hover:bg-red-700 transition-colors font-syne font-medium text-2xl"
                 style={{
                   width: '183px',
                   height: '49px',
@@ -80,7 +80,7 @@ const Header = () => {
           <div className="md:hidden">
             <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className="text-gray-700 hover:text-total-red p-2"
+              className="text-gray-700 hover:text-logo-red p-2"
             >
               {isMenuOpen ? <X size={20} /> : <Menu size={20} />}
             </button>
@@ -94,7 +94,7 @@ const Header = () => {
               <Link 
                 to="/" 
                 className={`block px-3 py-2 font-syne font-medium text-lg ${
-                  isActive('/') ? 'text-total-red font-bold' : 'text-gray-700 hover:text-total-red'
+                  isActive('/') ? 'text-logo-red font-bold' : 'text-gray-700 hover:text-logo-red'
                 }`}
                 onClick={() => setIsMenuOpen(false)}
               >
@@ -103,7 +103,7 @@ const Header = () => {
               <Link 
                 to="/about" 
                 className={`block px-3 py-2 font-syne font-medium text-lg ${
-                  isActive('/about') ? 'text-total-red font-bold' : 'text-gray-700 hover:text-total-red'
+                  isActive('/about') ? 'text-logo-red font-bold' : 'text-gray-700 hover:text-logo-red'
                 }`}
                 onClick={() => setIsMenuOpen(false)}
               >
@@ -112,7 +112,7 @@ const Header = () => {
               <Link 
                 to="/services" 
                 className={`block px-3 py-2 font-syne font-medium text-lg ${
-                  isActive('/services') ? 'text-total-red font-bold' : 'text-gray-700 hover:text-total-red'
+                  isActive('/services') ? 'text-logo-red font-bold' : 'text-gray-700 hover:text-logo-red'
                 }`}
                 onClick={() => setIsMenuOpen(false)}
               >
@@ -121,14 +121,14 @@ const Header = () => {
               <Link 
                 to="/projects" 
                 className={`block px-3 py-2 font-syne font-medium text-lg ${
-                  isActive('/projects') ? 'text-total-red font-bold' : 'text-gray-700 hover:text-total-red'
+                  isActive('/projects') ? 'text-logo-red font-bold' : 'text-gray-700 hover:text-logo-red'
                 }`}
                 onClick={() => setIsMenuOpen(false)}
               >
                 Projects
               </Link>
               <Link to="/contact" onClick={() => setIsMenuOpen(false)}>
-                <button className="w-full mt-2 bg-total-red text-white px-4 py-2 rounded-md hover:bg-red-600 transition-colors font-syne font-medium text-lg">
+                <button className="w-full mt-2 bg-logo-red text-white px-4 py-2 rounded-md hover:bg-red-700 transition-colors font-syne font-medium text-lg">
                   Contact Us
                 </button>
               </Link>

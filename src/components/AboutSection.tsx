@@ -13,7 +13,7 @@ const AboutSection = () => {
           {/* Left Content */}
           <div>
             <h3 className="text-2xl lg:text-3xl font-bold text-gray-900 mb-6 font-poppins">
-              <span className="text-total-red">Total Construction & Remodeling</span> is an Atlanta based construction company specializing in new construction and remodeling.
+              <span className="text-logo-red">Total Construction & Remodeling</span> is an Atlanta based construction company specializing in new construction and remodeling.
             </h3>
             
             <p className="text-gray-600 text-lg leading-relaxed mb-8 font-poppins">
@@ -37,7 +37,7 @@ const AboutSection = () => {
             </div>
 
             <button 
-              className="bg-total-red text-white hover:bg-red-600 transition-colors font-syne font-medium text-2xl"
+              className="bg-logo-red text-white hover:bg-red-700 transition-colors font-syne font-medium text-2xl"
               style={{
                 width: '176px',
                 height: '62px',

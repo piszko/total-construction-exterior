@@ -12,7 +12,7 @@ const About = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h1 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6 font-poppins">
-              About <span className="text-total-red">Total Construction & Remodeling</span>
+              About <span className="text-logo-red">Total Construction & Remodeling</span>
             </h1>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto font-poppins">
               Serving Atlanta and surrounding areas since 1990 with quality construction and remodeling services.

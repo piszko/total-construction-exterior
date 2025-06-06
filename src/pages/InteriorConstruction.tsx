@@ -33,7 +33,7 @@ const InteriorConstruction = () => {
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div>
               <div className="flex items-center mb-4">
-                <Home className="w-8 h-8 text-total-red mr-3" />
+                <Home className="w-8 h-8 text-logo-red mr-3" />
                 <h1 className="text-4xl lg:text-5xl font-bold text-gray-900 font-poppins">
                   Total Interior Construction
                 </h1>
@@ -43,7 +43,7 @@ const InteriorConstruction = () => {
               </p>
               <Link to="/contact">
                 <button 
-                  className="bg-total-red text-white hover:bg-red-600 transition-colors font-syne font-medium text-2xl"
+                  className="bg-logo-red text-white hover:bg-red-700 transition-colors font-syne font-medium text-2xl"
                   style={{
                     width: '200px',
                     height: '55px',
@@ -76,7 +76,7 @@ const InteriorConstruction = () => {
               <div className="space-y-4">
                 {features.map((feature, index) => (
                   <div key={index} className="flex items-center">
-                    <CheckCircle className="w-5 h-5 text-total-red mr-3" />
+                    <CheckCircle className="w-5 h-5 text-logo-red mr-3" />
                     <span className="text-lg text-gray-700 font-poppins">{feature}</span>
                   </div>
                 ))}
@@ -89,7 +89,7 @@ const InteriorConstruction = () => {
               <div className="space-y-4">
                 {benefits.map((benefit, index) => (
                   <div key={index} className="flex items-center">
-                    <Star className="w-5 h-5 text-total-red mr-3" />
+                    <Star className="w-5 h-5 text-logo-red mr-3" />
                     <span className="text-lg text-gray-700 font-poppins">{benefit}</span>
                   </div>
                 ))}
@@ -100,7 +100,7 @@ const InteriorConstruction = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="py-16 bg-total-red text-white">
+      <section className="py-16 bg-logo-red text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-3xl lg:text-4xl font-bold mb-6 font-poppins">
             Ready to Renovate Your Interior?
@@ -110,7 +110,7 @@ const InteriorConstruction = () => {
           </p>
           <Link to="/contact">
             <button 
-              className="bg-white text-total-red hover:bg-gray-100 transition-colors font-syne font-medium text-2xl whitespace-nowrap"
+              className="bg-white text-logo-red hover:bg-gray-100 transition-colors font-syne font-medium text-2xl whitespace-nowrap"
               style={{
                 width: '250px',
                 height: '55px',

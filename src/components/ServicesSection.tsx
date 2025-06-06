@@ -37,7 +37,7 @@ const ServicesSection = () => {
           </h2>
           <Link to="/services" className="flex-shrink-0">
             <button 
-              className="bg-total-red text-white hover:bg-red-600 transition-colors font-syne font-medium text-xl sm:text-2xl whitespace-nowrap px-4 sm:px-6"
+              className="bg-logo-red text-white hover:bg-red-700 transition-colors font-syne font-medium text-xl sm:text-2xl whitespace-nowrap px-4 sm:px-6"
               style={{
                 width: 'auto',
                 minWidth: '176px',
@@ -65,7 +65,7 @@ const ServicesSection = () => {
               </Link>
               <div>
                 <Link to={service.link}>
-                  <h3 className="font-poppins font-semibold text-[24px] text-gray-900 mb-3 hover:text-total-red transition-colors">
+                  <h3 className="font-poppins font-semibold text-[24px] text-gray-900 mb-3 hover:text-logo-red transition-colors">
                     {service.title}
                   </h3>
                 </Link>
