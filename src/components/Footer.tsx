@@ -10,7 +10,7 @@ const Footer = () => {
           <div>
             <div className="mb-4">
               <img 
-                src="/lovable-uploads/6e20f217-2601-444a-b4da-fe1996160910.png" 
+                src="/lovable-uploads/79cb77b9-7686-4faa-b2f5-488bc978db30.png" 
                 alt="Total Construction & Remodeling"
                 className="h-[60px] w-auto brightness-0 invert"
               />
