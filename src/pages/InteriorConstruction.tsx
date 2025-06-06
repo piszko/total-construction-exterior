@@ -112,7 +112,7 @@ const InteriorConstruction = () => {
             <button 
               className="bg-white text-total-red hover:bg-gray-100 transition-colors font-syne font-medium text-2xl whitespace-nowrap"
               style={{
-                width: '200px',
+                width: '250px',
                 height: '55px',
                 borderRadius: '27px'
               }}
