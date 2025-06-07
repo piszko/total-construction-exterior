@@ -60,6 +60,7 @@ const ServicesSection = () => {
                     src={service.image}
                     alt={service.title}
                     className="w-full h-full object-contain group-hover:scale-105 transition-transform duration-300 rounded-lg"
+                    style={{ borderRadius: '8px' }}
                   />
                 </div>
               </Link>
