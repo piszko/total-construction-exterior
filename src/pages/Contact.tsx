@@ -170,7 +170,9 @@ const Contact = () => {
                   </div>
                   <div>
                     <h3 className="font-semibold text-gray-900 font-poppins">Phone</h3>
-                    <p className="text-gray-600 font-poppins">(404) 386-6849</p>
+                    <a href="tel:+14043866849" className="text-gray-600 font-poppins hover:text-total-red transition-colors">
+                      (404) 386-6849
+                    </a>
                     <p className="text-sm text-gray-500 font-poppins">Available Mon-Fri, 8:00am - 5:00pm</p>
                   </div>
                 </div>
@@ -181,7 +183,9 @@ const Contact = () => {
                   </div>
                   <div>
                     <h3 className="font-semibold text-gray-900 font-poppins">Email</h3>
-                    <p className="text-gray-600 font-poppins">info@totalconstructionandremodeling.com</p>
+                    <a href="mailto:info@totalconstructionandremodeling.com" className="text-gray-600 font-poppins hover:text-total-red transition-colors">
+                      info@totalconstructionandremodeling.com
+                    </a>
                     <p className="text-sm text-gray-500 font-poppins">We'll respond within 24 hours</p>
                   </div>
                 </div>
