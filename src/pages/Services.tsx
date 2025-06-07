@@ -83,7 +83,7 @@ const Services = () => {
                 key={index}
                 className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow"
               >
-                <div className="h-48 overflow-hidden">
+                <div className="h-48 overflow-hidden rounded-t-lg">
                   <img
                     src={service.image}
                     alt={service.title}
