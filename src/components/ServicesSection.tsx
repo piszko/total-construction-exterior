@@ -55,11 +55,14 @@ const ServicesSection = () => {
           {services.map((service, index) => (
             <div key={index} className="max-w-[446px] mx-auto">
               <Link to={service.link} className="block group">
-                <div className="mb-4 w-full max-w-[446px] h-[536px] overflow-hidden rounded-lg">
+                <div 
+                  className="mb-4 w-full max-w-[446px] h-[536px] rounded-lg overflow-hidden"
+                  style={{ borderRadius: '8px' }}
+                >
                   <img
                     src={service.image}
                     alt={service.title}
-                    className="w-full h-full object-contain group-hover:scale-105 transition-transform duration-300 rounded-lg"
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                     style={{ borderRadius: '8px' }}
                   />
                 </div>
