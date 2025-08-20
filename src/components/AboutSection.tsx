@@ -1,5 +1,8 @@
 
+import { useNavigate } from 'react-router-dom';
+
 const AboutSection = () => {
+  const navigate = useNavigate();
   return (
     <section className="py-16 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -37,6 +40,7 @@ const AboutSection = () => {
             </div>
 
             <button 
+              onClick={() => navigate('/about')}
               className="bg-logo-red text-white hover:bg-red-700 transition-colors font-syne font-medium text-2xl"
               style={{
                 width: '176px',
