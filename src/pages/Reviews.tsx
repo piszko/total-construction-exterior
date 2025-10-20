@@ -69,7 +69,7 @@ const Reviews = () => {
                   {/* Positive Tags */}
                   {review.positive && (
                     <div className="mb-4">
-                      <p className="font-poppins text-sm font-semibold text-gray-700 mb-1">Positive</p>
+                      <p className="font-poppins text-sm font-semibold text-total-red mb-1">Positive</p>
                       <p className="font-epilogue text-sm text-gray-600">{review.positive}</p>
                     </div>
                   )}
@@ -77,7 +77,6 @@ const Reviews = () => {
                   {/* Customer Info */}
                   <div className="border-t border-gray-200 pt-4">
                     <p className="font-poppins font-semibold text-gray-900">{review.name}</p>
-                    <p className="font-poppins text-sm text-gray-600">{review.date}</p>
                   </div>
                 </div>
               ))}
