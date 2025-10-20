@@ -9,21 +9,21 @@ const Reviews = () => {
       name: "Customer Name",
       rating: 5,
       text: "Add your Google review text here. This is a placeholder for your actual review content.",
-      date: "Date"
+      date: "Date",
     },
     {
       id: 2,
       name: "Customer Name",
       rating: 5,
       text: "Add your Google review text here. This is a placeholder for your actual review content.",
-      date: "Date"
+      date: "Date",
     },
     {
       id: 3,
       name: "Customer Name",
       rating: 5,
       text: "Add your Google review text here. This is a placeholder for your actual review content.",
-      date: "Date"
+      date: "Date",
     },
     // Add more reviews as needed
   ];
@@ -40,7 +40,7 @@ const Reviews = () => {
                 Customer <span className="text-total-red">Reviews</span>
               </h1>
               <p className="text-xl text-gray-600 max-w-3xl mx-auto font-poppins">
-                See what our satisfied customers have to say about our work
+                See what our satisfied customers have to say about our work.
               </p>
             </div>
           </div>
@@ -51,33 +51,24 @@ const Reviews = () => {
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {reviews.map((review) => (
-                <div 
+                <div
                   key={review.id}
                   className="bg-white border border-gray-200 rounded-lg p-6 shadow-sm hover:shadow-md transition-shadow"
                 >
                   {/* Star Rating */}
                   <div className="flex gap-1 mb-4">
                     {[...Array(review.rating)].map((_, i) => (
-                      <Star 
-                        key={i} 
-                        className="w-5 h-5 fill-yellow-400 text-yellow-400" 
-                      />
+                      <Star key={i} className="w-5 h-5 fill-yellow-400 text-yellow-400" />
                     ))}
                   </div>
 
                   {/* Review Text */}
-                  <p className="font-epilogue text-gray-600 mb-4 leading-relaxed">
-                    "{review.text}"
-                  </p>
+                  <p className="font-epilogue text-gray-600 mb-4 leading-relaxed">"{review.text}"</p>
 
                   {/* Customer Info */}
                   <div className="border-t border-gray-200 pt-4">
-                    <p className="font-poppins font-semibold text-gray-900">
-                      {review.name}
-                    </p>
-                    <p className="font-poppins text-sm text-gray-600">
-                      {review.date}
-                    </p>
+                    <p className="font-poppins font-semibold text-gray-900">{review.name}</p>
+                    <p className="font-poppins text-sm text-gray-600">{review.date}</p>
                   </div>
                 </div>
               ))}
@@ -91,21 +82,19 @@ const Reviews = () => {
             <h2 className="font-poppins font-bold text-2xl lg:text-3xl mb-4 text-gray-900">
               Want to share your experience?
             </h2>
-            <p className="font-poppins text-lg text-gray-600 mb-6">
-              We'd love to hear from you!
-            </p>
-            <a 
+            <p className="font-poppins text-lg text-gray-600 mb-6">We'd love to hear from you!</p>
+            <a
               href="https://share.google/rMrqAKDWSTYKcyHKX"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-block"
             >
-              <button 
+              <button
                 className="bg-logo-red text-white hover:bg-red-700 transition-colors font-syne font-medium text-2xl"
                 style={{
-                  width: '220px',
-                  height: '62px',
-                  borderRadius: '27px'
+                  width: "220px",
+                  height: "62px",
+                  borderRadius: "27px",
                 }}
               >
                 Leave a Review
