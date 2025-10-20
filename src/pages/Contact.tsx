@@ -24,6 +24,8 @@ interface ContactFormData {
 
 interface ReviewFormData {
   name: string;
+  email: string;
+  phone: string;
   rating: number;
   message: string;
   photos?: FileList;
@@ -146,7 +148,7 @@ const Contact = () => {
               <Card>
                 <CardHeader>
                   <CardTitle className="text-2xl font-bold text-gray-900 font-poppins">
-                    Send Us a Message
+                    Tell Us About Your Project
                   </CardTitle>
                 </CardHeader>
                 <CardContent>
@@ -299,16 +301,46 @@ const Contact = () => {
                 </CardHeader>
                 <CardContent>
                   <form onSubmit={handleSubmitReview(onSubmitReview)} className="space-y-6">
+                    <div className="grid md:grid-cols-2 gap-4">
+                      <div>
+                        <Label htmlFor="review-name" className="font-poppins">Name *</Label>
+                        <Input
+                          id="review-name"
+                          {...registerReview("name", { required: "Name is required" })}
+                          className="mt-1"
+                        />
+                        {reviewErrors.name && (
+                          <p className="text-red-500 text-sm mt-1">{reviewErrors.name.message}</p>
+                        )}
+                      </div>
+                      <div>
+                        <Label htmlFor="review-email" className="font-poppins">Email *</Label>
+                        <Input
+                          id="review-email"
+                          type="email"
+                          {...registerReview("email", { 
+                            required: "Email is required",
+                            pattern: {
+                              value: /^\S+@\S+$/i,
+                              message: "Invalid email address"
+                            }
+                          })}
+                          className="mt-1"
+                        />
+                        {reviewErrors.email && (
+                          <p className="text-red-500 text-sm mt-1">{reviewErrors.email.message}</p>
+                        )}
+                      </div>
+                    </div>
+
                     <div>
-                      <Label htmlFor="review-name" className="font-poppins">Name *</Label>
+                      <Label htmlFor="review-phone" className="font-poppins">Phone</Label>
                       <Input
-                        id="review-name"
-                        {...registerReview("name", { required: "Name is required" })}
+                        id="review-phone"
+                        type="tel"
+                        {...registerReview("phone")}
                         className="mt-1"
                       />
-                      {reviewErrors.name && (
-                        <p className="text-red-500 text-sm mt-1">{reviewErrors.name.message}</p>
-                      )}
                     </div>
 
                     <div>
