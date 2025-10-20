@@ -44,15 +44,6 @@ const Reviews = () => {
                     <p className="font-epilogue text-gray-600 mb-4 leading-relaxed">"{review.text}"</p>
                   )}
 
-                  {/* Bullets */}
-                  {review.bullets && (
-                    <ul className="list-disc list-inside mb-4 font-epilogue text-gray-600 space-y-1">
-                      {review.bullets.map((bullet, idx) => (
-                        <li key={idx}>{bullet}</li>
-                      ))}
-                    </ul>
-                  )}
-
                   {/* Positive Tags */}
                   {review.positive && (
                     <div className="mb-4">
