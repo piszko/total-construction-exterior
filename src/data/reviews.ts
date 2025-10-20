@@ -5,6 +5,7 @@ export interface Review {
   text?: string;
   positive?: string;
   services?: string;
+  bullets?: string[];
 }
 
 export const reviews: Review[] = [
@@ -88,7 +89,16 @@ export const reviews: Review[] = [
     id: 12,
     name: "Chris Weber",
     rating: 5,
-    text: "I have known Patrick Vinces for a while and there is no one else I would trust with my construction projects. Among the great qualities he brings are: Extensive home building knowledge and experiences; strong work ethics and integrity; highly skilled and experienced, hard working, conscientious, polite, respectful and dedicated trades people; excellent communication, expectation setting and interaction skills; a cost effective approach; rigorous project oversight; impeccable results.",
+    text: "I have known Patrick Vinces for a while and there is no one else I would trust with my construction projects. Among the great qualities he brings are:",
+    bullets: [
+      "Extensive home building knowledge and experiences",
+      "Strong work ethics and integrity",
+      "Highly skilled and experienced, hard working, conscientious, polite, respectful and dedicated trades people",
+      "Excellent communication, expectation setting and interaction skills",
+      "A cost effective approach",
+      "Rigorous project oversight",
+      "Impeccable results"
+    ]
   },
   {
     id: 16,
