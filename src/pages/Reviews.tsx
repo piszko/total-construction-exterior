@@ -6,10 +6,11 @@ const Reviews = () => {
   const reviews = [
     {
       id: 1,
-      name: "Customer Name",
+      name: "Sarah Schimmel",
       rating: 5,
-      text: "Add your Google review text here. This is a placeholder for your actual review content.",
-      date: "Date",
+      text: "Patrick and his awesome crew came out and expanded our back patio, laid decking, and covered it with a beautiful roof. They were super fast and responsive. It came out better than we could have imagined. This was the second project Patrick and did for us - the first was enclosing an open, unused loft space into a bedroom. We're already planning our next project and are grateful to have a reliable contractor who gets the job done right, on time, and at a competitive rate.",
+      date: "4 years ago",
+      positive: "Quality, Professionalism, Value",
     },
     {
       id: 2,
@@ -64,6 +65,14 @@ const Reviews = () => {
 
                   {/* Review Text */}
                   <p className="font-epilogue text-gray-600 mb-4 leading-relaxed">"{review.text}"</p>
+
+                  {/* Positive Tags */}
+                  {review.positive && (
+                    <div className="mb-4">
+                      <p className="font-poppins text-sm font-semibold text-gray-700 mb-1">Positive</p>
+                      <p className="font-epilogue text-sm text-gray-600">{review.positive}</p>
+                    </div>
+                  )}
 
                   {/* Customer Info */}
                   <div className="border-t border-gray-200 pt-4">
