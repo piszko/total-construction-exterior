@@ -18,7 +18,7 @@ const HomeReviewsSection = () => {
             What Our <span className="text-total-red">Customers Say</span>
           </h2>
           <p className="text-lg text-gray-600 max-w-2xl mx-auto font-poppins">
-            Don't just take our word for it - hear from our satisfied clients
+            Hear from our satisfied clients
           </p>
         </div>
 
