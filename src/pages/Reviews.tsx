@@ -33,12 +33,12 @@ const Reviews = () => {
       <Header />
       <main className="flex-1 bg-white">
         {/* Hero Section */}
-        <section className="bg-gray-50 py-12">
+        <section className="bg-white py-12">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <h1 className="font-syne font-bold text-4xl sm:text-5xl mb-4 text-gray-900">
+            <h1 className="font-poppins font-bold text-3xl lg:text-4xl mb-4 text-gray-900">
               Customer Reviews
             </h1>
-            <p className="font-syne text-xl text-gray-600 max-w-2xl mx-auto">
+            <p className="font-poppins text-lg text-gray-600 max-w-2xl mx-auto">
               See what our satisfied customers have to say about our work
             </p>
           </div>
@@ -64,16 +64,16 @@ const Reviews = () => {
                   </div>
 
                   {/* Review Text */}
-                  <p className="font-syne text-gray-700 mb-4 leading-relaxed">
+                  <p className="font-epilogue text-gray-600 mb-4 leading-relaxed">
                     "{review.text}"
                   </p>
 
                   {/* Customer Info */}
                   <div className="border-t border-gray-200 pt-4">
-                    <p className="font-syne font-semibold text-gray-900">
+                    <p className="font-poppins font-semibold text-gray-900">
                       {review.name}
                     </p>
-                    <p className="font-syne text-sm text-gray-500">
+                    <p className="font-poppins text-sm text-gray-600">
                       {review.date}
                     </p>
                   </div>
@@ -84,12 +84,12 @@ const Reviews = () => {
         </section>
 
         {/* CTA Section */}
-        <section className="bg-gray-50 py-12">
+        <section className="bg-white py-12">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <h2 className="font-syne font-bold text-3xl mb-4 text-gray-900">
+            <h2 className="font-poppins font-bold text-2xl lg:text-3xl mb-4 text-gray-900">
               Want to share your experience?
             </h2>
-            <p className="font-syne text-lg text-gray-600 mb-6">
+            <p className="font-poppins text-lg text-gray-600 mb-6">
               We'd love to hear from you!
             </p>
             <a 
@@ -99,7 +99,12 @@ const Reviews = () => {
               className="inline-block"
             >
               <button 
-                className="bg-logo-red text-white hover:bg-red-700 transition-colors font-syne font-medium text-2xl px-8 py-3 rounded-full"
+                className="bg-logo-red text-white hover:bg-red-700 transition-colors font-syne font-medium text-2xl"
+                style={{
+                  width: '220px',
+                  height: '62px',
+                  borderRadius: '27px'
+                }}
               >
                 Leave a Review
               </button>
