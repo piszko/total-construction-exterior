@@ -78,7 +78,7 @@ const Reviews = () => {
             </h2>
             <p className="font-poppins text-lg text-gray-600 mb-6">We'd love to hear from you!</p>
             <a
-              href="https://share.google/rMrqAKDWSTYKcyHKX"
+              href="https://www.google.com/search?kgmid=/g/11g8v6bcpr&hl=en-US&q=Total+Construction+%26+Remodeling&shndl=30&shem=lcuae,lscta2,shrtsdl&source=sh/x/loc/osrp/m5/1&kgs=841739da52277dec&utm_source=lcuae,lscta2,shrtsdl,sh/x/loc/osrp/m5/1&dlnr=1&sei=jVf2aJbBC5ui5NoPwuDNwAs#"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-block"
