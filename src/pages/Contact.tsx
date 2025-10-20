@@ -8,21 +8,25 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Phone, Mail, MapPin, Clock } from 'lucide-react';
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
+import { Phone, Mail, MapPin, Clock, Upload } from 'lucide-react';
 import { useToast } from "@/hooks/use-toast";
 
 interface ContactFormData {
   name: string;
   email: string;
   phone: string;
+  service: string;
   subject: string;
   message: string;
+  photos?: FileList;
 }
 
 const Contact = () => {
-  const { register, handleSubmit, reset, formState: { errors } } = useForm<ContactFormData>();
+  const { register, handleSubmit, reset, formState: { errors }, setValue } = useForm<ContactFormData>();
   const { toast } = useToast();
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [selectedService, setSelectedService] = useState<string>('');
 
   const onSubmit = async (data: ContactFormData) => {
     setIsSubmitting(true);
@@ -114,16 +118,45 @@ const Contact = () => {
                         />
                       </div>
                       <div>
-                        <Label htmlFor="subject" className="font-poppins">Subject *</Label>
-                        <Input
-                          id="subject"
-                          {...register("subject", { required: "Subject is required" })}
-                          className="mt-1"
-                        />
-                        {errors.subject && (
-                          <p className="text-red-500 text-sm mt-1">{errors.subject.message}</p>
+                        <Label htmlFor="service" className="font-poppins">Service Interested In *</Label>
+                        <Select 
+                          value={selectedService} 
+                          onValueChange={(value) => {
+                            setSelectedService(value);
+                            setValue("service", value);
+                          }}
+                        >
+                          <SelectTrigger className="mt-1">
+                            <SelectValue placeholder="Select a service" />
+                          </SelectTrigger>
+                          <SelectContent>
+                            <SelectItem value="exterior-construction">Exterior Construction</SelectItem>
+                            <SelectItem value="interior-construction">Interior Construction</SelectItem>
+                            <SelectItem value="roofing-services">Roofing Services</SelectItem>
+                            <SelectItem value="kitchen-remodeling">Kitchen Remodeling</SelectItem>
+                            <SelectItem value="bathroom-remodeling">Bathroom Remodeling</SelectItem>
+                            <SelectItem value="basement-finishing">Basement Finishing</SelectItem>
+                            <SelectItem value="deck-patio">Deck & Patio</SelectItem>
+                            <SelectItem value="other">Other</SelectItem>
+                          </SelectContent>
+                        </Select>
+                        <input type="hidden" {...register("service", { required: "Please select a service" })} />
+                        {errors.service && (
+                          <p className="text-red-500 text-sm mt-1">{errors.service.message}</p>
                         )}
                       </div>
+                    </div>
+                    
+                    <div>
+                      <Label htmlFor="subject" className="font-poppins">Subject *</Label>
+                      <Input
+                        id="subject"
+                        {...register("subject", { required: "Subject is required" })}
+                        className="mt-1"
+                      />
+                      {errors.subject && (
+                        <p className="text-red-500 text-sm mt-1">{errors.subject.message}</p>
+                      )}
                     </div>
 
                     <div>
@@ -140,7 +173,35 @@ const Contact = () => {
                       )}
                     </div>
 
-                    <Button 
+                    <div>
+                      <Label htmlFor="photos" className="font-poppins">
+                        Upload Project Photos (Optional)
+                      </Label>
+                      <div className="mt-1 flex items-center justify-center w-full">
+                        <label
+                          htmlFor="photos"
+                          className="flex flex-col items-center justify-center w-full h-32 border-2 border-dashed rounded-lg cursor-pointer bg-gray-50 hover:bg-gray-100 transition-colors"
+                        >
+                          <div className="flex flex-col items-center justify-center pt-5 pb-6">
+                            <Upload className="w-8 h-8 mb-2 text-gray-500" />
+                            <p className="mb-2 text-sm text-gray-500 font-poppins">
+                              <span className="font-semibold">Click to upload</span> or drag and drop
+                            </p>
+                            <p className="text-xs text-gray-500 font-poppins">PNG, JPG, JPEG (MAX. 10MB each)</p>
+                          </div>
+                          <Input
+                            id="photos"
+                            type="file"
+                            multiple
+                            accept="image/png,image/jpeg,image/jpg"
+                            {...register("photos")}
+                            className="hidden"
+                          />
+                        </label>
+                      </div>
+                    </div>
+
+                    <Button
                       type="submit" 
                       disabled={isSubmitting}
                       className="w-full bg-total-red hover:bg-red-600 text-white font-poppins"
