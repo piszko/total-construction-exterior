@@ -1,6 +1,5 @@
-
-import { useState } from 'react';
-import { useForm } from 'react-hook-form';
+import { useState } from "react";
+import { useForm } from "react-hook-form";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
@@ -9,7 +8,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
-import { Phone, Mail, MapPin, Clock, Upload, Star } from 'lucide-react';
+import { Phone, Mail, MapPin, Clock, Upload, Star } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 
 interface ContactFormData {
@@ -33,40 +32,52 @@ interface ReviewFormData {
 }
 
 const Contact = () => {
-  const { register: registerContact, handleSubmit: handleSubmitContact, reset: resetContact, formState: { errors: contactErrors }, setValue: setContactValue } = useForm<ContactFormData>();
-  const { register: registerReview, handleSubmit: handleSubmitReview, reset: resetReview, formState: { errors: reviewErrors }, setValue: setReviewValue } = useForm<ReviewFormData>();
+  const {
+    register: registerContact,
+    handleSubmit: handleSubmitContact,
+    reset: resetContact,
+    formState: { errors: contactErrors },
+    setValue: setContactValue,
+  } = useForm<ContactFormData>();
+  const {
+    register: registerReview,
+    handleSubmit: handleSubmitReview,
+    reset: resetReview,
+    formState: { errors: reviewErrors },
+    setValue: setReviewValue,
+  } = useForm<ReviewFormData>();
   const { toast } = useToast();
   const [isSubmittingContact, setIsSubmittingContact] = useState(false);
   const [isSubmittingReview, setIsSubmittingReview] = useState(false);
-  const [selectedService, setSelectedService] = useState<string>('');
+  const [selectedService, setSelectedService] = useState<string>("");
   const [selectedRating, setSelectedRating] = useState<number>(0);
   const [hoverRating, setHoverRating] = useState<number>(0);
 
   const onSubmitContact = async (data: ContactFormData) => {
     setIsSubmittingContact(true);
-    await new Promise(resolve => setTimeout(resolve, 1000));
-    
-    console.log('Contact form submitted:', data);
+    await new Promise((resolve) => setTimeout(resolve, 1000));
+
+    console.log("Contact form submitted:", data);
     toast({
       title: "Message Sent!",
       description: "Thank you for contacting us. We'll get back to you within 24 hours.",
     });
-    
+
     resetContact();
-    setSelectedService('');
+    setSelectedService("");
     setIsSubmittingContact(false);
   };
 
   const onSubmitReview = async (data: ReviewFormData) => {
     setIsSubmittingReview(true);
-    await new Promise(resolve => setTimeout(resolve, 1000));
-    
-    console.log('Review form submitted:', data);
+    await new Promise((resolve) => setTimeout(resolve, 1000));
+
+    console.log("Review form submitted:", data);
     toast({
       title: "Review Submitted!",
       description: "Thank you for your review! We appreciate your feedback.",
     });
-    
+
     resetReview();
     setSelectedRating(0);
     setIsSubmittingReview(false);
@@ -75,7 +86,7 @@ const Contact = () => {
   return (
     <div className="min-h-screen">
       <Header />
-      
+
       {/* Hero Section */}
       <section className="py-16 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -84,7 +95,8 @@ const Contact = () => {
               Contact <span className="text-total-red">Us</span>
             </h1>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto font-poppins">
-              Ready to start your construction or remodeling project? Get in touch with our team for a free consultation.
+              Ready to start your construction or remodeling project? Get in touch with our team for a free
+              consultation. Or give us a review!
             </p>
           </div>
         </div>
@@ -94,11 +106,10 @@ const Contact = () => {
       <section className="py-16 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="mb-12">
-            <h2 className="text-3xl font-bold text-gray-900 mb-6 font-poppins text-center">
-              Get in Touch
-            </h2>
+            <h2 className="text-3xl font-bold text-gray-900 mb-6 font-poppins text-center">Get in Touch</h2>
             <p className="text-gray-600 text-lg leading-relaxed mb-8 font-poppins text-center max-w-3xl mx-auto">
-              We're here to help bring your construction and remodeling dreams to life. Contact us today for a free consultation and estimate.
+              We're here to help bring your construction and remodeling dreams to life. Contact us today for a free
+              consultation and estimate.
             </p>
 
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
@@ -107,7 +118,10 @@ const Contact = () => {
                   <Phone className="text-white" size={24} />
                 </div>
                 <h3 className="font-semibold text-gray-900 font-poppins mb-1">Phone</h3>
-                <a href="tel:+14043866849" className="text-gray-600 font-poppins hover:text-total-red transition-colors">
+                <a
+                  href="tel:+14043866849"
+                  className="text-gray-600 font-poppins hover:text-total-red transition-colors"
+                >
                   (404) 386-6849
                 </a>
                 <p className="text-sm text-gray-500 font-poppins">Mon-Fri, 8am - 5pm</p>
@@ -118,7 +132,10 @@ const Contact = () => {
                   <Mail className="text-white" size={24} />
                 </div>
                 <h3 className="font-semibold text-gray-900 font-poppins mb-1">Email</h3>
-                <a href="mailto:info@totalconstructionandremodeling.com" className="text-gray-600 font-poppins hover:text-total-red transition-colors text-sm">
+                <a
+                  href="mailto:info@totalconstructionandremodeling.com"
+                  className="text-gray-600 font-poppins hover:text-total-red transition-colors text-sm"
+                >
                   info@totalconstruction...
                 </a>
                 <p className="text-sm text-gray-500 font-poppins">Response in 24hrs</p>
@@ -129,7 +146,11 @@ const Contact = () => {
                   <MapPin className="text-white" size={24} />
                 </div>
                 <h3 className="font-semibold text-gray-900 font-poppins mb-1">Address</h3>
-                <p className="text-gray-600 font-poppins text-sm">1273 Thomas Rd<br />Decatur, GA 30030</p>
+                <p className="text-gray-600 font-poppins text-sm">
+                  1273 Thomas Rd
+                  <br />
+                  Decatur, GA 30030
+                </p>
               </div>
 
               <div className="flex flex-col items-center text-center">
@@ -161,7 +182,9 @@ const Contact = () => {
                   <form onSubmit={handleSubmitContact(onSubmitContact)} className="space-y-6">
                     <div className="grid md:grid-cols-2 gap-4">
                       <div>
-                        <Label htmlFor="contact-name" className="font-poppins">Name *</Label>
+                        <Label htmlFor="contact-name" className="font-poppins">
+                          Name *
+                        </Label>
                         <Input
                           id="contact-name"
                           {...registerContact("name", { required: "Name is required" })}
@@ -172,16 +195,18 @@ const Contact = () => {
                         )}
                       </div>
                       <div>
-                        <Label htmlFor="contact-email" className="font-poppins">Email *</Label>
+                        <Label htmlFor="contact-email" className="font-poppins">
+                          Email *
+                        </Label>
                         <Input
                           id="contact-email"
                           type="email"
-                          {...registerContact("email", { 
+                          {...registerContact("email", {
                             required: "Email is required",
                             pattern: {
                               value: /^\S+@\S+$/i,
-                              message: "Invalid email address"
-                            }
+                              message: "Invalid email address",
+                            },
                           })}
                           className="mt-1"
                         />
@@ -190,21 +215,20 @@ const Contact = () => {
                         )}
                       </div>
                     </div>
-                    
+
                     <div className="grid md:grid-cols-2 gap-4">
                       <div>
-                        <Label htmlFor="contact-phone" className="font-poppins">Phone</Label>
-                        <Input
-                          id="contact-phone"
-                          type="tel"
-                          {...registerContact("phone")}
-                          className="mt-1"
-                        />
+                        <Label htmlFor="contact-phone" className="font-poppins">
+                          Phone
+                        </Label>
+                        <Input id="contact-phone" type="tel" {...registerContact("phone")} className="mt-1" />
                       </div>
                       <div>
-                        <Label htmlFor="contact-service" className="font-poppins">Service Interested In *</Label>
-                        <Select 
-                          value={selectedService} 
+                        <Label htmlFor="contact-service" className="font-poppins">
+                          Service Interested In *
+                        </Label>
+                        <Select
+                          value={selectedService}
                           onValueChange={(value) => {
                             setSelectedService(value);
                             setContactValue("service", value);
@@ -230,9 +254,11 @@ const Contact = () => {
                         )}
                       </div>
                     </div>
-                    
+
                     <div>
-                      <Label htmlFor="contact-subject" className="font-poppins">Subject *</Label>
+                      <Label htmlFor="contact-subject" className="font-poppins">
+                        Subject *
+                      </Label>
                       <Input
                         id="contact-subject"
                         {...registerContact("subject", { required: "Subject is required" })}
@@ -244,7 +270,9 @@ const Contact = () => {
                     </div>
 
                     <div>
-                      <Label htmlFor="contact-message" className="font-poppins">Message *</Label>
+                      <Label htmlFor="contact-message" className="font-poppins">
+                        Message *
+                      </Label>
                       <Textarea
                         id="contact-message"
                         rows={5}
@@ -285,8 +313,8 @@ const Contact = () => {
                       </div>
                     </div>
 
-                    <Button 
-                      type="submit" 
+                    <Button
+                      type="submit"
                       disabled={isSubmittingContact}
                       className="w-full bg-total-red hover:bg-red-600 text-white font-poppins"
                     >
@@ -309,27 +337,29 @@ const Contact = () => {
                   <form onSubmit={handleSubmitReview(onSubmitReview)} className="space-y-6">
                     <div className="grid md:grid-cols-2 gap-4">
                       <div>
-                        <Label htmlFor="review-name" className="font-poppins">Name *</Label>
+                        <Label htmlFor="review-name" className="font-poppins">
+                          Name *
+                        </Label>
                         <Input
                           id="review-name"
                           {...registerReview("name", { required: "Name is required" })}
                           className="mt-1"
                         />
-                        {reviewErrors.name && (
-                          <p className="text-red-500 text-sm mt-1">{reviewErrors.name.message}</p>
-                        )}
+                        {reviewErrors.name && <p className="text-red-500 text-sm mt-1">{reviewErrors.name.message}</p>}
                       </div>
                       <div>
-                        <Label htmlFor="review-email" className="font-poppins">Email *</Label>
+                        <Label htmlFor="review-email" className="font-poppins">
+                          Email *
+                        </Label>
                         <Input
                           id="review-email"
                           type="email"
-                          {...registerReview("email", { 
+                          {...registerReview("email", {
                             required: "Email is required",
                             pattern: {
                               value: /^\S+@\S+$/i,
-                              message: "Invalid email address"
-                            }
+                              message: "Invalid email address",
+                            },
                           })}
                           className="mt-1"
                         />
@@ -341,16 +371,15 @@ const Contact = () => {
 
                     <div className="grid md:grid-cols-2 gap-4">
                       <div>
-                        <Label htmlFor="review-phone" className="font-poppins">Phone</Label>
-                        <Input
-                          id="review-phone"
-                          type="tel"
-                          {...registerReview("phone")}
-                          className="mt-1"
-                        />
+                        <Label htmlFor="review-phone" className="font-poppins">
+                          Phone
+                        </Label>
+                        <Input id="review-phone" type="tel" {...registerReview("phone")} className="mt-1" />
                       </div>
                       <div>
-                        <Label htmlFor="review-positives" className="font-poppins">Positives about the Project</Label>
+                        <Label htmlFor="review-positives" className="font-poppins">
+                          Positives about the Project
+                        </Label>
                         <Input
                           id="review-positives"
                           {...registerReview("positives")}
@@ -393,7 +422,9 @@ const Contact = () => {
                     </div>
 
                     <div>
-                      <Label htmlFor="review-message" className="font-poppins">Your Review *</Label>
+                      <Label htmlFor="review-message" className="font-poppins">
+                        Your Review *
+                      </Label>
                       <Textarea
                         id="review-message"
                         rows={5}
@@ -434,8 +465,8 @@ const Contact = () => {
                       </div>
                     </div>
 
-                    <Button 
-                      type="submit" 
+                    <Button
+                      type="submit"
                       disabled={isSubmittingReview}
                       className="w-full bg-total-red hover:bg-red-600 text-white font-poppins"
                     >
@@ -458,13 +489,13 @@ const Contact = () => {
           <p className="text-xl text-gray-600 mb-8 font-poppins">
             For urgent construction emergencies, we offer 24/7 emergency services.
           </p>
-          <button 
+          <button
             className="bg-total-red text-white hover:bg-red-600 transition-colors font-syne font-medium text-xl sm:text-2xl whitespace-nowrap px-4 sm:px-6"
             style={{
-              width: 'auto',
-              minWidth: '220px',
-              height: '49px',
-              borderRadius: '27px'
+              width: "auto",
+              minWidth: "220px",
+              height: "49px",
+              borderRadius: "27px",
             }}
           >
             Emergency Contact
