@@ -87,6 +87,33 @@ const Reviews = () => {
           </div>
         </section>
 
+        {/* CTA Section */}
+        <section className="bg-white py-12">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 className="font-poppins font-bold text-2xl lg:text-3xl mb-4 text-gray-900">
+              Want to share your experience?
+            </h2>
+            <p className="font-poppins text-lg text-gray-600 mb-6">We'd love to hear from you!</p>
+            <a
+              href="https://www.google.com/search?kgmid=/g/11g8v6bcpr&hl=en-US&q=Total+Construction+%26+Remodeling&shndl=30&shem=lcuae,lscta2,shrtsdl&source=sh/x/loc/osrp/m5/1&kgs=841739da52277dec&utm_source=lcuae,lscta2,shrtsdl,sh/x/loc/osrp/m5/1&dlnr=1&sei=jVf2aJbBC5ui5NoPwuDNwAs#"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-block"
+            >
+              <button
+                className="bg-logo-red text-white hover:bg-red-700 transition-colors font-syne font-medium text-2xl"
+                style={{
+                  width: "220px",
+                  height: "62px",
+                  borderRadius: "27px",
+                }}
+              >
+                Leave a Review
+              </button>
+            </a>
+          </div>
+        </section>
+
       </main>
       <Footer />
     </div>
