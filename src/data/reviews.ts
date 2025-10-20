@@ -88,7 +88,13 @@ export const reviews: Review[] = [
     id: 12,
     name: "Chris Weber",
     rating: 5,
-    text: "I have known Patrick Vinces for a while and there is no one else I would trust with my construction projects. Among the great qualities he brings are, Extensive home building knowledge and experiences Strong work ethics and integrity Highly skilled and experienced, hard working, conscientious, polite, respectful and dedicated trades people Excellent communication, expectation setting and interaction skills A cost effective approach Rigorous project oversight Impeccable results Chris Weber TridentIntownDevelopers",
+    text: "I have known Patrick Vinces for a while and there is no one else I would trust with my construction projects. Among the great qualities he brings are: Extensive home building knowledge and experiences; strong work ethics and integrity; highly skilled and experienced, hard working, conscientious, polite, respectful and dedicated trades people; excellent communication, expectation setting and interaction skills; a cost effective approach; rigorous project oversight; impeccable results.",
+  },
+  {
+    id: 16,
+    name: "Angelika Taylor",
+    rating: 5,
+    text: "I have been working with Patrick and Total Construction & Remodeling for many years on various residential projects. As an Interior Designer, I expect perfection. Patrick and his crews exceed my expectations on elaborate kitchen and bathroom renovations, new home builds, custom built-ins, hardwood flooring, custom decks and indoor/outdoor painting. He is timely, on budget and trustworthy. My clients are always thrilled by his work. Patrick gets all my referrals and treats my clients like they are his first priority every time. I always look forward to our next project together.",
   },
   {
     id: 13,
