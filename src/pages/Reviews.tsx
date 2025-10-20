@@ -33,14 +33,16 @@ const Reviews = () => {
       <Header />
       <main className="flex-1 bg-white">
         {/* Hero Section */}
-        <section className="bg-white py-12">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <h1 className="font-poppins font-bold text-3xl lg:text-4xl mb-4 text-gray-900">
-              Customer Reviews
-            </h1>
-            <p className="font-poppins text-lg text-gray-600 max-w-2xl mx-auto">
-              See what our satisfied customers have to say about our work
-            </p>
+        <section className="py-16 bg-gray-50">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="text-center mb-12">
+              <h1 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6 font-poppins">
+                Customer <span className="text-total-red">Reviews</span>
+              </h1>
+              <p className="text-xl text-gray-600 max-w-3xl mx-auto font-poppins">
+                See what our satisfied customers have to say about our work
+              </p>
+            </div>
           </div>
         </section>
 
