@@ -9,7 +9,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
-import { Phone, Mail, MapPin, Clock, Upload } from 'lucide-react';
+import { Phone, Mail, MapPin, Clock, Upload, Star } from 'lucide-react';
 import { useToast } from "@/hooks/use-toast";
 
 interface ContactFormData {
@@ -22,25 +22,51 @@ interface ContactFormData {
   photos?: FileList;
 }
 
-const Contact = () => {
-  const { register, handleSubmit, reset, formState: { errors }, setValue } = useForm<ContactFormData>();
-  const { toast } = useToast();
-  const [isSubmitting, setIsSubmitting] = useState(false);
-  const [selectedService, setSelectedService] = useState<string>('');
+interface ReviewFormData {
+  name: string;
+  rating: number;
+  message: string;
+  photos?: FileList;
+}
 
-  const onSubmit = async (data: ContactFormData) => {
-    setIsSubmitting(true);
-    // Simulate form submission
+const Contact = () => {
+  const { register: registerContact, handleSubmit: handleSubmitContact, reset: resetContact, formState: { errors: contactErrors }, setValue: setContactValue } = useForm<ContactFormData>();
+  const { register: registerReview, handleSubmit: handleSubmitReview, reset: resetReview, formState: { errors: reviewErrors }, setValue: setReviewValue } = useForm<ReviewFormData>();
+  const { toast } = useToast();
+  const [isSubmittingContact, setIsSubmittingContact] = useState(false);
+  const [isSubmittingReview, setIsSubmittingReview] = useState(false);
+  const [selectedService, setSelectedService] = useState<string>('');
+  const [selectedRating, setSelectedRating] = useState<number>(0);
+  const [hoverRating, setHoverRating] = useState<number>(0);
+
+  const onSubmitContact = async (data: ContactFormData) => {
+    setIsSubmittingContact(true);
     await new Promise(resolve => setTimeout(resolve, 1000));
     
-    console.log('Form submitted:', data);
+    console.log('Contact form submitted:', data);
     toast({
       title: "Message Sent!",
       description: "Thank you for contacting us. We'll get back to you within 24 hours.",
     });
     
-    reset();
-    setIsSubmitting(false);
+    resetContact();
+    setSelectedService('');
+    setIsSubmittingContact(false);
+  };
+
+  const onSubmitReview = async (data: ReviewFormData) => {
+    setIsSubmittingReview(true);
+    await new Promise(resolve => setTimeout(resolve, 1000));
+    
+    console.log('Review form submitted:', data);
+    toast({
+      title: "Review Submitted!",
+      description: "Thank you for your review! We appreciate your feedback.",
+    });
+    
+    resetReview();
+    setSelectedRating(0);
+    setIsSubmittingReview(false);
   };
 
   return (
@@ -61,10 +87,60 @@ const Contact = () => {
         </div>
       </section>
 
-      {/* Contact Form and Info Section */}
+      {/* Contact Information Section */}
       <section className="py-16 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid lg:grid-cols-2 gap-12">
+          <div className="mb-12">
+            <h2 className="text-3xl font-bold text-gray-900 mb-6 font-poppins text-center">
+              Get in Touch
+            </h2>
+            <p className="text-gray-600 text-lg leading-relaxed mb-8 font-poppins text-center max-w-3xl mx-auto">
+              We're here to help bring your construction and remodeling dreams to life. Contact us today for a free consultation and estimate.
+            </p>
+
+            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
+              <div className="flex flex-col items-center text-center">
+                <div className="bg-total-red p-3 rounded-lg mb-3">
+                  <Phone className="text-white" size={24} />
+                </div>
+                <h3 className="font-semibold text-gray-900 font-poppins mb-1">Phone</h3>
+                <a href="tel:+14043866849" className="text-gray-600 font-poppins hover:text-total-red transition-colors">
+                  (404) 386-6849
+                </a>
+                <p className="text-sm text-gray-500 font-poppins">Mon-Fri, 8am - 5pm</p>
+              </div>
+
+              <div className="flex flex-col items-center text-center">
+                <div className="bg-total-red p-3 rounded-lg mb-3">
+                  <Mail className="text-white" size={24} />
+                </div>
+                <h3 className="font-semibold text-gray-900 font-poppins mb-1">Email</h3>
+                <a href="mailto:info@totalconstructionandremodeling.com" className="text-gray-600 font-poppins hover:text-total-red transition-colors text-sm">
+                  info@totalconstruction...
+                </a>
+                <p className="text-sm text-gray-500 font-poppins">Response in 24hrs</p>
+              </div>
+
+              <div className="flex flex-col items-center text-center">
+                <div className="bg-total-red p-3 rounded-lg mb-3">
+                  <MapPin className="text-white" size={24} />
+                </div>
+                <h3 className="font-semibold text-gray-900 font-poppins mb-1">Address</h3>
+                <p className="text-gray-600 font-poppins text-sm">1273 Thomas Rd<br />Decatur, GA 30030</p>
+              </div>
+
+              <div className="flex flex-col items-center text-center">
+                <div className="bg-total-red p-3 rounded-lg mb-3">
+                  <Clock className="text-white" size={24} />
+                </div>
+                <h3 className="font-semibold text-gray-900 font-poppins mb-1">Hours</h3>
+                <p className="text-gray-600 font-poppins text-sm">Mon-Fri: 8am - 5pm</p>
+                <p className="text-gray-600 font-poppins text-sm">Sat: 9am - 3pm</p>
+              </div>
+            </div>
+          </div>
+
+          <div className="grid lg:grid-cols-2 gap-8">
             {/* Contact Form */}
             <div>
               <Card>
@@ -74,25 +150,25 @@ const Contact = () => {
                   </CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
+                  <form onSubmit={handleSubmitContact(onSubmitContact)} className="space-y-6">
                     <div className="grid md:grid-cols-2 gap-4">
                       <div>
-                        <Label htmlFor="name" className="font-poppins">Name *</Label>
+                        <Label htmlFor="contact-name" className="font-poppins">Name *</Label>
                         <Input
-                          id="name"
-                          {...register("name", { required: "Name is required" })}
+                          id="contact-name"
+                          {...registerContact("name", { required: "Name is required" })}
                           className="mt-1"
                         />
-                        {errors.name && (
-                          <p className="text-red-500 text-sm mt-1">{errors.name.message}</p>
+                        {contactErrors.name && (
+                          <p className="text-red-500 text-sm mt-1">{contactErrors.name.message}</p>
                         )}
                       </div>
                       <div>
-                        <Label htmlFor="email" className="font-poppins">Email *</Label>
+                        <Label htmlFor="contact-email" className="font-poppins">Email *</Label>
                         <Input
-                          id="email"
+                          id="contact-email"
                           type="email"
-                          {...register("email", { 
+                          {...registerContact("email", { 
                             required: "Email is required",
                             pattern: {
                               value: /^\S+@\S+$/i,
@@ -101,29 +177,29 @@ const Contact = () => {
                           })}
                           className="mt-1"
                         />
-                        {errors.email && (
-                          <p className="text-red-500 text-sm mt-1">{errors.email.message}</p>
+                        {contactErrors.email && (
+                          <p className="text-red-500 text-sm mt-1">{contactErrors.email.message}</p>
                         )}
                       </div>
                     </div>
                     
                     <div className="grid md:grid-cols-2 gap-4">
                       <div>
-                        <Label htmlFor="phone" className="font-poppins">Phone</Label>
+                        <Label htmlFor="contact-phone" className="font-poppins">Phone</Label>
                         <Input
-                          id="phone"
+                          id="contact-phone"
                           type="tel"
-                          {...register("phone")}
+                          {...registerContact("phone")}
                           className="mt-1"
                         />
                       </div>
                       <div>
-                        <Label htmlFor="service" className="font-poppins">Service Interested In *</Label>
+                        <Label htmlFor="contact-service" className="font-poppins">Service Interested In *</Label>
                         <Select 
                           value={selectedService} 
                           onValueChange={(value) => {
                             setSelectedService(value);
-                            setValue("service", value);
+                            setContactValue("service", value);
                           }}
                         >
                           <SelectTrigger className="mt-1">
@@ -140,46 +216,46 @@ const Contact = () => {
                             <SelectItem value="other">Other</SelectItem>
                           </SelectContent>
                         </Select>
-                        <input type="hidden" {...register("service", { required: "Please select a service" })} />
-                        {errors.service && (
-                          <p className="text-red-500 text-sm mt-1">{errors.service.message}</p>
+                        <input type="hidden" {...registerContact("service", { required: "Please select a service" })} />
+                        {contactErrors.service && (
+                          <p className="text-red-500 text-sm mt-1">{contactErrors.service.message}</p>
                         )}
                       </div>
                     </div>
                     
                     <div>
-                      <Label htmlFor="subject" className="font-poppins">Subject *</Label>
+                      <Label htmlFor="contact-subject" className="font-poppins">Subject *</Label>
                       <Input
-                        id="subject"
-                        {...register("subject", { required: "Subject is required" })}
+                        id="contact-subject"
+                        {...registerContact("subject", { required: "Subject is required" })}
                         className="mt-1"
                       />
-                      {errors.subject && (
-                        <p className="text-red-500 text-sm mt-1">{errors.subject.message}</p>
+                      {contactErrors.subject && (
+                        <p className="text-red-500 text-sm mt-1">{contactErrors.subject.message}</p>
                       )}
                     </div>
 
                     <div>
-                      <Label htmlFor="message" className="font-poppins">Message *</Label>
+                      <Label htmlFor="contact-message" className="font-poppins">Message *</Label>
                       <Textarea
-                        id="message"
+                        id="contact-message"
                         rows={5}
-                        {...register("message", { required: "Message is required" })}
+                        {...registerContact("message", { required: "Message is required" })}
                         className="mt-1"
                         placeholder="Tell us about your project..."
                       />
-                      {errors.message && (
-                        <p className="text-red-500 text-sm mt-1">{errors.message.message}</p>
+                      {contactErrors.message && (
+                        <p className="text-red-500 text-sm mt-1">{contactErrors.message.message}</p>
                       )}
                     </div>
 
                     <div>
-                      <Label htmlFor="photos" className="font-poppins">
+                      <Label htmlFor="contact-photos" className="font-poppins">
                         Upload Project Photos (Optional)
                       </Label>
                       <div className="mt-1 flex items-center justify-center w-full">
                         <label
-                          htmlFor="photos"
+                          htmlFor="contact-photos"
                           className="flex flex-col items-center justify-center w-full h-32 border-2 border-dashed rounded-lg cursor-pointer bg-gray-50 hover:bg-gray-100 transition-colors"
                         >
                           <div className="flex flex-col items-center justify-center pt-5 pb-6">
@@ -190,90 +266,135 @@ const Contact = () => {
                             <p className="text-xs text-gray-500 font-poppins">PNG, JPG, JPEG (MAX. 10MB each)</p>
                           </div>
                           <Input
-                            id="photos"
+                            id="contact-photos"
                             type="file"
                             multiple
                             accept="image/png,image/jpeg,image/jpg"
-                            {...register("photos")}
+                            {...registerContact("photos")}
                             className="hidden"
                           />
                         </label>
                       </div>
                     </div>
 
-                    <Button
+                    <Button 
                       type="submit" 
-                      disabled={isSubmitting}
+                      disabled={isSubmittingContact}
                       className="w-full bg-total-red hover:bg-red-600 text-white font-poppins"
                     >
-                      {isSubmitting ? "Sending..." : "Send Message"}
+                      {isSubmittingContact ? "Sending..." : "Send Message"}
                     </Button>
                   </form>
                 </CardContent>
               </Card>
             </div>
 
-            {/* Contact Information */}
-            <div className="space-y-8">
-              <div>
-                <h2 className="text-3xl font-bold text-gray-900 mb-6 font-poppins">
-                  Get in Touch
-                </h2>
-                <p className="text-gray-600 text-lg leading-relaxed mb-8 font-poppins">
-                  We're here to help bring your construction and remodeling dreams to life. Contact us today for a free consultation and estimate.
-                </p>
-              </div>
+            {/* Review Form */}
+            <div>
+              <Card>
+                <CardHeader>
+                  <CardTitle className="text-2xl font-bold text-gray-900 font-poppins">
+                    Leave a Review
+                  </CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <form onSubmit={handleSubmitReview(onSubmitReview)} className="space-y-6">
+                    <div>
+                      <Label htmlFor="review-name" className="font-poppins">Name *</Label>
+                      <Input
+                        id="review-name"
+                        {...registerReview("name", { required: "Name is required" })}
+                        className="mt-1"
+                      />
+                      {reviewErrors.name && (
+                        <p className="text-red-500 text-sm mt-1">{reviewErrors.name.message}</p>
+                      )}
+                    </div>
 
-              <div className="space-y-6">
-                <div className="flex items-start space-x-4">
-                  <div className="bg-total-red p-3 rounded-lg">
-                    <Phone className="text-white" size={24} />
-                  </div>
-                  <div>
-                    <h3 className="font-semibold text-gray-900 font-poppins">Phone</h3>
-                    <a href="tel:+14043866849" className="text-gray-600 font-poppins hover:text-total-red transition-colors">
-                      (404) 386-6849
-                    </a>
-                    <p className="text-sm text-gray-500 font-poppins">Available Mon-Fri, 8:00am - 5:00pm</p>
-                  </div>
-                </div>
+                    <div>
+                      <Label className="font-poppins">Rating *</Label>
+                      <div className="flex gap-2 mt-2">
+                        {[1, 2, 3, 4, 5].map((star) => (
+                          <button
+                            key={star}
+                            type="button"
+                            onClick={() => {
+                              setSelectedRating(star);
+                              setReviewValue("rating", star);
+                            }}
+                            onMouseEnter={() => setHoverRating(star)}
+                            onMouseLeave={() => setHoverRating(0)}
+                            className="focus:outline-none transition-transform hover:scale-110"
+                          >
+                            <Star
+                              size={32}
+                              className={
+                                star <= (hoverRating || selectedRating)
+                                  ? "fill-yellow-400 text-yellow-400"
+                                  : "text-gray-300"
+                              }
+                            />
+                          </button>
+                        ))}
+                      </div>
+                      <input type="hidden" {...registerReview("rating", { required: "Please select a rating" })} />
+                      {reviewErrors.rating && (
+                        <p className="text-red-500 text-sm mt-1">{reviewErrors.rating.message}</p>
+                      )}
+                    </div>
 
-                <div className="flex items-start space-x-4">
-                  <div className="bg-total-red p-3 rounded-lg">
-                    <Mail className="text-white" size={24} />
-                  </div>
-                  <div>
-                    <h3 className="font-semibold text-gray-900 font-poppins">Email</h3>
-                    <a href="mailto:info@totalconstructionandremodeling.com" className="text-gray-600 font-poppins hover:text-total-red transition-colors">
-                      info@totalconstructionandremodeling.com
-                    </a>
-                    <p className="text-sm text-gray-500 font-poppins">We'll respond within 24 hours</p>
-                  </div>
-                </div>
+                    <div>
+                      <Label htmlFor="review-message" className="font-poppins">Your Review *</Label>
+                      <Textarea
+                        id="review-message"
+                        rows={5}
+                        {...registerReview("message", { required: "Review message is required" })}
+                        className="mt-1"
+                        placeholder="Tell us about your experience..."
+                      />
+                      {reviewErrors.message && (
+                        <p className="text-red-500 text-sm mt-1">{reviewErrors.message.message}</p>
+                      )}
+                    </div>
 
-                <div className="flex items-start space-x-4">
-                  <div className="bg-total-red p-3 rounded-lg">
-                    <MapPin className="text-white" size={24} />
-                  </div>
-                  <div>
-                    <h3 className="font-semibold text-gray-900 font-poppins">Address</h3>
-                    <p className="text-gray-600 font-poppins">1273 Thomas Rd<br />Decatur, GA 30030</p>
-                    <p className="text-sm text-gray-500 font-poppins">Serving Atlanta and surrounding areas</p>
-                  </div>
-                </div>
+                    <div>
+                      <Label htmlFor="review-photos" className="font-poppins">
+                        Upload Project Photos (Optional)
+                      </Label>
+                      <div className="mt-1 flex items-center justify-center w-full">
+                        <label
+                          htmlFor="review-photos"
+                          className="flex flex-col items-center justify-center w-full h-32 border-2 border-dashed rounded-lg cursor-pointer bg-gray-50 hover:bg-gray-100 transition-colors"
+                        >
+                          <div className="flex flex-col items-center justify-center pt-5 pb-6">
+                            <Upload className="w-8 h-8 mb-2 text-gray-500" />
+                            <p className="mb-2 text-sm text-gray-500 font-poppins">
+                              <span className="font-semibold">Click to upload</span> or drag and drop
+                            </p>
+                            <p className="text-xs text-gray-500 font-poppins">PNG, JPG, JPEG (MAX. 10MB each)</p>
+                          </div>
+                          <Input
+                            id="review-photos"
+                            type="file"
+                            multiple
+                            accept="image/png,image/jpeg,image/jpg"
+                            {...registerReview("photos")}
+                            className="hidden"
+                          />
+                        </label>
+                      </div>
+                    </div>
 
-                <div className="flex items-start space-x-4">
-                  <div className="bg-total-red p-3 rounded-lg">
-                    <Clock className="text-white" size={24} />
-                  </div>
-                  <div>
-                    <h3 className="font-semibold text-gray-900 font-poppins">Business Hours</h3>
-                    <p className="text-gray-600 font-poppins">Monday - Friday: 8:00am - 5:00pm</p>
-                    <p className="text-gray-600 font-poppins">Saturday: 9:00am - 3:00pm</p>
-                    <p className="text-gray-600 font-poppins">Sunday: Closed</p>
-                  </div>
-                </div>
-              </div>
+                    <Button 
+                      type="submit" 
+                      disabled={isSubmittingReview}
+                      className="w-full bg-total-red hover:bg-red-600 text-white font-poppins"
+                    >
+                      {isSubmittingReview ? "Submitting..." : "Submit Review"}
+                    </Button>
+                  </form>
+                </CardContent>
+              </Card>
             </div>
           </div>
         </div>
