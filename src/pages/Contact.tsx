@@ -489,17 +489,19 @@ const Contact = () => {
           <p className="text-xl text-gray-600 mb-8 font-poppins">
             For urgent construction emergencies, we offer 24/7 emergency services.
           </p>
-          <button
-            className="bg-total-red text-white hover:bg-red-600 transition-colors font-syne font-medium text-xl sm:text-2xl whitespace-nowrap px-4 sm:px-6"
+          <a
+            href="tel:+14043866849"
+            className="inline-block bg-total-red text-white hover:bg-red-600 transition-colors font-syne font-medium text-xl sm:text-2xl whitespace-nowrap px-4 sm:px-6 text-center"
             style={{
               width: "auto",
               minWidth: "220px",
               height: "49px",
               borderRadius: "27px",
+              lineHeight: "49px",
             }}
           >
             Emergency Contact
-          </button>
+          </a>
         </div>
       </section>
 
