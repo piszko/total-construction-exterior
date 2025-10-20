@@ -26,6 +26,7 @@ interface ReviewFormData {
   name: string;
   email: string;
   phone: string;
+  positives: string;
   rating: number;
   message: string;
   photos?: FileList;
@@ -333,14 +334,25 @@ const Contact = () => {
                       </div>
                     </div>
 
-                    <div>
-                      <Label htmlFor="review-phone" className="font-poppins">Phone</Label>
-                      <Input
-                        id="review-phone"
-                        type="tel"
-                        {...registerReview("phone")}
-                        className="mt-1"
-                      />
+                    <div className="grid md:grid-cols-2 gap-4">
+                      <div>
+                        <Label htmlFor="review-phone" className="font-poppins">Phone</Label>
+                        <Input
+                          id="review-phone"
+                          type="tel"
+                          {...registerReview("phone")}
+                          className="mt-1"
+                        />
+                      </div>
+                      <div>
+                        <Label htmlFor="review-positives" className="font-poppins">Positives about the Project</Label>
+                        <Input
+                          id="review-positives"
+                          {...registerReview("positives")}
+                          className="mt-1"
+                          placeholder="What did you love most?"
+                        />
+                      </div>
                     </div>
 
                     <div>
