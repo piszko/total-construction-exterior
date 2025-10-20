@@ -146,7 +146,7 @@ const Contact = () => {
           <div className="grid lg:grid-cols-2 gap-8">
             {/* Contact Form */}
             <div>
-              <Card className="bg-gradient-to-br from-blue-50 to-white border-blue-100">
+              <Card>
                 <CardHeader>
                   <CardTitle className="text-2xl font-bold text-gray-900 font-poppins">
                     Tell Us About Your Project
@@ -294,7 +294,7 @@ const Contact = () => {
 
             {/* Review Form */}
             <div>
-              <Card className="bg-gradient-to-br from-amber-50 to-white border-amber-100">
+              <Card>
                 <CardHeader>
                   <CardTitle className="text-2xl font-bold text-gray-900 font-poppins">
                     Review Your Project Experience
