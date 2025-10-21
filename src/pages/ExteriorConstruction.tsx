@@ -41,7 +41,7 @@ const ExteriorConstruction = () => {
               <p className="text-xl text-gray-600 mb-8 font-poppins">
                 From new construction to complete remodeling, we handle everything from roofs, decks, porches, siding, painting and much more. Transform your home's exterior with our expert craftsmanship.
               </p>
-              <Link to="/contact">
+              <Link to="/contact#forms">
                 <button 
                   className="bg-logo-red text-white hover:bg-red-700 transition-colors font-syne font-medium text-2xl"
                   style={{

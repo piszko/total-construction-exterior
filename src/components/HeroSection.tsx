@@ -58,7 +58,7 @@ const HeroSection = () => {
 
             {/* CTA Buttons */}
             <div className="flex flex-col sm:flex-row gap-4 mb-6 sm:mb-8">
-              <Link to="/contact" className="w-full sm:w-auto">
+              <Link to="/contact#forms" className="w-full sm:w-auto">
                 <button className="bg-total-red text-white font-syne font-medium text-lg sm:text-xl lg:text-2xl hover:bg-red-600 transition-colors w-full sm:w-[282px] h-[50px] sm:h-[70px] rounded-[20px] sm:rounded-[27px]">
                   Get a Free Quote
                 </button>

@@ -41,7 +41,7 @@ const InteriorConstruction = () => {
               <p className="text-xl text-gray-600 mb-8 font-poppins">
                 From simple updates to elaborate renovations, let us make your dreams come true. We specialize in hardwood, carpet, tile, bathrooms, drywall and much more.
               </p>
-              <Link to="/contact">
+              <Link to="/contact#forms">
                 <button 
                   className="bg-logo-red text-white hover:bg-red-700 transition-colors font-syne font-medium text-2xl"
                   style={{

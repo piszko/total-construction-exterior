@@ -41,7 +41,7 @@ const RoofingServices = () => {
               <p className="text-xl text-gray-600 mb-8 font-poppins">
                 For all your residential and commercial roofing needs, we offer numerous products and solutions. Protect your property with our expert roofing services.
               </p>
-              <Link to="/contact">
+              <Link to="/contact#forms">
                 <button 
                   className="bg-total-red text-white hover:bg-red-600 transition-colors font-syne font-medium text-2xl"
                   style={{
