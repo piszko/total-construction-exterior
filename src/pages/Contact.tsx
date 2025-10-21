@@ -330,7 +330,7 @@ const Contact = () => {
               <Card>
                 <CardHeader>
                   <CardTitle className="text-2xl font-bold text-gray-900 font-poppins">
-                    Review Your Project Experience
+                    Rate Your Project Experience
                   </CardTitle>
                 </CardHeader>
                 <CardContent>
