@@ -20,7 +20,7 @@ const Reviews = () => {
                 See what our satisfied customers have to say about our work.
               </p>
               <a
-                href="/contact"
+                href="/contact#forms"
                 className="inline-block"
               >
                 <button
@@ -93,7 +93,7 @@ const Reviews = () => {
             </h2>
             <p className="font-poppins text-lg text-gray-600 mb-6">We'd love to hear from you!</p>
             <a
-              href="/contact"
+              href="/contact#forms"
               className="inline-block"
             >
               <button
