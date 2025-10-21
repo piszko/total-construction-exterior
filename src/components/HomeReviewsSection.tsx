@@ -24,9 +24,10 @@ const HomeReviewsSection = () => {
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
           {randomReviews.map((review) => (
-            <div
+            <Link
               key={review.id}
-              className="bg-white border border-gray-200 rounded-lg p-6 shadow-sm hover:shadow-md transition-shadow"
+              to="/reviews"
+              className="bg-white border border-gray-200 rounded-lg p-6 shadow-sm hover:shadow-md transition-shadow block"
             >
               {/* Star Rating */}
               <div className="flex gap-1 mb-4">
@@ -56,7 +57,7 @@ const HomeReviewsSection = () => {
               <div className="border-t border-gray-200 pt-4">
                 <p className="font-poppins font-semibold text-gray-900">{review.name}</p>
               </div>
-            </div>
+            </Link>
           ))}
         </div>
 
