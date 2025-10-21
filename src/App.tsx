@@ -15,6 +15,7 @@ import InteriorConstruction from "./pages/InteriorConstruction";
 import RoofingServices from "./pages/RoofingServices";
 import Reviews from "./pages/Reviews";
 import NotFound from "./pages/NotFound";
+import ScrollToHash from "./components/ScrollToHash";
 
 const queryClient = new QueryClient();
 
@@ -24,6 +25,7 @@ const App = () => (
       <Toaster />
       <Sonner />
       <BrowserRouter>
+        <ScrollToHash />
         <Routes>
           <Route path="/" element={<Index />} />
           <Route path="/about" element={<About />} />
