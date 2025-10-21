@@ -10,7 +10,7 @@ const Reviews = () => {
       <Header />
       <main className="flex-1 bg-white">
         {/* Hero Section */}
-        <section className="py-16 bg-gray-50">
+        <section className="pt-16 pb-8 bg-gray-50">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-12">
               <h1 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6 font-poppins">
@@ -39,7 +39,7 @@ const Reviews = () => {
         </section>
 
         {/* Reviews Grid */}
-        <section className="py-16 bg-gray-50">
+        <section className="pt-8 pb-16 bg-gray-50">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="columns-1 md:columns-2 lg:columns-3 gap-8 space-y-8">
               {reviews.map((review) => (
