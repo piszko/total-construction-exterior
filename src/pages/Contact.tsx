@@ -10,6 +10,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Phone, Mail, MapPin, Clock, Upload, Star } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
+import { supabase } from "@/integrations/supabase/client";
 
 interface ContactFormData {
   name: string;
@@ -55,32 +56,110 @@ const Contact = () => {
 
   const onSubmitContact = async (data: ContactFormData) => {
     setIsSubmittingContact(true);
-    await new Promise((resolve) => setTimeout(resolve, 1000));
+    
+    try {
+      // Save to database
+      const { error: dbError } = await supabase
+        .from('contact_submissions')
+        .insert({
+          name: data.name,
+          email: data.email,
+          phone: data.phone || null,
+          service: data.service,
+          subject: data.subject,
+          message: data.message,
+        });
 
-    console.log("Contact form submitted:", data);
-    toast({
-      title: "Message Sent!",
-      description: "Thank you for contacting us. We'll get back to you within 24 hours.",
-    });
+      if (dbError) throw dbError;
 
-    resetContact();
-    setSelectedService("");
-    setIsSubmittingContact(false);
+      // Send email notification
+      const { error: emailError } = await supabase.functions.invoke('send-contact-email', {
+        body: {
+          name: data.name,
+          email: data.email,
+          phone: data.phone,
+          service: data.service,
+          subject: data.subject,
+          message: data.message,
+        },
+      });
+
+      if (emailError) {
+        console.error("Email error:", emailError);
+        // Don't fail the submission if email fails
+      }
+
+      toast({
+        title: "Message Sent!",
+        description: "Thank you for contacting us. We'll get back to you within 24 hours.",
+      });
+
+      resetContact();
+      setSelectedService("");
+    } catch (error: any) {
+      console.error("Submission error:", error);
+      toast({
+        title: "Error",
+        description: "There was a problem submitting your message. Please try again.",
+        variant: "destructive",
+      });
+    } finally {
+      setIsSubmittingContact(false);
+    }
   };
 
   const onSubmitReview = async (data: ReviewFormData) => {
     setIsSubmittingReview(true);
-    await new Promise((resolve) => setTimeout(resolve, 1000));
+    
+    try {
+      // Save to database
+      const { error: dbError } = await supabase
+        .from('reviews')
+        .insert({
+          name: data.name,
+          email: data.email,
+          phone: data.phone || null,
+          positives: data.positives || null,
+          rating: data.rating,
+          message: data.message,
+        });
 
-    console.log("Review form submitted:", data);
-    toast({
-      title: "Review Submitted!",
-      description: "Thank you for your review! We appreciate your feedback.",
-    });
+      if (dbError) throw dbError;
 
-    resetReview();
-    setSelectedRating(0);
-    setIsSubmittingReview(false);
+      // Send email notification
+      const { error: emailError } = await supabase.functions.invoke('send-review-email', {
+        body: {
+          name: data.name,
+          email: data.email,
+          phone: data.phone,
+          positives: data.positives,
+          rating: data.rating,
+          message: data.message,
+        },
+      });
+
+      if (emailError) {
+        console.error("Email error:", emailError);
+        // Don't fail the submission if email fails
+      }
+
+      toast({
+        title: "Review Submitted!",
+        description: "Thank you for your review! We appreciate your feedback.",
+      });
+
+      resetReview();
+      setSelectedRating(0);
+    } catch (error: any) {
+      console.error("Submission error:", error);
+      toast({
+        title: "Error",
+        description: "There was a problem submitting your review. Please try again.",
+        variant: "destructive",
+      });
+    } finally {
+      setIsSubmittingReview(false);
+    }
   };
 
   return (
