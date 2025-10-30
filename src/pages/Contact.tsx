@@ -8,9 +8,10 @@ import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
-import { Phone, Mail, MapPin, Clock, Upload, Star } from "lucide-react";
+import { Phone, Mail, MapPin, Clock, Star } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 import { supabase } from "@/integrations/supabase/client";
+import { FileUpload } from "@/components/FileUpload";
 
 interface ContactFormData {
   name: string;
@@ -19,7 +20,6 @@ interface ContactFormData {
   service: string;
   subject: string;
   message: string;
-  photos?: FileList;
 }
 
 interface ReviewFormData {
@@ -29,7 +29,6 @@ interface ReviewFormData {
   positives: string;
   rating: number;
   message: string;
-  photos?: FileList;
 }
 
 const Contact = () => {
@@ -53,11 +52,55 @@ const Contact = () => {
   const [selectedService, setSelectedService] = useState<string>("");
   const [selectedRating, setSelectedRating] = useState<number>(0);
   const [hoverRating, setHoverRating] = useState<number>(0);
+  const [contactPhotos, setContactPhotos] = useState<File[]>([]);
+  const [reviewPhotos, setReviewPhotos] = useState<File[]>([]);
+
+  const uploadPhotos = async (files: File[], prefix: string) => {
+    const uploadedUrls: string[] = [];
+    
+    for (const file of files) {
+      const fileExt = file.name.split('.').pop();
+      const fileName = `${prefix}-${Date.now()}-${Math.random().toString(36).substring(7)}.${fileExt}`;
+      const filePath = `${fileName}`;
+
+      const { error } = await supabase.storage
+        .from('project-photos')
+        .upload(filePath, file);
+
+      if (error) {
+        console.error('Upload error:', error);
+        throw error;
+      }
+
+      const { data: { publicUrl } } = supabase.storage
+        .from('project-photos')
+        .getPublicUrl(filePath);
+
+      uploadedUrls.push(publicUrl);
+    }
+
+    return uploadedUrls;
+  };
 
   const onSubmitContact = async (data: ContactFormData) => {
     setIsSubmittingContact(true);
     
     try {
+      // Upload photos if any
+      let photoUrls: string[] = [];
+      if (contactPhotos.length > 0) {
+        try {
+          photoUrls = await uploadPhotos(contactPhotos, 'contact');
+        } catch (uploadError) {
+          console.error("Photo upload error:", uploadError);
+          toast({
+            title: "Warning",
+            description: "Photos could not be uploaded, but your message will still be sent.",
+            variant: "default",
+          });
+        }
+      }
+
       // Save to database
       const { error: dbError } = await supabase
         .from('contact_submissions')
@@ -72,7 +115,11 @@ const Contact = () => {
 
       if (dbError) throw dbError;
 
-      // Send email notification
+      // Send email notification with photo URLs
+      const messageWithPhotos = photoUrls.length > 0
+        ? `${data.message}\n\nAttached Photos:\n${photoUrls.join('\n')}`
+        : data.message;
+
       const { error: emailError } = await supabase.functions.invoke('send-contact-email', {
         body: {
           name: data.name,
@@ -80,7 +127,7 @@ const Contact = () => {
           phone: data.phone,
           service: data.service,
           subject: data.subject,
-          message: data.message,
+          message: messageWithPhotos,
         },
       });
 
@@ -96,6 +143,7 @@ const Contact = () => {
 
       resetContact();
       setSelectedService("");
+      setContactPhotos([]);
     } catch (error: any) {
       console.error("Submission error:", error);
       toast({
@@ -112,6 +160,21 @@ const Contact = () => {
     setIsSubmittingReview(true);
     
     try {
+      // Upload photos if any
+      let photoUrls: string[] = [];
+      if (reviewPhotos.length > 0) {
+        try {
+          photoUrls = await uploadPhotos(reviewPhotos, 'review');
+        } catch (uploadError) {
+          console.error("Photo upload error:", uploadError);
+          toast({
+            title: "Warning",
+            description: "Photos could not be uploaded, but your review will still be sent.",
+            variant: "default",
+          });
+        }
+      }
+
       // Save to database
       const { error: dbError } = await supabase
         .from('reviews')
@@ -126,7 +189,11 @@ const Contact = () => {
 
       if (dbError) throw dbError;
 
-      // Send email notification
+      // Send email notification with photo URLs
+      const messageWithPhotos = photoUrls.length > 0
+        ? `${data.message}\n\nAttached Photos:\n${photoUrls.join('\n')}`
+        : data.message;
+
       const { error: emailError } = await supabase.functions.invoke('send-review-email', {
         body: {
           name: data.name,
@@ -134,7 +201,7 @@ const Contact = () => {
           phone: data.phone,
           positives: data.positives,
           rating: data.rating,
-          message: data.message,
+          message: messageWithPhotos,
         },
       });
 
@@ -150,6 +217,7 @@ const Contact = () => {
 
       resetReview();
       setSelectedRating(0);
+      setReviewPhotos([]);
     } catch (error: any) {
       console.error("Submission error:", error);
       toast({
@@ -365,30 +433,15 @@ const Contact = () => {
                     </div>
 
                     <div>
-                      <Label htmlFor="contact-photos" className="font-poppins">
+                      <Label className="font-poppins">
                         Upload Project Photos (Optional)
                       </Label>
-                      <div className="mt-1 flex items-center justify-center w-full">
-                        <label
-                          htmlFor="contact-photos"
-                          className="flex flex-col items-center justify-center w-full h-32 border-2 border-dashed rounded-lg cursor-pointer bg-gray-50 hover:bg-gray-100 transition-colors"
-                        >
-                          <div className="flex flex-col items-center justify-center pt-5 pb-6">
-                            <Upload className="w-8 h-8 mb-2 text-gray-500" />
-                            <p className="mb-2 text-sm text-gray-500 font-poppins">
-                              <span className="font-semibold">Click to upload</span> or drag and drop
-                            </p>
-                            <p className="text-xs text-gray-500 font-poppins">PNG, JPG, JPEG (MAX. 10MB each)</p>
-                          </div>
-                          <Input
-                            id="contact-photos"
-                            type="file"
-                            multiple
-                            accept="image/png,image/jpeg,image/jpg"
-                            {...registerContact("photos")}
-                            className="hidden"
-                          />
-                        </label>
+                      <div className="mt-1">
+                        <FileUpload
+                          onFilesSelected={setContactPhotos}
+                          maxFiles={5}
+                          accept="image/png,image/jpeg,image/jpg"
+                        />
                       </div>
                     </div>
 
@@ -517,30 +570,15 @@ const Contact = () => {
                     </div>
 
                     <div>
-                      <Label htmlFor="review-photos" className="font-poppins">
+                      <Label className="font-poppins">
                         Upload Project Photos (Optional)
                       </Label>
-                      <div className="mt-1 flex items-center justify-center w-full">
-                        <label
-                          htmlFor="review-photos"
-                          className="flex flex-col items-center justify-center w-full h-32 border-2 border-dashed rounded-lg cursor-pointer bg-gray-50 hover:bg-gray-100 transition-colors"
-                        >
-                          <div className="flex flex-col items-center justify-center pt-5 pb-6">
-                            <Upload className="w-8 h-8 mb-2 text-gray-500" />
-                            <p className="mb-2 text-sm text-gray-500 font-poppins">
-                              <span className="font-semibold">Click to upload</span> or drag and drop
-                            </p>
-                            <p className="text-xs text-gray-500 font-poppins">PNG, JPG, JPEG (MAX. 10MB each)</p>
-                          </div>
-                          <Input
-                            id="review-photos"
-                            type="file"
-                            multiple
-                            accept="image/png,image/jpeg,image/jpg"
-                            {...registerReview("photos")}
-                            className="hidden"
-                          />
-                        </label>
+                      <div className="mt-1">
+                        <FileUpload
+                          onFilesSelected={setReviewPhotos}
+                          maxFiles={5}
+                          accept="image/png,image/jpeg,image/jpg"
+                        />
                       </div>
                     </div>
 
