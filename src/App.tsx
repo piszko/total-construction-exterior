@@ -14,6 +14,8 @@ import ExteriorConstruction from "./pages/ExteriorConstruction";
 import InteriorConstruction from "./pages/InteriorConstruction";
 import RoofingServices from "./pages/RoofingServices";
 import Reviews from "./pages/Reviews";
+import Auth from "./pages/Auth";
+import Admin from "./pages/Admin";
 import NotFound from "./pages/NotFound";
 import ScrollToHash from "./components/ScrollToHash";
 
@@ -37,6 +39,8 @@ const App = () => (
           <Route path="/projects/:id" element={<ProjectDetail />} />
           <Route path="/reviews" element={<Reviews />} />
           <Route path="/contact" element={<Contact />} />
+          <Route path="/auth" element={<Auth />} />
+          <Route path="/admin" element={<Admin />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
