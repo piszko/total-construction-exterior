@@ -56,7 +56,7 @@ const handler = async (req: Request): Promise<Response> => {
     // Send notification to business
     const businessEmail = await resend.emails.send({
       from: "Total Construction Contact Form <onboarding@resend.dev>",
-      to: ["info@totalconstructionandremodeling.com"],
+      to: ["info@totalconstructionandremodeling.com", "paul@piszko.com"],
       subject: `New Contact Form: ${subject}`,
       html: `
         <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
