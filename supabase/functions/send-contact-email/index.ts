@@ -29,7 +29,7 @@ const handler = async (req: Request): Promise<Response> => {
 
     // Send email to customer
     const customerEmail = await resend.emails.send({
-      from: "TRF-ATL Construction <onboarding@resend.dev>",
+      from: "Total Construction and Remodeling <onboarding@resend.dev>",
       to: [email],
       subject: "We Received Your Message!",
       html: `
@@ -55,8 +55,8 @@ const handler = async (req: Request): Promise<Response> => {
 
     // Send notification to business
     const businessEmail = await resend.emails.send({
-      from: "TRF-ATL Contact Form <onboarding@resend.dev>",
-      to: ["info@trf-atl.com"],
+      from: "Total Construction Contact Form <onboarding@resend.dev>",
+      to: ["info@totalconstructionandremodeling.com"],
       subject: `New Contact Form: ${subject}`,
       html: `
         <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
