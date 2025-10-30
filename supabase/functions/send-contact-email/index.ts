@@ -111,7 +111,7 @@ const handler = async (req: Request): Promise<Response> => {
 
     // Send email to customer
     const customerEmail = await resend.emails.send({
-      from: "Total Construction and Remodeling <onboarding@resend.dev>",
+      from: "Total Construction and Remodeling <noreply@totalconstructionandremodeling.com>",
       to: [email],
       subject: "We Received Your Message!",
       html: `
@@ -137,7 +137,7 @@ const handler = async (req: Request): Promise<Response> => {
 
     // Send notification to business
     const businessEmail = await resend.emails.send({
-      from: "Total Construction Contact Form <onboarding@resend.dev>",
+      from: "Total Construction Contact Form <noreply@totalconstructionandremodeling.com>",
       to: ["info@totalconstructionandremodeling.com", "paul@piszko.com"],
       subject: `New Contact Form: ${safeSubject}`,
       html: `
