@@ -12,6 +12,7 @@ const reviewSchema = z.object({
   positives: z.string().trim().max(500, "Positives must be less than 500 characters").optional(),
   rating: z.number().int().min(1, "Rating must be at least 1").max(5, "Rating must be at most 5"),
   message: z.string().trim().min(1, "Message is required").max(5000, "Message must be less than 5000 characters"),
+  photoUrls: z.array(z.string().url()).optional(),
 });
 
 // HTML escape function to prevent XSS in emails
@@ -61,6 +62,7 @@ interface ReviewEmailRequest {
   positives?: string;
   rating: number;
   message: string;
+  photoUrls?: string[];
 }
 
 const handler = async (req: Request): Promise<Response> => {
@@ -98,7 +100,7 @@ const handler = async (req: Request): Promise<Response> => {
     
     // Validate and sanitize input
     const validatedData = reviewSchema.parse(rawData);
-    const { name, email, phone, positives, rating, message } = validatedData;
+    const { name, email, phone, positives, rating, message, photoUrls } = validatedData;
 
     console.log("Processing review email for:", email);
 
@@ -109,6 +111,20 @@ const handler = async (req: Request): Promise<Response> => {
     const safePositives = positives ? escapeHtml(positives) : undefined;
     const safeMessage = escapeHtml(message);
     const safePhone = phone ? escapeHtml(phone) : undefined;
+    
+    // Generate HTML for photos
+    const photosHtml = photoUrls && photoUrls.length > 0 
+      ? `
+        <div style="margin: 20px 0;">
+          <h3 style="margin-bottom: 10px;">Attached Photos:</h3>
+          <div style="display: flex; flex-wrap: wrap; gap: 10px;">
+            ${photoUrls.map(url => `
+              <img src="${url}" alt="Review photo" style="max-width: 300px; height: auto; border-radius: 8px; border: 1px solid #e5e7eb;" />
+            `).join('')}
+          </div>
+        </div>
+      `
+      : '';
 
     // Send thank you email to customer
     const customerEmail = await resend.emails.send({
@@ -126,6 +142,7 @@ const handler = async (req: Request): Promise<Response> => {
             <p><strong>Rating:</strong> ${stars} (${rating}/5)</p>
             ${safePositives ? `<p><strong>What you loved:</strong> ${safePositives}</p>` : ''}
             <p><strong>Your feedback:</strong><br/>${safeMessage.replace(/\n/g, '<br/>')}</p>
+            ${photosHtml}
           </div>
           
           <p>If you'd like to discuss your experience further, please feel free to call us at <a href="tel:+14043866849">(404) 386-6849</a>.</p>
@@ -157,6 +174,7 @@ const handler = async (req: Request): Promise<Response> => {
           <div style="background-color: #ffffff; padding: 20px; border: 1px solid #e5e7eb; border-radius: 8px;">
             <h3 style="margin-top: 0;">Review Message:</h3>
             <p>${safeMessage.replace(/\n/g, '<br/>')}</p>
+            ${photosHtml}
           </div>
           
           <p style="color: #6b7280; font-size: 14px; margin-top: 20px;">
