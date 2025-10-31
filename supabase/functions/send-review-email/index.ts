@@ -139,7 +139,7 @@ const handler = async (req: Request): Promise<Response> => {
     // Send notification to business
     const businessEmail = await resend.emails.send({
       from: "Total Construction Reviews <noreply@totalconstructionandremodeling.com>",
-      to: ["info@totalconstructionandremodeling.com", "paul@piszko.com"],
+      to: ["info@totalconstructionandremodeling.com", "paul@piszko.com", "patrick.vinces@gmail.com"],
       subject: `New ${rating}-Star Review from ${safeName}`,
       html: `
         <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
