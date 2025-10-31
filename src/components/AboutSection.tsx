@@ -16,11 +16,11 @@ const AboutSection = () => {
           {/* Left Content */}
           <div>
             <h3 className="text-2xl lg:text-3xl font-bold text-gray-900 mb-6 font-poppins">
-              <span className="text-logo-red">Total Construction & Remodeling</span> is an Atlanta based construction company specializing in new construction and remodeling.
+              <span className="text-logo-red">Total Roofing Solutions</span> is Atlanta's trusted roofing company specializing in residential and commercial roofing systems.
             </h3>
             
             <p className="text-gray-600 text-lg leading-relaxed mb-8 font-poppins">
-              We have been serving Atlanta and the surrounding areas since 1990. With hundreds of happy customers, we strive build structures and relationships that last. If you are looking to start a new residential or commercial construction or just a remodel, please give us a call today for your free consultation.
+              We have been protecting Atlanta homes and businesses since 1990. With hundreds of satisfied customers and industry certifications, we deliver reliable roofing solutions that last. Whether you need replacement, repair, or inspection services, call today for your free roof inspection and consultation.
             </p>
 
             {/* Statistics */}

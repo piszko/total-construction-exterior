@@ -41,19 +41,19 @@ const HeroSection = () => {
           {/* Left Content */}
           <div className="animate-fade-in order-2 lg:order-1">
             <h1 className="text-[28px] sm:text-[36px] lg:text-[50px] font-semibold text-gray-900 leading-tight mb-4 sm:mb-6 font-poppins">
-              Atlanta, GA Based
+              Atlanta's Premier
               <br />
-              Construction, Roofing
+              Roofing Specialists
               <br />
-              and Remodeling Co.
+              Since 1990
             </h1>
             
             <p className="text-[#6F6F6F] text-[16px] sm:text-[18px] lg:text-[22px] mb-4 sm:mb-6 lg:mb-8 leading-relaxed font-epilogue">
-              Total Construction & Remodeling specializes in home construction, roofing, and remodeling. We have been serving Atlanta and the surrounding areas since 1990. With hundreds of happy customers and awards for our work, we strive to be the best construction contractors that we can.
+              Total Roofing Solutions specializes in residential and commercial roofing services. We have been protecting Atlanta homes and businesses since 1990. With hundreds of satisfied customers and industry certifications, we deliver quality roofing solutions you can trust.
             </p>
 
             <p className="text-[#6F6F6F] text-[16px] sm:text-[18px] lg:text-[22px] mb-6 sm:mb-8 leading-relaxed font-epilogue">
-              If you are looking to start a new residential or commercial construction, remodel a bathroom or kitchen, or are in need of a new roof, please give us a call today for a free, no-hassle consultation. Quality craftsmanship and service at a reasonable price.
+              Whether you need a complete roof replacement, repairs, inspections, or maintenance, we provide expert craftsmanship and premium materials. Call today for your free roof inspection and quote. Reliable protection at competitive prices.
             </p>
 
             {/* CTA Buttons */}

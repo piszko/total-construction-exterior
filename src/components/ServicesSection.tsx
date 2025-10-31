@@ -5,25 +5,25 @@ import { Link } from 'react-router-dom';
 const ServicesSection = () => {
   const services = [
     {
-      title: "Total Exterior Construction",
-      description: "From new construction to remodeling, we handle anything from roofs, decks, porches, siding, painting and much more.",
+      title: "Roof Replacement",
+      description: "Complete roof replacement services using premium materials. Expert installation for asphalt shingles, metal roofing, and tile systems.",
+      icon: Shield,
+      image: "/lovable-uploads/7cadb1e4-bb42-4bb2-9133-7aac1a0b332b.png",
+      link: "/services/roofing-services"
+    },
+    {
+      title: "Roof Repairs",
+      description: "Emergency and scheduled roof repairs for leaks, storm damage, and wear. Fast response times to protect your property.",
       icon: Hammer,
       image: "/lovable-uploads/7275067e-f8d1-4392-9730-3ede28f23a5b.png",
       link: "/services/exterior-construction"
     },
     {
-      title: "Total Interior Construction", 
-      description: "From simple to elaborate, let us make your dreams come true. Hardwood, carpet, tile, bathrooms, drywall and more.",
+      title: "Inspections & Maintenance", 
+      description: "Comprehensive roof inspections and preventive maintenance programs to extend your roof's lifespan and prevent costly repairs.",
       icon: Home,
       image: "/lovable-uploads/310bd3db-7307-4ff6-8ea6-4f464c721cf6.png",
       link: "/services/interior-construction"
-    },
-    {
-      title: "Total Roofing Services",
-      description: "For all your residential and commercial roofing needs, we offer numerous products and solutions.",
-      icon: Shield,
-      image: "/lovable-uploads/7cadb1e4-bb42-4bb2-9133-7aac1a0b332b.png",
-      link: "/services/roofing-services"
     }
   ];
 
