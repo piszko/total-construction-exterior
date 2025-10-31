@@ -5,7 +5,7 @@ import { useState } from "react";
 import { Dialog, DialogContent } from "@/components/ui/dialog";
 const Projects = () => {
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
-  const projectImages = ["/lovable-uploads/project-1.jpg", "/lovable-uploads/project-2.jpg", "/lovable-uploads/project-3.jpg", "/lovable-uploads/project-4.jpg", "/lovable-uploads/project-5.jpg", "/lovable-uploads/project-6.jpg", "/lovable-uploads/project-7.jpg", "/lovable-uploads/project-8.jpg", "/lovable-uploads/project-9.jpg", "/lovable-uploads/project-10.jpg", "/lovable-uploads/project-11.jpg", "/lovable-uploads/project-12.jpg", "/lovable-uploads/project-13.jpg", "/lovable-uploads/project-14.jpg"];
+  const projectImages = ["/lovable-uploads/project-1.jpg", "/lovable-uploads/project-2.jpg", "/lovable-uploads/project-3.jpg", "/lovable-uploads/project-4.jpg", "/lovable-uploads/project-5.jpg", "/lovable-uploads/project-6.jpg", "/lovable-uploads/project-7.jpg", "/lovable-uploads/project-8.jpg", "/lovable-uploads/project-9.jpg", "/lovable-uploads/project-10.jpg", "/lovable-uploads/project-11.jpg", "/lovable-uploads/project-12.jpg", "/lovable-uploads/project-13.jpg", "/lovable-uploads/project-14.jpg", "/lovable-uploads/project-15.jpg"];
   return <div className="min-h-screen">
       <Header />
       
