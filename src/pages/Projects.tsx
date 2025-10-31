@@ -36,7 +36,7 @@ const Projects = () => {
               Our <span className="text-total-red">Projects</span>
             </h1>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto font-poppins">
-              Explore our portfolio of successful construction and remodeling projects throughout Atlanta and surrounding areas.
+              Check out some of the work below. Soon you will be able to explore our portfolio of successful construction and remodeling projects throughout Atlanta and surrounding areas.
             </p>
           </div>
         </div>
