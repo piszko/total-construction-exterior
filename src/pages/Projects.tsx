@@ -46,7 +46,7 @@ const Projects = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <div className="max-w-2xl mx-auto">
             <h2 className="text-5xl lg:text-6xl font-bold text-gray-900 mb-8 font-poppins">
-              Coming <span className="text-total-red">More Coming Soon</span>
+              More <span className="text-total-red">Coming Soon</span>
             </h2>
             <p className="text-xl text-gray-600 mb-12 font-poppins">
               We're currently updating our project portfolio. Check back soon to see our amazing construction and remodeling projects throughout Atlanta.
