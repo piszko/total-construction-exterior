@@ -18,6 +18,10 @@ const Projects = () => {
     "/lovable-uploads/project-8.jpg",
     "/lovable-uploads/project-9.jpg",
     "/lovable-uploads/project-10.jpg",
+    "/lovable-uploads/project-11.jpg",
+    "/lovable-uploads/project-12.jpg",
+    "/lovable-uploads/project-13.jpg",
+    "/lovable-uploads/project-14.jpg",
   ];
 
   return (
