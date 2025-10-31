@@ -1,9 +1,24 @@
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { Link } from "react-router-dom";
+import { useState } from "react";
+import { Dialog, DialogContent } from "@/components/ui/dialog";
 
 const Projects = () => {
-  // Projects content hidden - Coming Soon page
+  const [selectedImage, setSelectedImage] = useState<string | null>(null);
+  
+  const projectImages = [
+    "/lovable-uploads/project-1.jpg",
+    "/lovable-uploads/project-2.jpg",
+    "/lovable-uploads/project-3.jpg",
+    "/lovable-uploads/project-4.jpg",
+    "/lovable-uploads/project-5.jpg",
+    "/lovable-uploads/project-6.jpg",
+    "/lovable-uploads/project-7.jpg",
+    "/lovable-uploads/project-8.jpg",
+    "/lovable-uploads/project-9.jpg",
+    "/lovable-uploads/project-10.jpg",
+  ];
 
   return (
     <div className="min-h-screen">
@@ -23,8 +38,41 @@ const Projects = () => {
         </div>
       </section>
 
+      {/* Photo Gallery Section */}
+      <section className="py-16 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
+            {projectImages.map((image, index) => (
+              <div
+                key={index}
+                className="cursor-pointer group overflow-hidden rounded-lg shadow-md hover:shadow-xl transition-all duration-300"
+                onClick={() => setSelectedImage(image)}
+              >
+                <img
+                  src={image}
+                  alt={`Project ${index + 1}`}
+                  className="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-300"
+                  loading="lazy"
+                />
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Image Modal */}
+      <Dialog open={!!selectedImage} onOpenChange={() => setSelectedImage(null)}>
+        <DialogContent className="max-w-4xl p-0">
+          <img
+            src={selectedImage || ""}
+            alt="Project detail"
+            className="w-full h-auto max-h-[80vh] object-contain"
+          />
+        </DialogContent>
+      </Dialog>
+
       {/* Coming Soon Section */}
-      <section className="py-32 bg-white">
+      <section className="py-32 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <div className="max-w-2xl mx-auto">
             <h2 className="text-5xl lg:text-6xl font-bold text-gray-900 mb-8 font-poppins">
