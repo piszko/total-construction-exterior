@@ -22,6 +22,7 @@ const Projects = () => {
     "/lovable-uploads/project-12.jpg",
     "/lovable-uploads/project-13.jpg",
     "/lovable-uploads/project-14.jpg",
+    "/lovable-uploads/project-15.jpg",
   ];
 
   return (
