@@ -42,7 +42,7 @@ const Reviews = () => {
         <section className="pt-8 pb-16 bg-gray-50">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="columns-1 md:columns-2 lg:columns-3 gap-8 space-y-8">
-              {reviews.map((review) => (
+              {[...reviews].sort((a, b) => b.id - a.id).map((review) => (
                 <div
                   key={review.id}
                   className="bg-white border border-gray-200 rounded-lg p-6 shadow-sm hover:shadow-md transition-shadow break-inside-avoid mb-8"
