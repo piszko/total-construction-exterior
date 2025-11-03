@@ -1,14 +1,28 @@
-import { Star } from "lucide-react";
+import { Star, ChevronDown, ChevronUp } from "lucide-react";
 import { reviews } from "@/data/reviews";
-import { useMemo } from "react";
+import { useMemo, useState } from "react";
 import { Link } from "react-router-dom";
 
 const HomeReviewsSection = () => {
+  const [expandedReviews, setExpandedReviews] = useState<Set<number>>(new Set());
+
   // Get 3 random reviews on each render/refresh
   const randomReviews = useMemo(() => {
     const shuffled = [...reviews].sort(() => Math.random() - 0.5);
     return shuffled.slice(0, 3);
   }, []);
+
+  const toggleReview = (id: number) => {
+    setExpandedReviews(prev => {
+      const newSet = new Set(prev);
+      if (newSet.has(id)) {
+        newSet.delete(id);
+      } else {
+        newSet.add(id);
+      }
+      return newSet;
+    });
+  };
 
   return (
     <section className="py-16 bg-gray-50">
@@ -38,9 +52,30 @@ const HomeReviewsSection = () => {
 
               {/* Review Text */}
               {review.text && (
-                <p className="font-epilogue text-gray-600 mb-4 leading-relaxed line-clamp-6">
-                  "{review.text}"
-                </p>
+                <div className="mb-4">
+                  <p className={`font-epilogue text-gray-600 leading-relaxed ${!expandedReviews.has(review.id) ? 'line-clamp-6' : ''}`}>
+                    "{review.text}"
+                  </p>
+                  {review.text.length > 400 && (
+                    <button
+                      onClick={(e) => {
+                        e.preventDefault();
+                        toggleReview(review.id);
+                      }}
+                      className="text-logo-red hover:text-red-700 font-poppins text-sm font-medium mt-2 flex items-center gap-1 transition-colors"
+                    >
+                      {expandedReviews.has(review.id) ? (
+                        <>
+                          Show less <ChevronUp className="w-4 h-4" />
+                        </>
+                      ) : (
+                        <>
+                          Read more <ChevronDown className="w-4 h-4" />
+                        </>
+                      )}
+                    </button>
+                  )}
+                </div>
               )}
 
               {/* Positive Tags */}

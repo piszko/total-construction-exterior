@@ -1,9 +1,23 @@
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import { Star } from "lucide-react";
+import { Star, ChevronDown, ChevronUp } from "lucide-react";
 import { reviews } from "@/data/reviews";
+import { useState } from "react";
 
 const Reviews = () => {
+  const [expandedReviews, setExpandedReviews] = useState<Set<number>>(new Set());
+
+  const toggleReview = (id: number) => {
+    setExpandedReviews(prev => {
+      const newSet = new Set(prev);
+      if (newSet.has(id)) {
+        newSet.delete(id);
+      } else {
+        newSet.add(id);
+      }
+      return newSet;
+    });
+  };
 
   return (
     <div className="min-h-screen flex flex-col">
@@ -56,7 +70,27 @@ const Reviews = () => {
 
                   {/* Review Text */}
                   {review.text && (
-                    <p className="font-epilogue text-gray-600 mb-4 leading-relaxed">"{review.text}"</p>
+                    <div className="mb-4">
+                      <p className={`font-epilogue text-gray-600 leading-relaxed ${!expandedReviews.has(review.id) ? 'line-clamp-6' : ''}`}>
+                        "{review.text}"
+                      </p>
+                      {review.text.length > 400 && (
+                        <button
+                          onClick={() => toggleReview(review.id)}
+                          className="text-logo-red hover:text-red-700 font-poppins text-sm font-medium mt-2 flex items-center gap-1 transition-colors"
+                        >
+                          {expandedReviews.has(review.id) ? (
+                            <>
+                              Show less <ChevronUp className="w-4 h-4" />
+                            </>
+                          ) : (
+                            <>
+                              Read more <ChevronDown className="w-4 h-4" />
+                            </>
+                          )}
+                        </button>
+                      )}
+                    </div>
                   )}
 
                   {/* Positive Tags */}
