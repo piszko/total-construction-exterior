@@ -77,7 +77,7 @@ const Reviews = () => {
                       {review.text.length > 400 && (
                         <button
                           onClick={() => toggleReview(review.id)}
-                          className="text-logo-red hover:text-red-700 font-poppins text-sm font-medium mt-2 flex items-center gap-1 transition-colors"
+                          className="text-logo-red hover:bg-logo-red hover:text-white border border-logo-red font-poppins text-sm font-medium mt-2 flex items-center gap-1 transition-all rounded-full px-4 py-1.5"
                         >
                           {expandedReviews.has(review.id) ? (
                             <>
