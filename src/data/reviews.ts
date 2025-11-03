@@ -117,4 +117,12 @@ export const reviews: Review[] = [
     positive: "Quality, Professionalism, Value",
     services: "Gutter cleaning, General construction, Demolition, Remodeling, Drywall installation, Fan installation, Install flooring, Tile work installation, Plumbing fixture installation, TV mounting, Paint indoors, Exterior painting, Refurbishment, Drywall repair, Fan repair, Repair flooring, Repair water fixtures, Tile work replacement",
   },
+  {
+    id: 17,
+    name: "Dan & Su Quinn",
+    rating: 5,
+    text: "We've had the pleasure of working with Patrick and his crew at Total Construction for several years now, and I can't recommend them enough. From start to finish, Patrick's attention to detail, communication, and expertise have consistently exceeded our expectations. Over the years, they've helped us with multiple projects, including a beautiful outdoor deck and a full-house painting job. Each time, Patrick took the time to understand our vision and needs, guiding us through every step of the process—from initial ideas to final touches. What I appreciate most is the seamless collaboration. Patrick and his team always ensure that we are informed, comfortable, and satisfied, while maintaining an exceptional standard of work. The outdoor deck they built is a standout feature of our home, beautifully designed and expertly constructed. It's become our go-to space for outdoor entertaining, and every time we have guests over, they're blown away by how great it looks. The painting work on the house was flawless, with crisp lines and vibrant, even coverage. The crew took extra care to protect our furniture and flooring. Patrick is truly a professional who takes pride in his craft, and it shows in every project. His team is punctual, hardworking, and always respectful of our space. What I admire most is their commitment to getting the job done right. If you're looking for quality work and a contractor you can trust, Total Construction is the way to go. We will definitely continue to hire them for any future projects. Thank you, Patrick, for consistently delivering outstanding results!",
+    positive: "Attention to detail, Communication, Expertise, Quality, Professionalism, Punctuality",
+    services: "Outdoor deck construction, Full-house painting",
+  },
 ];
