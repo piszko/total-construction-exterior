@@ -125,4 +125,11 @@ export const reviews: Review[] = [
     positive: "Attention to detail, Communication, Expertise, Quality, Professionalism, Punctuality",
     services: "Outdoor deck construction, Full-house painting",
   },
+  {
+    id: 18,
+    name: "Chris M",
+    rating: 5,
+    text: "Patrick did a great job planning, managing and delivering on the work we needed. His work looks great and the crew was very courteous. Highly recommended especially if you're not quite sure what you need. Definitely check him out you won't be disappointed.",
+    positive: "Quality of Work",
+  },
 ];
