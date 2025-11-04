@@ -59,6 +59,14 @@ const Header = () => {
               Projects
             </Link>
             <Link 
+              to="/property-management" 
+              className={`font-syne font-medium text-2xl transition-colors ${
+                isActive('/property-management') ? 'text-logo-red font-bold' : 'text-gray-700 hover:text-logo-red'
+              }`}
+            >
+              Property Management
+            </Link>
+            <Link 
               to="/reviews" 
               className={`font-syne font-medium text-2xl transition-colors ${
                 isActive('/reviews') ? 'text-logo-red font-bold' : 'text-gray-700 hover:text-logo-red'
@@ -141,6 +149,17 @@ const Header = () => {
                   isActive('/projects') ? 'bg-logo-red text-white' : 'bg-logo-red text-white hover:bg-red-700'
                 }`}>
                   Projects
+                </button>
+              </Link>
+              <Link 
+                to="/property-management" 
+                className="block"
+                onClick={() => setIsMenuOpen(false)}
+              >
+                <button className={`w-full py-3 px-6 rounded-lg font-syne font-medium text-xl transition-colors ${
+                  isActive('/property-management') ? 'bg-logo-red text-white' : 'bg-logo-red text-white hover:bg-red-700'
+                }`}>
+                  Property Management
                 </button>
               </Link>
               <Link 

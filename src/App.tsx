@@ -13,6 +13,7 @@ import ProjectDetail from "./pages/ProjectDetail";
 import ExteriorConstruction from "./pages/ExteriorConstruction";
 import InteriorConstruction from "./pages/InteriorConstruction";
 import RoofingServices from "./pages/RoofingServices";
+import PropertyManagement from "./pages/PropertyManagement";
 import Reviews from "./pages/Reviews";
 import Auth from "./pages/Auth";
 import Admin from "./pages/Admin";
@@ -37,6 +38,7 @@ const App = () => (
           <Route path="/services/roofing-services" element={<RoofingServices />} />
           <Route path="/projects" element={<Projects />} />
           <Route path="/projects/:id" element={<ProjectDetail />} />
+          <Route path="/property-management" element={<PropertyManagement />} />
           <Route path="/reviews" element={<Reviews />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/auth" element={<Auth />} />
