@@ -150,8 +150,11 @@ const PropertyManagement = () => {
         <section className="py-16 bg-gray-50">
           <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center space-y-6">
+              <h2 className="text-3xl lg:text-4xl font-bold text-logo-red mb-6 font-poppins">
+                At Total Construction and Remodeling, we treat your home like it's our own.
+              </h2>
+              
               <p className="text-lg text-gray-700 font-poppins leading-relaxed">
-                At Total Construction and Remodeling, we treat your home like it's our own. 
                 Our priority is delivering reliable, high-quality service that keeps your property running smoothly and looking its best. From routine maintenance to full renovations, our team brings local expertise and a commitment to craftsmanship to every project across the greater Atlanta area and surrounding communities.
               </p>
               
