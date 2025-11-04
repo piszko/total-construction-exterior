@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { useForm } from "react-hook-form";
+import { useForm, Controller } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import * as z from "zod";
 import Header from "@/components/Header";
@@ -8,6 +8,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { useToast } from "@/hooks/use-toast";
 import { supabase } from "@/integrations/supabase/client";
 import { Building2, CheckCircle, Shield, Clock, Wrench } from "lucide-react";
@@ -16,11 +17,20 @@ const consultationSchema = z.object({
   userType: z.enum(["owner", "renter", "vendor"], {
     required_error: "Please select if you're an owner, renter, or vendor",
   }),
+  inquiryType: z.string().optional(),
   name: z.string().trim().min(2, "Name must be at least 2 characters").max(100),
   email: z.string().trim().email("Invalid email address").max(255),
   phone: z.string().trim().min(10, "Phone number must be at least 10 digits").max(20),
   propertyAddress: z.string().trim().min(5, "Property address is required").max(200),
   message: z.string().trim().max(1000, "Message must be less than 1000 characters").optional(),
+}).refine((data) => {
+  if (data.userType === "vendor" && !data.inquiryType) {
+    return false;
+  }
+  return true;
+}, {
+  message: "Please select an inquiry type",
+  path: ["inquiryType"],
 });
 
 type ConsultationFormData = z.infer<typeof consultationSchema>;
@@ -35,6 +45,7 @@ const PropertyManagement = () => {
     formState: { errors },
     reset,
     watch,
+    control,
   } = useForm<ConsultationFormData>({
     resolver: zodResolver(consultationSchema),
   });
@@ -45,12 +56,16 @@ const PropertyManagement = () => {
     setIsSubmitting(true);
     
     try {
+      const serviceType = data.userType === "vendor" && data.inquiryType
+        ? `Property Management - Vendor (${data.inquiryType})`
+        : `Property Management - ${data.userType.charAt(0).toUpperCase() + data.userType.slice(1)}`;
+
       const { error } = await supabase.functions.invoke("send-contact-email", {
         body: {
           name: data.name,
           email: data.email,
           phone: data.phone,
-          service: `Property Management - ${data.userType.charAt(0).toUpperCase() + data.userType.slice(1)}`,
+          service: serviceType,
           subject: "Property Management Consultation Request",
           message: `Property Address: ${data.propertyAddress}\n\n${data.message || ""}`,
         },
@@ -239,6 +254,36 @@ const PropertyManagement = () => {
                     <p className="text-red-500 text-sm mt-2">{errors.userType.message}</p>
                   )}
                 </div>
+
+                {/* Vendor Inquiry Type - Shows only when vendor is selected */}
+                {userType === "vendor" && (
+                  <div>
+                    <Label htmlFor="inquiryType" className="font-poppins">
+                      Inquiry Type *
+                    </Label>
+                    <Controller
+                      name="inquiryType"
+                      control={control}
+                      render={({ field }) => (
+                        <Select onValueChange={field.onChange} value={field.value}>
+                          <SelectTrigger className="mt-2">
+                            <SelectValue placeholder="Select inquiry type" />
+                          </SelectTrigger>
+                          <SelectContent>
+                            <SelectItem value="General Inquiry">General Inquiry</SelectItem>
+                            <SelectItem value="Vendor Request">Vendor Request</SelectItem>
+                            <SelectItem value="Maintenance Request">Maintenance Request</SelectItem>
+                            <SelectItem value="Property Availability">Property Availability</SelectItem>
+                            <SelectItem value="Other">Other</SelectItem>
+                          </SelectContent>
+                        </Select>
+                      )}
+                    />
+                    {errors.inquiryType && (
+                      <p className="text-red-500 text-sm mt-1">{errors.inquiryType.message}</p>
+                    )}
+                  </div>
+                )}
 
                 {/* Name */}
                 <div>
