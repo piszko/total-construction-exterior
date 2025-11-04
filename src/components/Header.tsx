@@ -28,7 +28,7 @@ const Header = () => {
           <nav className="hidden md:flex space-x-10">
             <Link 
               to="/about" 
-              className={`font-syne font-medium text-xl transition-colors ${
+              className={`font-syne font-medium text-2xl transition-colors ${
                 isActive('/about') ? 'text-logo-red font-bold' : 'text-gray-700 hover:text-logo-red'
               }`}
             >
@@ -36,7 +36,7 @@ const Header = () => {
             </Link>
             <Link 
               to="/services" 
-              className={`font-syne font-medium text-xl transition-colors ${
+              className={`font-syne font-medium text-2xl transition-colors ${
                 isActive('/services') ? 'text-logo-red font-bold' : 'text-gray-700 hover:text-logo-red'
               }`}
             >
@@ -44,7 +44,7 @@ const Header = () => {
             </Link>
             <Link 
               to="/projects" 
-              className={`font-syne font-medium text-xl transition-colors ${
+              className={`font-syne font-medium text-2xl transition-colors ${
                 isActive('/projects') ? 'text-logo-red font-bold' : 'text-gray-700 hover:text-logo-red'
               }`}
             >
@@ -52,7 +52,7 @@ const Header = () => {
             </Link>
             <Link 
               to="/property-management" 
-              className={`font-syne font-medium text-xl transition-colors ${
+              className={`font-syne font-medium text-2xl transition-colors ${
                 isActive('/property-management') ? 'text-logo-red font-bold' : 'text-gray-700 hover:text-logo-red'
               }`}
             >
@@ -60,7 +60,7 @@ const Header = () => {
             </Link>
             <Link 
               to="/reviews" 
-              className={`font-syne font-medium text-xl transition-colors ${
+              className={`font-syne font-medium text-2xl transition-colors ${
                 isActive('/reviews') ? 'text-logo-red font-bold' : 'text-gray-700 hover:text-logo-red'
               }`}
             >
