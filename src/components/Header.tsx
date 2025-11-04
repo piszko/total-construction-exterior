@@ -25,10 +25,10 @@ const Header = () => {
           </div>
 
           {/* Desktop Navigation */}
-          <nav className="hidden md:flex space-x-12">
+          <nav className="hidden md:flex space-x-8">
             <Link 
               to="/" 
-              className={`font-syne font-medium text-2xl transition-colors ${
+              className={`font-syne font-medium text-lg transition-colors ${
                 isActive('/') ? 'text-logo-red font-bold' : 'text-gray-700 hover:text-logo-red'
               }`}
             >
@@ -36,7 +36,7 @@ const Header = () => {
             </Link>
             <Link 
               to="/about" 
-              className={`font-syne font-medium text-2xl transition-colors ${
+              className={`font-syne font-medium text-lg transition-colors ${
                 isActive('/about') ? 'text-logo-red font-bold' : 'text-gray-700 hover:text-logo-red'
               }`}
             >
@@ -44,7 +44,7 @@ const Header = () => {
             </Link>
             <Link 
               to="/services" 
-              className={`font-syne font-medium text-2xl transition-colors ${
+              className={`font-syne font-medium text-lg transition-colors ${
                 isActive('/services') ? 'text-logo-red font-bold' : 'text-gray-700 hover:text-logo-red'
               }`}
             >
@@ -52,7 +52,7 @@ const Header = () => {
             </Link>
             <Link 
               to="/projects" 
-              className={`font-syne font-medium text-2xl transition-colors ${
+              className={`font-syne font-medium text-lg transition-colors ${
                 isActive('/projects') ? 'text-logo-red font-bold' : 'text-gray-700 hover:text-logo-red'
               }`}
             >
@@ -60,7 +60,7 @@ const Header = () => {
             </Link>
             <Link 
               to="/property-management" 
-              className={`font-syne font-medium text-2xl transition-colors ${
+              className={`font-syne font-medium text-lg transition-colors ${
                 isActive('/property-management') ? 'text-logo-red font-bold' : 'text-gray-700 hover:text-logo-red'
               }`}
             >
@@ -68,7 +68,7 @@ const Header = () => {
             </Link>
             <Link 
               to="/reviews" 
-              className={`font-syne font-medium text-2xl transition-colors ${
+              className={`font-syne font-medium text-lg transition-colors ${
                 isActive('/reviews') ? 'text-logo-red font-bold' : 'text-gray-700 hover:text-logo-red'
               }`}
             >
