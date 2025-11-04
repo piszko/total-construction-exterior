@@ -82,21 +82,23 @@ const PropertyManagement = () => {
       
       <main className="flex-grow">
         {/* Hero Section */}
-        <section className="relative bg-gradient-to-br from-blue-900 via-blue-800 to-cyan-600 text-white py-20 px-4">
-          <div className="max-w-7xl mx-auto text-center">
-            <h1 className="font-syne font-bold text-4xl md:text-6xl mb-6">
-              Property Management Services
-            </h1>
-            <p className="font-poppins text-xl md:text-2xl mb-8 max-w-3xl mx-auto">
-              Professional maintenance and management for your rental properties
-            </p>
+        <section className="py-16 bg-gray-50">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="text-center mb-12">
+              <h1 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6 font-poppins">
+                Property <span className="text-logo-red">Management</span> Services
+              </h1>
+              <p className="text-xl text-gray-600 max-w-3xl mx-auto font-poppins">
+                Professional maintenance and management for your rental properties in Atlanta and surrounding areas.
+              </p>
+            </div>
           </div>
         </section>
 
         {/* Services Overview */}
-        <section className="py-16 px-4 bg-white">
-          <div className="max-w-7xl mx-auto">
-            <h2 className="font-syne font-bold text-3xl md:text-4xl text-center mb-12">
+        <section className="py-16 bg-white">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 text-center mb-12 font-poppins">
               Why Choose Our Property Management Services?
             </h2>
             
@@ -105,7 +107,7 @@ const PropertyManagement = () => {
                 <div className="inline-flex items-center justify-center w-16 h-16 bg-logo-red/10 rounded-full mb-4">
                   <Building2 className="w-8 h-8 text-logo-red" />
                 </div>
-                <h3 className="font-syne font-bold text-xl mb-2">Full-Service Management</h3>
+                <h3 className="text-xl font-bold text-gray-900 mb-2 font-poppins">Full-Service Management</h3>
                 <p className="font-poppins text-gray-600">
                   Complete property care from maintenance to tenant relations
                 </p>
@@ -115,7 +117,7 @@ const PropertyManagement = () => {
                 <div className="inline-flex items-center justify-center w-16 h-16 bg-logo-red/10 rounded-full mb-4">
                   <Clock className="w-8 h-8 text-logo-red" />
                 </div>
-                <h3 className="font-syne font-bold text-xl mb-2">24/7 Support</h3>
+                <h3 className="text-xl font-bold text-gray-900 mb-2 font-poppins">24/7 Support</h3>
                 <p className="font-poppins text-gray-600">
                   Emergency maintenance and support available around the clock
                 </p>
@@ -125,7 +127,7 @@ const PropertyManagement = () => {
                 <div className="inline-flex items-center justify-center w-16 h-16 bg-logo-red/10 rounded-full mb-4">
                   <Wrench className="w-8 h-8 text-logo-red" />
                 </div>
-                <h3 className="font-syne font-bold text-xl mb-2">Expert Maintenance</h3>
+                <h3 className="text-xl font-bold text-gray-900 mb-2 font-poppins">Expert Maintenance</h3>
                 <p className="font-poppins text-gray-600">
                   Licensed professionals for all repairs and improvements
                 </p>
@@ -135,7 +137,7 @@ const PropertyManagement = () => {
                 <div className="inline-flex items-center justify-center w-16 h-16 bg-logo-red/10 rounded-full mb-4">
                   <Shield className="w-8 h-8 text-logo-red" />
                 </div>
-                <h3 className="font-syne font-bold text-xl mb-2">Transparent Process</h3>
+                <h3 className="text-xl font-bold text-gray-900 mb-2 font-poppins">Transparent Process</h3>
                 <p className="font-poppins text-gray-600">
                   Clear communication and regular updates on all work
                 </p>
@@ -145,10 +147,10 @@ const PropertyManagement = () => {
         </section>
 
         {/* Consultation Form Section */}
-        <section className="py-16 px-4 bg-gray-50">
-          <div className="max-w-4xl mx-auto">
+        <section className="py-16 bg-gray-50">
+          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="bg-white rounded-2xl shadow-lg p-8 md:p-12">
-              <h2 className="font-syne font-bold text-3xl md:text-4xl text-center mb-4">
+              <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 text-center mb-4 font-poppins">
                 Schedule Your Free Consultation
               </h2>
               <p className="font-poppins text-gray-600 text-center mb-8">
@@ -314,9 +316,9 @@ const PropertyManagement = () => {
         </section>
 
         {/* Benefits Section */}
-        <section className="py-16 px-4 bg-white">
-          <div className="max-w-7xl mx-auto">
-            <h2 className="font-syne font-bold text-3xl md:text-4xl text-center mb-12">
+        <section className="py-16 bg-white">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 text-center mb-12 font-poppins">
               What You Get With Our Services
             </h2>
             

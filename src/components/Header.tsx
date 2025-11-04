@@ -25,18 +25,10 @@ const Header = () => {
           </div>
 
           {/* Desktop Navigation */}
-          <nav className="hidden md:flex space-x-8">
-            <Link 
-              to="/" 
-              className={`font-syne font-medium text-lg transition-colors ${
-                isActive('/') ? 'text-logo-red font-bold' : 'text-gray-700 hover:text-logo-red'
-              }`}
-            >
-              Home
-            </Link>
+          <nav className="hidden md:flex space-x-10">
             <Link 
               to="/about" 
-              className={`font-syne font-medium text-lg transition-colors ${
+              className={`font-syne font-medium text-xl transition-colors ${
                 isActive('/about') ? 'text-logo-red font-bold' : 'text-gray-700 hover:text-logo-red'
               }`}
             >
@@ -44,7 +36,7 @@ const Header = () => {
             </Link>
             <Link 
               to="/services" 
-              className={`font-syne font-medium text-lg transition-colors ${
+              className={`font-syne font-medium text-xl transition-colors ${
                 isActive('/services') ? 'text-logo-red font-bold' : 'text-gray-700 hover:text-logo-red'
               }`}
             >
@@ -52,7 +44,7 @@ const Header = () => {
             </Link>
             <Link 
               to="/projects" 
-              className={`font-syne font-medium text-lg transition-colors ${
+              className={`font-syne font-medium text-xl transition-colors ${
                 isActive('/projects') ? 'text-logo-red font-bold' : 'text-gray-700 hover:text-logo-red'
               }`}
             >
@@ -60,15 +52,15 @@ const Header = () => {
             </Link>
             <Link 
               to="/property-management" 
-              className={`font-syne font-medium text-lg transition-colors ${
+              className={`font-syne font-medium text-xl transition-colors ${
                 isActive('/property-management') ? 'text-logo-red font-bold' : 'text-gray-700 hover:text-logo-red'
               }`}
             >
-              Property Management
+              Property Mgmt
             </Link>
             <Link 
               to="/reviews" 
-              className={`font-syne font-medium text-lg transition-colors ${
+              className={`font-syne font-medium text-xl transition-colors ${
                 isActive('/reviews') ? 'text-logo-red font-bold' : 'text-gray-700 hover:text-logo-red'
               }`}
             >
@@ -107,17 +99,6 @@ const Header = () => {
         {isMenuOpen && (
           <div className="md:hidden bg-white pb-6">
             <div className="px-4 pt-4 pb-3 space-y-4 text-center">
-              <Link 
-                to="/" 
-                className="block"
-                onClick={() => setIsMenuOpen(false)}
-              >
-                <button className={`w-full py-3 px-6 rounded-lg font-syne font-medium text-xl transition-colors ${
-                  isActive('/') ? 'bg-logo-red text-white' : 'bg-logo-red text-white hover:bg-red-700'
-                }`}>
-                  Home
-                </button>
-              </Link>
               <Link 
                 to="/about" 
                 className="block"
@@ -159,7 +140,7 @@ const Header = () => {
                 <button className={`w-full py-3 px-6 rounded-lg font-syne font-medium text-xl transition-colors ${
                   isActive('/property-management') ? 'bg-logo-red text-white' : 'bg-logo-red text-white hover:bg-red-700'
                 }`}>
-                  Property Management
+                  Property Mgmt
                 </button>
               </Link>
               <Link 
