@@ -132,4 +132,12 @@ export const reviews: Review[] = [
     text: "Patrick did a great job planning, managing and delivering on the work we needed. His work looks great and the crew was very courteous. Highly recommended especially if you're not quite sure what you need. Definitely check him out you won't be disappointed.",
     positive: "Quality of Work",
   },
+  {
+    id: 19,
+    name: "Josh Chamberlain",
+    rating: 5,
+    text: "Patrick and his team of solid professionals completed the remodeling of our sunroom, and the experience was exceptional from start to finish. The entire process—from initial planning and execution to the final tidying up—was seamless and stress-free. Patrick's years of experience are invaluable; his guidance was essential in informing crucial design and building decisions. He is a trusted source of expertise and professionalism, and the quality of the final result is amazing. I regularly recommend Patrick to both friends and clients without hesitation.",
+    positive: "Quality, Speed",
+    services: "Sunroom remodeling",
+  },
 ];
