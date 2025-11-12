@@ -74,7 +74,7 @@ const Reviews = () => {
                       <p className={`font-epilogue text-gray-600 leading-relaxed ${!expandedReviews.has(review.id) ? 'line-clamp-6' : ''}`}>
                         "{review.text}"
                       </p>
-                      {review.text.length > 400 && (
+                      {review.text.length > 300 && (
                         <button
                           onClick={() => toggleReview(review.id)}
                           className="text-logo-red hover:bg-logo-red hover:text-white border border-logo-red font-poppins text-sm font-medium mt-2 flex items-center gap-1 transition-all rounded-full px-4 py-1.5"
