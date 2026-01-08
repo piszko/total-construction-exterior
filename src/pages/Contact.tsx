@@ -288,17 +288,6 @@ const Contact = () => {
                 <p className="text-sm text-gray-500 font-poppins">Response in 24hrs</p>
               </div>
 
-              <div className="flex flex-col items-center text-center">
-                <div className="bg-total-red p-3 rounded-lg mb-3">
-                  <MapPin className="text-white" size={24} />
-                </div>
-                <h3 className="font-semibold text-gray-900 font-poppins mb-1">Address</h3>
-                <p className="text-gray-600 font-poppins text-sm">
-                  1273 Thomas Rd
-                  <br />
-                  Decatur, GA 30030
-                </p>
-              </div>
 
               <div className="flex flex-col items-center text-center">
                 <div className="bg-total-red p-3 rounded-lg mb-3">
