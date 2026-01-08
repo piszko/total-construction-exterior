@@ -1,5 +1,5 @@
 
-import { Phone, Mail, MapPin, Clock } from 'lucide-react';
+import { Phone, Mail, Clock } from 'lucide-react';
 
 const Footer = () => {
   return (
@@ -53,10 +53,6 @@ const Footer = () => {
               <div className="flex items-center">
                 <Mail size={16} className="text-logo-red mr-3" />
                 <span className="text-gray-400">info@totalconstructionandremodeling.com</span>
-              </div>
-              <div className="flex items-start">
-                <MapPin size={16} className="text-logo-red mr-3 mt-1" />
-                <span className="text-gray-400">1273 Thomas Rd, Decatur, GA 30030</span>
               </div>
               <div className="flex items-center">
                 <Clock size={16} className="text-logo-red mr-3" />
