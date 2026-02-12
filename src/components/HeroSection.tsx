@@ -68,7 +68,7 @@ const HeroSection = () => {
             {/* Contact Info */}
             <div className="border-l-4 border-total-red pl-3 sm:pl-4">
               <p className="text-[#6F6F6F] font-poppins font-medium text-[18px] sm:text-[20px] lg:text-[24px] mb-1">For a Free Consultation:</p>
-              <p className="text-total-red text-xl sm:text-2xl font-bold font-epilogue">(404) 386-6848</p>
+              <p className="text-total-red text-xl sm:text-2xl font-bold font-epilogue"><p className="text-total-red text-xl sm:text-2xl font-bold font-epilogue">(404) 386-6849</p></p>
             </div>
           </div>
 
