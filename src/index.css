@@ -100,4 +100,17 @@
   body {
     @apply bg-background text-foreground font-epilogue;
   }
+
+  /* Visible focus styles for keyboard navigation (WCAG 2.1 AA) */
+  *:focus-visible {
+    @apply outline-2 outline-offset-2 outline-current;
+  }
+
+  a:focus-visible,
+  button:focus-visible,
+  input:focus-visible,
+  select:focus-visible,
+  textarea:focus-visible {
+    @apply ring-2 ring-offset-2 ring-current outline-none;
+  }
 }

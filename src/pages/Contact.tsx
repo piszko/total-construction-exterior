@@ -8,10 +8,11 @@ import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
-import { Phone, Mail, MapPin, Clock, Star } from "lucide-react";
+import { Phone, Mail, Clock, Star } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 import { supabase } from "@/integrations/supabase/client";
 import { FileUpload } from "@/components/FileUpload";
+import SEOHead from "@/components/SEOHead";
 
 interface ContactFormData {
   name: string;
@@ -232,8 +233,13 @@ const Contact = () => {
 
   return (
     <div className="min-h-screen">
+      <SEOHead
+        title="Contact Us | Total Construction Atlanta GA"
+        description="Contact Total Construction & Remodeling for a free estimate. Call (404) 386-6849 or submit your project details online. Serving Atlanta since 1990."
+        canonicalPath="/contact"
+      />
       <Header />
-
+      <main id="main-content">
       {/* Hero Section */}
       <section className="py-16 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -611,6 +617,7 @@ const Contact = () => {
         </div>
       </section>
 
+      </main>
       <Footer />
     </div>
   );

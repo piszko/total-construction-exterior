@@ -35,7 +35,7 @@ const HeroSection = () => {
   };
 
   return (
-    <section className="bg-white py-8 sm:py-12 lg:py-20">
+    <section className="bg-white py-8 sm:py-12 lg:py-20" aria-label="Welcome to Total Construction & Remodeling">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-start">
           {/* Left Content */}
@@ -68,7 +68,9 @@ const HeroSection = () => {
             {/* Contact Info */}
             <div className="border-l-4 border-total-red pl-3 sm:pl-4">
               <p className="text-[#6F6F6F] font-poppins font-medium text-[18px] sm:text-[20px] lg:text-[24px] mb-1">For a Free Consultation:</p>
-              <p className="text-total-red text-xl sm:text-2xl font-bold font-epilogue"><p className="text-total-red text-xl sm:text-2xl font-bold font-epilogue">(404) 386-6849</p></p>
+              <p className="text-total-red text-xl sm:text-2xl font-bold font-epilogue">
+                <a href="tel:+14043866849" aria-label="Call us at (404) 386-6849">(404) 386-6849</a>
+              </p>
             </div>
           </div>
 
@@ -85,6 +87,9 @@ const HeroSection = () => {
                       className={`w-full h-auto transition-opacity duration-500 ${
                         index === currentSlide ? 'opacity-100' : 'opacity-0 absolute top-0 left-0'
                       }`}
+                      loading={index === 0 ? "eager" : "lazy"}
+                      width="600"
+                      height="400"
                     />
                   ))}
                 </div>
@@ -93,25 +98,30 @@ const HeroSection = () => {
               {/* Slideshow Controls */}
               <button
                 onClick={prevSlide}
-                className="absolute left-2 sm:left-4 top-1/2 transform -translate-y-1/2 bg-white/80 hover:bg-white text-gray-800 p-1 sm:p-2 rounded-full shadow-lg transition-all z-10"
+                className="absolute left-2 sm:left-4 top-1/2 transform -translate-y-1/2 bg-white/80 hover:bg-white text-gray-800 p-1 sm:p-2 rounded-full shadow-lg transition-all z-10 focus:outline-none focus:ring-2 focus:ring-total-red"
+                aria-label="Previous slide"
               >
-                <ChevronLeft size={20} className="sm:w-6 sm:h-6" />
+                <ChevronLeft size={20} className="sm:w-6 sm:h-6" aria-hidden="true" />
               </button>
               
               <button
                 onClick={nextSlide}
-                className="absolute right-2 sm:right-4 top-1/2 transform -translate-y-1/2 bg-white/80 hover:bg-white text-gray-800 p-1 sm:p-2 rounded-full shadow-lg transition-all z-10"
+                className="absolute right-2 sm:right-4 top-1/2 transform -translate-y-1/2 bg-white/80 hover:bg-white text-gray-800 p-1 sm:p-2 rounded-full shadow-lg transition-all z-10 focus:outline-none focus:ring-2 focus:ring-total-red"
+                aria-label="Next slide"
               >
-                <ChevronRight size={20} className="sm:w-6 sm:h-6" />
+                <ChevronRight size={20} className="sm:w-6 sm:h-6" aria-hidden="true" />
               </button>
 
               {/* Slide Indicators */}
-              <div className="absolute bottom-2 sm:bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-2 z-10">
+              <div className="absolute bottom-2 sm:bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-2 z-10" role="tablist" aria-label="Slideshow controls">
                 {slides.map((_, index) => (
                   <button
                     key={index}
                     onClick={() => setCurrentSlide(index)}
-                    className={`w-2 h-2 sm:w-3 sm:h-3 rounded-full transition-all ${
+                    role="tab"
+                    aria-selected={index === currentSlide}
+                    aria-label={`Go to slide ${index + 1}`}
+                    className={`w-2 h-2 sm:w-3 sm:h-3 rounded-full transition-all focus:outline-none focus:ring-2 focus:ring-white ${
                       index === currentSlide ? 'bg-total-red' : 'bg-white/60'
                     }`}
                   />
