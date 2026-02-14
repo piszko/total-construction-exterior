@@ -26,7 +26,7 @@ const Footer = () => {
 
           {/* Quick Links */}
           <div>
-            <h4 className="text-lg font-semibold mb-4">Quick Links</h4>
+            <h3 className="text-lg font-semibold mb-4">Quick Links</h3>
             <nav aria-label="Footer quick links">
               <ul className="space-y-2">
                 <li><Link to="/about" className="text-gray-400 hover:text-white transition-colors">About Us</Link></li>
@@ -39,7 +39,7 @@ const Footer = () => {
 
           {/* Services */}
           <div>
-            <h4 className="text-lg font-semibold mb-4">Services</h4>
+            <h3 className="text-lg font-semibold mb-4">Services</h3>
             <nav aria-label="Footer services links">
               <ul className="space-y-2">
                 <li><Link to="/services/exterior-construction" className="text-gray-400 hover:text-white transition-colors">Exterior Construction</Link></li>
@@ -52,7 +52,7 @@ const Footer = () => {
 
           {/* Contact Info */}
           <div>
-            <h4 className="text-lg font-semibold mb-4">Contact</h4>
+            <h3 className="text-lg font-semibold mb-4">Contact</h3>
             <div className="space-y-3">
               <div className="flex items-center">
                 <Phone size={16} className="text-logo-red mr-3" aria-hidden="true" />

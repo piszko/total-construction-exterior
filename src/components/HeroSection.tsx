@@ -39,7 +39,7 @@ const HeroSection = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-start">
           {/* Left Content */}
-          <div className="animate-fade-in order-2 lg:order-1">
+          <div className="order-2 lg:order-1">
             <h1 className="text-[28px] sm:text-[36px] lg:text-[50px] font-semibold text-gray-900 leading-tight mb-4 sm:mb-6 font-poppins">
               Atlanta, GA Based
               <br />
@@ -75,7 +75,7 @@ const HeroSection = () => {
           </div>
 
           {/* Right Image Slideshow */}
-          <div className="animate-fade-in order-1 lg:order-2">
+          <div className="order-1 lg:order-2">
             <div className="relative">
               <div className="overflow-hidden rounded-lg shadow-xl">
                 <div className="relative w-full h-auto">
@@ -88,8 +88,9 @@ const HeroSection = () => {
                         index === currentSlide ? 'opacity-100' : 'opacity-0 absolute top-0 left-0'
                       }`}
                       loading={index === 0 ? "eager" : "lazy"}
-                      width="600"
-                      height="400"
+                      fetchPriority={index === 0 ? "high" : undefined}
+                      width="665"
+                      height="835"
                     />
                   ))}
                 </div>
@@ -121,10 +122,12 @@ const HeroSection = () => {
                     role="tab"
                     aria-selected={index === currentSlide}
                     aria-label={`Go to slide ${index + 1}`}
-                    className={`w-2 h-2 sm:w-3 sm:h-3 rounded-full transition-all focus:outline-none focus:ring-2 focus:ring-white ${
+                    className="w-6 h-6 rounded-full transition-all focus:outline-none focus:ring-2 focus:ring-white flex items-center justify-center"
+                  >
+                    <span className={`w-3 h-3 rounded-full transition-all ${
                       index === currentSlide ? 'bg-total-red' : 'bg-white/60'
-                    }`}
-                  />
+                    }`} />
+                  </button>
                 ))}
               </div>
             </div>

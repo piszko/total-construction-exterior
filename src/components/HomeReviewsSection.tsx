@@ -81,7 +81,7 @@ const HomeReviewsSection = () => {
               {/* Positive Tags */}
               {review.positive && (
                 <div className="mb-4">
-                  <p className="font-poppins text-sm font-semibold text-total-red mb-1">
+                  <p className="font-poppins text-sm font-semibold text-red-700 mb-1">
                     Positive
                   </p>
                   <p className="font-epilogue text-sm text-gray-600">{review.positive}</p>
