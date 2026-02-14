@@ -64,6 +64,9 @@ const ServicesSection = () => {
                     alt={service.title}
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                     style={{ borderRadius: '8px' }}
+                    loading="lazy"
+                    width="446"
+                    height="536"
                   />
                 </div>
               </Link>

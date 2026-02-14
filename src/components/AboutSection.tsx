@@ -58,6 +58,9 @@ const AboutSection = () => {
               src="/lovable-uploads/a5d40fca-81d6-4d1a-8426-931a7bed28df.png" 
               alt="Beautiful modern house construction by Total Construction & Remodeling"
               className="w-full h-96 object-cover rounded-lg shadow-lg"
+              loading="lazy"
+              width="600"
+              height="384"
             />
           </div>
         </div>
