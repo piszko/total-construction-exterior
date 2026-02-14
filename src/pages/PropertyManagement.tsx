@@ -4,6 +4,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import * as z from "zod";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import SEOHead from "@/components/SEOHead";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
@@ -93,9 +94,14 @@ const PropertyManagement = () => {
 
   return (
     <div className="min-h-screen flex flex-col bg-gray-50">
+      <SEOHead
+        title="Property Management Atlanta | Total Construction"
+        description="Professional property management and maintenance in Atlanta. 24/7 support, expert repairs, tenant communication. Schedule a free consultation today."
+        canonicalPath="/property-management"
+      />
       <Header />
       
-      <main className="flex-grow">
+      <main id="main-content" className="flex-grow">
         {/* Hero Section */}
         <section className="py-16 bg-gray-50">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
