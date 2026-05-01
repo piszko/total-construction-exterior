@@ -34,6 +34,44 @@ const miscImages: ProjectImage[] = [
 
 const delphineImages: ProjectImage[] = [
   {
+    src: "/projects/1888-delphine/exterior-1.jpg",
+    alt: "1888 Delphine front exterior view with new siding, brick accents, and refreshed roofline",
+  },
+  {
+    src: "/projects/1888-delphine/exterior-2.jpg",
+    alt: "1888 Delphine front yard view showing the renovated ranch home and fresh landscaping",
+  },
+  {
+    src: "/projects/1888-delphine/exterior-3-entry.jpg",
+    alt: "1888 Delphine covered front entry with new columns, mulched beds, and walkway",
+  },
+  {
+    src: "/projects/1888-delphine/great-room-entry.jpg",
+    alt: "View from the front door into the open great room and remodeled kitchen at 1888 Delphine",
+  },
+  {
+    src: "/projects/1888-delphine/living-room-staged.jpg",
+    alt: "1888 Delphine living room with virtually staged neutral furniture and natural light",
+    emptySrc: "/projects/1888-delphine/living-room-empty.jpg",
+    emptyAlt: "1888 Delphine empty living room showing refinished red oak floors and large windows",
+  },
+  {
+    src: "/projects/1888-delphine/kitchen-wide.jpg",
+    alt: "Wide view of the remodeled 1888 Delphine kitchen with white cabinetry, quartz island, and pendant lighting",
+  },
+  {
+    src: "/projects/1888-delphine/kitchen-island-detail.jpg",
+    alt: "Close-up of the 1888 Delphine kitchen island with veined quartz countertop, stainless hood, and tile backsplash",
+  },
+  {
+    src: "/projects/1888-delphine/kitchen-appliances.jpg",
+    alt: "1888 Delphine kitchen with stainless steel appliances, white shaker cabinets, and gold hardware",
+  },
+  {
+    src: "/projects/1888-delphine/kitchen-island-sink.jpg",
+    alt: "1888 Delphine kitchen island sink with quartz countertop and brass faucet",
+  },
+  {
     src: "/projects/1888-delphine/bedroom-staged.jpg",
     alt: "1888 Delphine bedroom with virtually staged mid-century furniture",
     emptySrc: "/projects/1888-delphine/bedroom-empty.jpg",
@@ -45,8 +83,8 @@ export const projects: Project[] = [
   {
     id: "1888-delphine",
     title: "1888 Delphine",
-    description: "Custom construction and remodeling project at 1888 Delphine, featuring refinished hardwood floors, fresh interior paint, and virtually staged interiors.",
-    thumbnail: "/projects/1888-delphine/bedroom-staged.jpg",
+    description: "Full renovation of a classic Atlanta ranch home featuring a remodeled chef's kitchen with quartz countertops, refinished red oak floors, fresh interior and exterior paint, and updated landscaping.",
+    thumbnail: "/projects/1888-delphine/exterior-1.jpg",
     images: delphineImages,
   },
   {
