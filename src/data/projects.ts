@@ -181,6 +181,47 @@ const delphineImages: ProjectImage[] = [
   },
 ];
 
+const valleyRidgeImages: ProjectImage[] = [
+  {
+    src: "/projects/2958-valley-ridge/exterior-front-1.jpg",
+    alt: "2958 Valley Ridge mid-century ranch front exterior with white painted brick, stacked-stone accents, and dark trim",
+  },
+  {
+    src: "/projects/2958-valley-ridge/exterior-driveway.jpg",
+    alt: "2958 Valley Ridge driveway view showing the renovated ranch with new french doors, white brick, and dark roofline",
+  },
+  {
+    src: "/projects/2958-valley-ridge/exterior-side.jpg",
+    alt: "2958 Valley Ridge side exterior view showing the full length of the renovated ranch home with new windows and trim",
+  },
+  {
+    src: "/projects/2958-valley-ridge/entry-porch-angle.jpg",
+    alt: "2958 Valley Ridge covered front entry with stacked stone columns, dark front door, and recessed porch lighting",
+  },
+  {
+    src: "/projects/2958-valley-ridge/entry-porch-front.jpg",
+    alt: "2958 Valley Ridge front entry detail with leaded glass dark door, stacked stone surround, and modern brick step",
+  },
+  {
+    src: "/projects/2958-valley-ridge/entry-interior.jpg",
+    alt: "2958 Valley Ridge interior entry view with new wood-look flooring, recessed lighting, and french doors to the rear deck",
+  },
+  {
+    src: "/projects/2958-valley-ridge/front-room-windows.jpg",
+    alt: "2958 Valley Ridge front room with picture windows, modern ceiling fan, recessed lighting, and new wood-look flooring",
+  },
+  {
+    src: "/projects/2958-valley-ridge/great-room-open.jpg",
+    alt: "2958 Valley Ridge open great room flowing to the kitchen and rear french doors, with fresh white walls and wood-look floors",
+  },
+  {
+    src: "/projects/2958-valley-ridge/living-room-staged.jpg",
+    alt: "2958 Valley Ridge living room virtually staged with leather sofa, gray accent chair, console, and area rug",
+    emptySrc: "/projects/2958-valley-ridge/living-room-empty.jpg",
+    emptyAlt: "2958 Valley Ridge empty living room showing wood-look flooring, large windows, ceiling fan, and fresh white paint",
+  },
+];
+
 export const projects: Project[] = [
   {
     id: "1888-delphine",
@@ -192,9 +233,9 @@ export const projects: Project[] = [
   {
     id: "2958-valley-ridge",
     title: "2958 Valley Ridge",
-    description: "Full-scope renovation project at 2958 Valley Ridge.",
-    thumbnail: "/placeholder.svg",
-    images: [],
+    description: "Mid-century ranch renovation featuring a freshly painted white brick exterior with stacked-stone accents, dark trim and gutters, refinished interiors with new wood-look flooring throughout, recessed lighting, and an open-concept living area opening to a rear deck.",
+    thumbnail: "/projects/2958-valley-ridge/exterior-front-1.jpg",
+    images: valleyRidgeImages,
   },
   {
     id: "misc",
