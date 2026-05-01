@@ -296,6 +296,46 @@ const valleyRidgeImages: ProjectImage[] = [
     src: "/projects/2958-valley-ridge/basement-rec.jpg",
     alt: "2958 Valley Ridge finished basement recreation room with new wood-look flooring, recessed lighting, two ceiling fans, and stairs to the main level",
   },
+  {
+    src: "/projects/2958-valley-ridge/basement-stairs.jpg",
+    alt: "2958 Valley Ridge basement stairwell with painted black treads, white risers, and open sightlines to additional finished basement living areas",
+  },
+  {
+    src: "/projects/2958-valley-ridge/basement-living.jpg",
+    alt: "2958 Valley Ridge basement living area with two modern ceiling fans, recessed lighting, double closet, and durable wood-look plank flooring",
+  },
+  {
+    src: "/projects/2958-valley-ridge/basement-open-area.jpg",
+    alt: "2958 Valley Ridge open basement flex space with bright white walls, recessed lighting, ceiling fan, and continuous wood-look flooring",
+  },
+  {
+    src: "/projects/2958-valley-ridge/basement-hallway.jpg",
+    alt: "2958 Valley Ridge basement hallway with modern ceiling fan, double closet doors, and access to additional bedrooms and storage",
+  },
+  {
+    src: "/projects/2958-valley-ridge/basement-laundry.jpg",
+    alt: "2958 Valley Ridge basement laundry room with marble-look tile flooring, washer and dryer hookups, and double doors",
+  },
+  {
+    src: "/projects/2958-valley-ridge/basement-bedroom-1.jpg",
+    alt: "2958 Valley Ridge basement bedroom with new ceiling fan, recessed lighting, fresh white walls, and wood-look plank flooring",
+  },
+  {
+    src: "/projects/2958-valley-ridge/basement-bathroom.jpg",
+    alt: "2958 Valley Ridge basement bathroom with white shaker vanity, granite countertop, framed mirror, and walk-in marble-tiled shower",
+  },
+  {
+    src: "/projects/2958-valley-ridge/basement-shower.jpg",
+    alt: "2958 Valley Ridge basement walk-in shower detail with marble-look tile walls, rainfall showerhead, and hexagon mosaic floor",
+  },
+  {
+    src: "/projects/2958-valley-ridge/basement-bedroom-2.jpg",
+    alt: "2958 Valley Ridge basement bedroom with window, ceiling fan, recessed lighting, and access to a private closet",
+  },
+  {
+    src: "/projects/2958-valley-ridge/basement-bedroom-3.jpg",
+    alt: "2958 Valley Ridge basement bedroom with bright natural light from a window, ceiling fan, and fresh wood-look flooring",
+  },
 ];
 
 export const projects: Project[] = [
