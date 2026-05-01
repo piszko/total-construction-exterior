@@ -220,6 +220,44 @@ const valleyRidgeImages: ProjectImage[] = [
     emptySrc: "/projects/2958-valley-ridge/living-room-empty.jpg",
     emptyAlt: "2958 Valley Ridge empty living room showing wood-look flooring, large windows, ceiling fan, and fresh white paint",
   },
+  {
+    src: "/projects/2958-valley-ridge/kitchen-dining-wide.jpg",
+    alt: "2958 Valley Ridge open kitchen and dining area with white shaker cabinets, stainless hood, gray subway tile backsplash, and french doors to the rear deck",
+  },
+  {
+    src: "/projects/2958-valley-ridge/kitchen-dining-staged.jpg",
+    alt: "2958 Valley Ridge kitchen and dining area virtually staged with round wood table, neutral chairs, and abstract wall art",
+    emptySrc: "/projects/2958-valley-ridge/kitchen-dining-empty.jpg",
+    emptyAlt: "2958 Valley Ridge empty kitchen and dining area showing white cabinets, gray subway backsplash, quartz counters, and wood-look flooring",
+  },
+  {
+    src: "/projects/2958-valley-ridge/kitchen-sink-window.jpg",
+    alt: "2958 Valley Ridge kitchen detail with white shaker cabinets, quartz countertops, gray subway tile backsplash, and stainless hood vent over the window",
+  },
+  {
+    src: "/projects/2958-valley-ridge/kitchen-hood-side.jpg",
+    alt: "2958 Valley Ridge kitchen side view showing the stainless hood, gray subway backsplash, and pull-down faucet at the prep sink",
+  },
+  {
+    src: "/projects/2958-valley-ridge/dining-french-doors.jpg",
+    alt: "2958 Valley Ridge dining nook with french doors opening to the rear deck and adjacent kitchen pass-through",
+  },
+  {
+    src: "/projects/2958-valley-ridge/hallway.jpg",
+    alt: "2958 Valley Ridge bedroom hallway with refinished hardwood floors, fresh white paint, and natural light from the rear bedroom",
+  },
+  {
+    src: "/projects/2958-valley-ridge/bathroom-tub.jpg",
+    alt: "2958 Valley Ridge full bathroom with white subway tile tub surround, granite vanity countertop, brushed nickel fixtures, and arched mirror",
+  },
+  {
+    src: "/projects/2958-valley-ridge/sunroom-french-doors.jpg",
+    alt: "2958 Valley Ridge enclosed sunroom with painted white brick walls, french doors to the backyard, and original concrete floor",
+  },
+  {
+    src: "/projects/2958-valley-ridge/sunroom-kitchen-access.jpg",
+    alt: "2958 Valley Ridge sunroom showing the side door access into the renovated kitchen and additional windows to the side yard",
+  },
 ];
 
 export const projects: Project[] = [
