@@ -40,15 +40,26 @@ const Projects = () => {
                   className="group block overflow-hidden rounded-lg shadow-md hover:shadow-xl transition-all duration-300 bg-white focus:outline-none focus:ring-2 focus:ring-total-red focus:ring-offset-2"
                   aria-label={`View ${project.title} project gallery`}
                 >
-                  <div className="h-64 overflow-hidden bg-gray-100">
+                  <div className="relative h-64 overflow-hidden bg-gray-100">
                     <img
                       src={project.thumbnail}
                       alt={`${project.title} project thumbnail`}
-                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                      className={`w-full h-full object-cover transition-all duration-500 ${project.thumbnailHover ? "group-hover:opacity-0" : "group-hover:scale-105"}`}
                       loading="lazy"
                       width="400"
                       height="256"
                     />
+                    {project.thumbnailHover && (
+                      <img
+                        src={project.thumbnailHover}
+                        alt=""
+                        aria-hidden="true"
+                        className="absolute inset-0 w-full h-full object-cover opacity-0 group-hover:opacity-100 transition-opacity duration-500"
+                        loading="lazy"
+                        width="400"
+                        height="256"
+                      />
+                    )}
                   </div>
                   <div className="p-6">
                     <h2 className="text-2xl font-bold text-gray-900 mb-2 font-poppins group-hover:text-total-red transition-colors">
