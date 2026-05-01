@@ -6,6 +6,7 @@ import { Button } from "@/components/ui/button";
 import { Dialog, DialogContent } from "@/components/ui/dialog";
 import { ArrowLeft, ChevronLeft, ChevronRight } from 'lucide-react';
 import SEOHead from "@/components/SEOHead";
+import BeforeAfterSlider from "@/components/BeforeAfterSlider";
 import { getProjectById } from "@/data/projects";
 
 const ProjectDetail = () => {
@@ -14,7 +15,6 @@ const ProjectDetail = () => {
   const [selectedImageIndex, setSelectedImageIndex] = useState<number | null>(null);
 
   const images = project?.images ?? [];
-  const descriptions = project?.imageDescriptions ?? [];
 
   const handlePrevious = () => {
     if (selectedImageIndex !== null && images.length > 0) {
@@ -42,6 +42,8 @@ const ProjectDetail = () => {
   if (!project) {
     return <Navigate to="/projects" replace />;
   }
+
+  const activeImage = selectedImageIndex !== null ? images[selectedImageIndex] : null;
 
   return (
     <div className="min-h-screen">
@@ -81,7 +83,12 @@ const ProjectDetail = () => {
         {/* Gallery */}
         <section className="py-16 bg-gray-50" aria-label={`${project.title} photo gallery`}>
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 className="text-3xl font-bold text-gray-900 mb-8 font-poppins">Project Gallery</h2>
+            <h2 className="text-3xl font-bold text-gray-900 mb-4 font-poppins">Project Gallery</h2>
+            {images.some((img) => img.emptySrc) && (
+              <p className="text-gray-600 mb-8 font-poppins">
+                Drag the slider on paired photos to compare the empty space with virtually staged interiors.
+              </p>
+            )}
 
             {images.length === 0 ? (
               <div className="text-center py-16 bg-white rounded-lg">
@@ -90,30 +97,33 @@ const ProjectDetail = () => {
                 </p>
               </div>
             ) : (
-              <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 {images.map((image, index) => (
-                  <div
-                    key={index}
-                    className="cursor-pointer group overflow-hidden rounded-lg shadow-md hover:shadow-xl transition-all duration-300"
-                    onClick={() => setSelectedImageIndex(index)}
-                    role="button"
-                    tabIndex={0}
-                    aria-label={`View ${descriptions[index] || `image ${index + 1}`}`}
-                    onKeyDown={(e) => {
-                      if (e.key === 'Enter' || e.key === ' ') {
-                        e.preventDefault();
-                        setSelectedImageIndex(index);
-                      }
-                    }}
-                  >
-                    <img
-                      src={image}
-                      alt={descriptions[index] || `${project.title} image ${index + 1}`}
-                      className="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-300"
-                      loading="lazy"
-                      width="300"
-                      height="192"
-                    />
+                  <div key={index}>
+                    {image.emptySrc ? (
+                      <BeforeAfterSlider
+                        beforeImage={image.emptySrc}
+                        afterImage={image.src}
+                        beforeAlt={image.emptyAlt || "Empty room"}
+                        afterAlt={image.alt}
+                      />
+                    ) : (
+                      <button
+                        type="button"
+                        className="block w-full overflow-hidden rounded-lg shadow-md hover:shadow-xl transition-all duration-300 group focus:outline-none focus:ring-2 focus:ring-total-red focus:ring-offset-2"
+                        onClick={() => setSelectedImageIndex(index)}
+                        aria-label={`View ${image.alt}`}
+                      >
+                        <img
+                          src={image.src}
+                          alt={image.alt}
+                          className="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-300"
+                          loading="lazy"
+                          width="600"
+                          height="400"
+                        />
+                      </button>
+                    )}
                   </div>
                 ))}
               </div>
@@ -121,7 +131,7 @@ const ProjectDetail = () => {
           </div>
         </section>
 
-        {/* Lightbox */}
+        {/* Lightbox (only for non-paired images) */}
         <Dialog open={selectedImageIndex !== null} onOpenChange={() => setSelectedImageIndex(null)}>
           <DialogContent className="max-w-6xl p-0 bg-black/95 border-none">
             <div className="relative">
@@ -135,11 +145,13 @@ const ProjectDetail = () => {
                 <ChevronLeft className="h-8 w-8" />
               </Button>
 
-              <img
-                src={selectedImageIndex !== null ? images[selectedImageIndex] : ""}
-                alt={selectedImageIndex !== null ? (descriptions[selectedImageIndex] || `${project.title} image`) : "Project detail"}
-                className="w-full h-auto max-h-[85vh] object-contain"
-              />
+              {activeImage && (
+                <img
+                  src={activeImage.src}
+                  alt={activeImage.alt}
+                  className="w-full h-auto max-h-[85vh] object-contain"
+                />
+              )}
 
               <Button
                 variant="ghost"
