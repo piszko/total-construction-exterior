@@ -116,6 +116,10 @@ const delphineImages: ProjectImage[] = [
     alt: "1888 Delphine closet with built-in shelving, hanging rods, and black marble tile floor",
   },
   {
+    src: "/projects/1888-delphine/basement-entry.jpg",
+    alt: "1888 Delphine finished basement entry landing with stained wood stair railing and wood-look tile floor",
+  },
+  {
     src: "/projects/1888-delphine/basement-stairs.jpg",
     alt: "1888 Delphine finished basement stairs with stained wood treads, white risers, and wood-look tile flooring",
   },
@@ -140,6 +144,10 @@ const delphineImages: ProjectImage[] = [
     alt: "1888 Delphine finished basement bedroom with two large windows and wood-look tile flooring",
   },
   {
+    src: "/projects/1888-delphine/basement-bedroom-4.jpg",
+    alt: "1888 Delphine finished basement bedroom with double-door closet, window, and wood-look tile floors",
+  },
+  {
     src: "/projects/1888-delphine/basement-bathroom-marble.jpg",
     alt: "1888 Delphine finished basement bathroom with marble-tile walk-in shower, gray vanity, and quartz countertop",
   },
@@ -150,6 +158,26 @@ const delphineImages: ProjectImage[] = [
   {
     src: "/projects/1888-delphine/basement-laundry.jpg",
     alt: "1888 Delphine finished basement laundry room with washer and dryer hookups and marble-look tile floor",
+  },
+  {
+    src: "/projects/1888-delphine/back-deck.jpg",
+    alt: "1888 Delphine rear deck with freshly stained dark railings overlooking a wooded backyard",
+  },
+  {
+    src: "/projects/1888-delphine/exterior-side.jpg",
+    alt: "1888 Delphine side exterior view showing brick facade, painted foundation, and new stained deck stairs",
+  },
+  {
+    src: "/projects/1888-delphine/exterior-rear.jpg",
+    alt: "1888 Delphine rear exterior showing the brick split-level facade, basement entry door, and new dark deck",
+  },
+  {
+    src: "/projects/1888-delphine/exterior-backyard.jpg",
+    alt: "1888 Delphine wooded backyard view showing the rear of the home and surrounding mature trees",
+  },
+  {
+    src: "/projects/1888-delphine/exterior-wooded-lot.jpg",
+    alt: "1888 Delphine wooded lot view from the back of the property looking toward the home",
   },
 ];
 
