@@ -115,13 +115,49 @@ const delphineImages: ProjectImage[] = [
     src: "/projects/1888-delphine/closet.jpg",
     alt: "1888 Delphine closet with built-in shelving, hanging rods, and black marble tile floor",
   },
+  {
+    src: "/projects/1888-delphine/basement-stairs.jpg",
+    alt: "1888 Delphine finished basement stairs with stained wood treads, white risers, and wood-look tile flooring",
+  },
+  {
+    src: "/projects/1888-delphine/basement-rec-area.jpg",
+    alt: "1888 Delphine open finished basement recreation area with recessed lighting, fresh paint, and wood-look tile floors",
+  },
+  {
+    src: "/projects/1888-delphine/basement-hallway.jpg",
+    alt: "1888 Delphine finished basement hallway with new doors, trim, and wood-look tile flooring",
+  },
+  {
+    src: "/projects/1888-delphine/basement-bedroom-1.jpg",
+    alt: "1888 Delphine finished basement bedroom with natural light, fresh neutral paint, and wood-look tile floors",
+  },
+  {
+    src: "/projects/1888-delphine/basement-bedroom-2.jpg",
+    alt: "1888 Delphine finished basement bedroom with double-door closet and new interior doors",
+  },
+  {
+    src: "/projects/1888-delphine/basement-bedroom-3.jpg",
+    alt: "1888 Delphine finished basement bedroom with two large windows and wood-look tile flooring",
+  },
+  {
+    src: "/projects/1888-delphine/basement-bathroom-marble.jpg",
+    alt: "1888 Delphine finished basement bathroom with marble-tile walk-in shower, gray vanity, and quartz countertop",
+  },
+  {
+    src: "/projects/1888-delphine/basement-bathroom-tub.jpg",
+    alt: "1888 Delphine finished basement bathroom with tub-shower combo, arched mirror, and quartz vanity",
+  },
+  {
+    src: "/projects/1888-delphine/basement-laundry.jpg",
+    alt: "1888 Delphine finished basement laundry room with washer and dryer hookups and marble-look tile floor",
+  },
 ];
 
 export const projects: Project[] = [
   {
     id: "1888-delphine",
     title: "1888 Delphine",
-    description: "Full renovation of a classic Atlanta ranch home featuring a remodeled chef's kitchen with quartz countertops, refinished red oak floors, fresh interior and exterior paint, and updated landscaping.",
+    description: "Full renovation of a classic Atlanta ranch home featuring a remodeled chef's kitchen with quartz countertops, refinished red oak floors, a fully finished basement with two bedrooms and two baths, fresh interior and exterior paint, and updated landscaping.",
     thumbnail: "/projects/1888-delphine/exterior-1.jpg",
     images: delphineImages,
   },
