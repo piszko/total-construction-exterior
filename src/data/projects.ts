@@ -1,56 +1,53 @@
+export interface ProjectImage {
+  src: string;
+  alt: string;
+  /** Optional empty/un-staged version of this same shot for before/after comparison */
+  emptySrc?: string;
+  emptyAlt?: string;
+}
+
 export interface Project {
   id: string;
   title: string;
   description: string;
   thumbnail: string;
-  images: string[];
-  imageDescriptions: string[];
+  images: ProjectImage[];
 }
 
-const miscImages = [
-  "/lovable-uploads/project-1.jpg",
-  "/lovable-uploads/project-2.jpg",
-  "/lovable-uploads/project-3.jpg",
-  "/lovable-uploads/project-4.jpg",
-  "/lovable-uploads/project-5.jpg",
-  "/lovable-uploads/project-6.jpg",
-  "/lovable-uploads/project-7.jpg",
-  "/lovable-uploads/project-8.jpg",
-  "/lovable-uploads/project-9.jpg",
-  "/lovable-uploads/project-10.jpg",
-  "/lovable-uploads/project-11.jpg",
-  "/lovable-uploads/project-12.jpg",
-  "/lovable-uploads/project-13.jpg",
-  "/lovable-uploads/project-14.jpg",
-  "/lovable-uploads/project-15.jpg",
+const miscImages: ProjectImage[] = [
+  { src: "/lovable-uploads/project-1.jpg", alt: "Residential roof replacement in Atlanta" },
+  { src: "/lovable-uploads/project-2.jpg", alt: "Kitchen remodel with granite countertops" },
+  { src: "/lovable-uploads/project-3.jpg", alt: "Full home exterior renovation" },
+  { src: "/lovable-uploads/project-4.jpg", alt: "Bathroom remodeling project" },
+  { src: "/lovable-uploads/project-5.jpg", alt: "Custom deck construction" },
+  { src: "/lovable-uploads/project-6.jpg", alt: "Interior painting and drywall work" },
+  { src: "/lovable-uploads/project-7.jpg", alt: "Siding installation on residential home" },
+  { src: "/lovable-uploads/project-8.jpg", alt: "Porch construction and renovation" },
+  { src: "/lovable-uploads/project-9.jpg", alt: "Hardwood flooring installation" },
+  { src: "/lovable-uploads/project-10.jpg", alt: "Commercial roofing project" },
+  { src: "/lovable-uploads/project-11.jpg", alt: "Home addition construction" },
+  { src: "/lovable-uploads/project-12.jpg", alt: "Window and door replacement" },
+  { src: "/lovable-uploads/project-13.jpg", alt: "Exterior painting project" },
+  { src: "/lovable-uploads/project-14.jpg", alt: "Gutter system installation" },
+  { src: "/lovable-uploads/project-15.jpg", alt: "Complete home renovation" },
 ];
 
-const miscDescriptions = [
-  "Residential roof replacement in Atlanta",
-  "Kitchen remodel with granite countertops",
-  "Full home exterior renovation",
-  "Bathroom remodeling project",
-  "Custom deck construction",
-  "Interior painting and drywall work",
-  "Siding installation on residential home",
-  "Porch construction and renovation",
-  "Hardwood flooring installation",
-  "Commercial roofing project",
-  "Home addition construction",
-  "Window and door replacement",
-  "Exterior painting project",
-  "Gutter system installation",
-  "Complete home renovation",
+const delphineImages: ProjectImage[] = [
+  {
+    src: "/projects/1888-delphine/bedroom-staged.jpg",
+    alt: "1888 Delphine bedroom with virtually staged mid-century furniture",
+    emptySrc: "/projects/1888-delphine/bedroom-empty.jpg",
+    emptyAlt: "1888 Delphine bedroom empty showing refinished hardwood floors and fresh paint",
+  },
 ];
 
 export const projects: Project[] = [
   {
     id: "1888-delphine",
     title: "1888 Delphine",
-    description: "Custom construction and remodeling project at 1888 Delphine.",
-    thumbnail: "/placeholder.svg",
-    images: [],
-    imageDescriptions: [],
+    description: "Custom construction and remodeling project at 1888 Delphine, featuring refinished hardwood floors, fresh interior paint, and virtually staged interiors.",
+    thumbnail: "/projects/1888-delphine/bedroom-staged.jpg",
+    images: delphineImages,
   },
   {
     id: "2958-valley-ridge",
@@ -58,15 +55,13 @@ export const projects: Project[] = [
     description: "Full-scope renovation project at 2958 Valley Ridge.",
     thumbnail: "/placeholder.svg",
     images: [],
-    imageDescriptions: [],
   },
   {
     id: "misc",
     title: "Miscellaneous Projects",
     description: "A collection of our past construction, roofing, and remodeling work across Atlanta.",
-    thumbnail: miscImages[0],
+    thumbnail: miscImages[0].src,
     images: miscImages,
-    imageDescriptions: miscDescriptions,
   },
 ];
 
