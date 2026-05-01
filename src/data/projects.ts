@@ -11,6 +11,8 @@ export interface Project {
   title: string;
   description: string;
   thumbnail: string;
+  /** Optional alternate image shown on hover of the portfolio thumbnail */
+  thumbnailHover?: string;
   images: ProjectImage[];
 }
 
@@ -384,6 +386,7 @@ export const projects: Project[] = [
     title: "1888 Delphine",
     description: "Full renovation of a classic Atlanta ranch home featuring a remodeled chef's kitchen with quartz countertops, refinished red oak floors, a fully finished basement with two bedrooms and two baths, fresh interior and exterior paint, and updated landscaping.",
     thumbnail: "/projects/1888-delphine/exterior-3-entry.jpg",
+    thumbnailHover: "/projects/1888-delphine/kitchen-appliances.jpg",
     images: delphineImages,
   },
   {
@@ -391,6 +394,7 @@ export const projects: Project[] = [
     title: "2958 Valley Ridge",
     description: "Mid-century ranch renovation featuring a freshly painted white brick exterior with stacked-stone accents, dark trim and gutters, refinished interiors with new wood-look flooring throughout, recessed lighting, and an open-concept living area opening to a rear deck.",
     thumbnail: "/projects/2958-valley-ridge/entry-porch-angle.jpg",
+    thumbnailHover: "/projects/2958-valley-ridge/primary-bedroom-barn-door.jpg",
     images: valleyRidgeImages,
   },
   {
