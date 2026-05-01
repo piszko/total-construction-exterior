@@ -373,7 +373,9 @@ const valleyRidgeImages: ProjectImage[] = [
     alt: "2958 Valley Ridge spacious backyard with new privacy fencing, freshly seeded lawn, and mature wooded perimeter",
   },
   {
-    src: "/projects/2958-valley-ridge/exterior-hvac.jpg
+    src: "/projects/2958-valley-ridge/exterior-hvac.jpg",
+    alt: "2958 Valley Ridge side yard with two new Goodman HVAC condensers in protective cages alongside the freshly painted white brick exterior",
+  },
 ];
 
 export const projects: Project[] = [
