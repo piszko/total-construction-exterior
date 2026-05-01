@@ -258,6 +258,44 @@ const valleyRidgeImages: ProjectImage[] = [
     src: "/projects/2958-valley-ridge/sunroom-kitchen-access.jpg",
     alt: "2958 Valley Ridge sunroom showing the side door access into the renovated kitchen and additional windows to the side yard",
   },
+  {
+    src: "/projects/2958-valley-ridge/primary-bedroom-staged.jpg",
+    alt: "2958 Valley Ridge primary bedroom virtually staged with mid-century walnut bed, olive bedding, matching nightstands, and abstract art",
+    emptySrc: "/projects/2958-valley-ridge/primary-bedroom-empty.jpg",
+    emptyAlt: "2958 Valley Ridge empty primary bedroom with fresh white paint, new neutral carpet, modern ceiling fan, and corner windows",
+  },
+  {
+    src: "/projects/2958-valley-ridge/primary-bedroom-barn-door.jpg",
+    alt: "2958 Valley Ridge primary bedroom showing the sliding barn door to the en-suite bathroom and bright corner windows",
+  },
+  {
+    src: "/projects/2958-valley-ridge/primary-bath-wide.jpg",
+    alt: "2958 Valley Ridge primary bathroom with walk-in tile shower, double vanity, quartz countertops, and modern sconce lighting",
+  },
+  {
+    src: "/projects/2958-valley-ridge/primary-bath-shower.jpg",
+    alt: "2958 Valley Ridge primary bathroom walk-in shower with large-format stone tile, rainfall and handheld shower heads, and a window",
+  },
+  {
+    src: "/projects/2958-valley-ridge/primary-bath-vanity.jpg",
+    alt: "2958 Valley Ridge primary bathroom double vanity with white shaker cabinets, quartz countertop, dual mirrors, and brushed nickel sconces",
+  },
+  {
+    src: "/projects/2958-valley-ridge/primary-closet.jpg",
+    alt: "2958 Valley Ridge primary suite walk-in closet with built-in shelving and tile flooring",
+  },
+  {
+    src: "/projects/2958-valley-ridge/bedroom-2.jpg",
+    alt: "2958 Valley Ridge secondary bedroom with double-door closet, modern ceiling fan, and fresh white walls",
+  },
+  {
+    src: "/projects/2958-valley-ridge/bedroom-3.jpg",
+    alt: "2958 Valley Ridge third bedroom with two windows, neutral carpet, and a modern ceiling fan",
+  },
+  {
+    src: "/projects/2958-valley-ridge/basement-rec.jpg",
+    alt: "2958 Valley Ridge finished basement recreation room with new wood-look flooring, recessed lighting, two ceiling fans, and stairs to the main level",
+  },
 ];
 
 export const projects: Project[] = [
