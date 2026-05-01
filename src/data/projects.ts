@@ -72,10 +72,48 @@ const delphineImages: ProjectImage[] = [
     alt: "1888 Delphine kitchen island sink with quartz countertop and brass faucet",
   },
   {
+    src: "/projects/1888-delphine/den-staged.jpg",
+    alt: "1888 Delphine vaulted den with exposed brick accent wall, virtually staged with leather chair, sofa, and media console",
+    emptySrc: "/projects/1888-delphine/den-empty.jpg",
+    emptyAlt: "1888 Delphine empty den showing exposed brick accent wall, vaulted ceiling, and refinished hardwood floors",
+  },
+  {
+    src: "/projects/1888-delphine/den-reverse-view.jpg",
+    alt: "1888 Delphine den reverse view showing the brick accent wall, vaulted ceiling, and natural light from corner windows",
+  },
+  {
     src: "/projects/1888-delphine/bedroom-staged.jpg",
     alt: "1888 Delphine bedroom with virtually staged mid-century furniture",
     emptySrc: "/projects/1888-delphine/bedroom-empty.jpg",
     emptyAlt: "1888 Delphine bedroom empty showing refinished hardwood floors and fresh paint",
+  },
+  {
+    src: "/projects/1888-delphine/primary-bedroom.jpg",
+    alt: "1888 Delphine primary bedroom with refinished hardwood floors, en-suite bathroom access, and large picture window",
+  },
+  {
+    src: "/projects/1888-delphine/bedroom-3.jpg",
+    alt: "1888 Delphine third bedroom with double window overlooking the front yard and refinished red oak floors",
+  },
+  {
+    src: "/projects/1888-delphine/bathroom-wide.jpg",
+    alt: "1888 Delphine primary bathroom wide view with double vanity, walk-in shower, and black marble flooring",
+  },
+  {
+    src: "/projects/1888-delphine/bathroom-vanity.jpg",
+    alt: "1888 Delphine primary bathroom double vanity with quartz countertop, brass mirrors, and modern sconces",
+  },
+  {
+    src: "/projects/1888-delphine/bathroom-shower-green.jpg",
+    alt: "1888 Delphine walk-in shower with green stacked tile, black marble accents, and rainfall shower head",
+  },
+  {
+    src: "/projects/1888-delphine/bathroom-shower-marble.jpg",
+    alt: "Detail of the 1888 Delphine shower wall featuring black veined marble tile and built-in niche",
+  },
+  {
+    src: "/projects/1888-delphine/closet.jpg",
+    alt: "1888 Delphine closet with built-in shelving, hanging rods, and black marble tile floor",
   },
 ];
 
