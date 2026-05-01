@@ -383,7 +383,7 @@ export const projects: Project[] = [
     id: "1888-delphine",
     title: "1888 Delphine",
     description: "Full renovation of a classic Atlanta ranch home featuring a remodeled chef's kitchen with quartz countertops, refinished red oak floors, a fully finished basement with two bedrooms and two baths, fresh interior and exterior paint, and updated landscaping.",
-    thumbnail: "/projects/1888-delphine/exterior-1.jpg",
+    thumbnail: "/projects/1888-delphine/exterior-3-entry.jpg",
     images: delphineImages,
   },
   {
