@@ -336,6 +336,46 @@ const valleyRidgeImages: ProjectImage[] = [
     src: "/projects/2958-valley-ridge/basement-bedroom-3.jpg",
     alt: "2958 Valley Ridge basement bedroom with bright natural light from a window, ceiling fan, and fresh wood-look flooring",
   },
+  {
+    src: "/projects/2958-valley-ridge/basement-bedroom-4.jpg",
+    alt: "2958 Valley Ridge basement bedroom with private exterior door to the backyard, additional window for natural light, and modern ceiling fan",
+  },
+  {
+    src: "/projects/2958-valley-ridge/basement-bedroom-5.jpg",
+    alt: "2958 Valley Ridge basement bedroom with double-door closet, ceiling fan, and view to the adjacent hallway and bathroom",
+  },
+  {
+    src: "/projects/2958-valley-ridge/exterior-rear-angle.jpg",
+    alt: "2958 Valley Ridge rear exterior showing newly painted white brick, freshly built black deck, and walk-out basement door on a wooded sloped lot",
+  },
+  {
+    src: "/projects/2958-valley-ridge/exterior-rear.jpg",
+    alt: "2958 Valley Ridge straight-on rear exterior view featuring the new black deck, French doors, and refreshed white brick siding",
+  },
+  {
+    src: "/projects/2958-valley-ridge/exterior-deck-side.jpg",
+    alt: "2958 Valley Ridge side exterior view of the new elevated deck with black railings, stairs, and walk-out basement entry",
+  },
+  {
+    src: "/projects/2958-valley-ridge/back-deck.jpg",
+    alt: "2958 Valley Ridge new back deck with charcoal composite decking, black spindle railings, and French doors leading into the sunroom",
+  },
+  {
+    src: "/projects/2958-valley-ridge/back-deck-view.jpg",
+    alt: "2958 Valley Ridge back deck showing the wooded backyard view from the new black-railed entertaining space",
+  },
+  {
+    src: "/projects/2958-valley-ridge/backyard-from-deck.jpg",
+    alt: "2958 Valley Ridge backyard view from the deck showing newly graded lawn, privacy fencing, and mature surrounding trees",
+  },
+  {
+    src: "/projects/2958-valley-ridge/backyard.jpg",
+    alt: "2958 Valley Ridge spacious backyard with new privacy fencing, freshly seeded lawn, and mature wooded perimeter",
+  },
+  {
+    src: "/projects/2958-valley-ridge/exterior-hvac.jpg",
+    alt: "2958 Valley Ridge side yard with two new Goodman HVAC condensers in protective cages alongside the freshly painted white brick exterior",
+  },
 ];
 
 export const projects: Project[] = [
