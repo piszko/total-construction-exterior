@@ -53,7 +53,7 @@ const Header = () => {
               }`}
               aria-current={isActive('/projects') ? 'page' : undefined}
             >
-              Projects
+              Portfolio
             </Link>
             <Link 
               to="/property-management" 
@@ -139,7 +139,7 @@ const Header = () => {
                 <button className={`w-full py-3 px-6 rounded-lg font-syne font-medium text-xl transition-colors focus:outline-none focus:ring-2 focus:ring-white ${
                   isActive('/projects') ? 'bg-logo-red text-white' : 'bg-logo-red text-white hover:bg-red-700'
                 }`}>
-                  Projects
+                  Portfolio
                 </button>
               </Link>
               <Link 
