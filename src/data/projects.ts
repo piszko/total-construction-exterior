@@ -394,7 +394,7 @@ export const projects: Project[] = [
     title: "2958 Valley Ridge",
     description: "Mid-century ranch renovation featuring a freshly painted white brick exterior with stacked-stone accents, dark trim and gutters, refinished interiors with new wood-look flooring throughout, recessed lighting, and an open-concept living area opening to a rear deck.",
     thumbnail: "/projects/2958-valley-ridge/entry-porch-angle.jpg",
-    thumbnailHover: "/projects/2958-valley-ridge/primary-bedroom-barn-door.jpg",
+    thumbnailHover: "/projects/2958-valley-ridge/primary-bath-wide.jpg",
     images: valleyRidgeImages,
   },
   {
