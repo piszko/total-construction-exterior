@@ -402,6 +402,7 @@ export const projects: Project[] = [
     title: "Miscellaneous Projects",
     description: "A collection of our past construction, roofing, and remodeling work across Atlanta.",
     thumbnail: miscImages[1].src,
+    thumbnailHover: miscImages[0].src,
     images: miscImages,
   },
 ];
